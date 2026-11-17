@@ -30,3 +30,14 @@ For each layer the repository keeps:
    not generated layers: whether the experiment reached its goal, whether its results satisfy us and, if not, why.
    Intermediate layers are not kept (see Rule 4);
 3. once the procedure that generates the layer is ready, a document that briefly summarises the results of the work.
+
+## Rule 6. Each level is built from the level above it
+
+The world is mapped at several levels of detail, from the global map down to detailed regional maps. Each level is
+built only from the layers of the level above it, and is checked automatically for consistency with that level.
+
+The consistency checks include at least:
+
+1. **Aggregation.** A level, averaged back to the resolution of the level above it, matches that level.
+2. **Rivers.** Every river of the level above exists on the level below and follows the same course.
+3. **Seams.** Neighbouring areas of the same level join without seams.

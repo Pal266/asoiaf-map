@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+
+# Generated layers and copyrighted source maps are never committed (Rule 4, research/SOURCES.md)
+*.npz
+*.jpg
+*.jpeg
+*.png
+*.tif
+*.tiff
