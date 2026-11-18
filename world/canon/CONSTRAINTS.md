@@ -103,6 +103,24 @@ each; the source column names the AWOIAF page.
    and along the Wall's meridian, and all areas, are as drawn; the Wall's midpoint is at **63.75° N**, the middle of
    the range (63.5–64° N) in which every canon climate region falls in its Earth latitude band.
 
+4. **Land covers ~29 % of the planet, as on Earth** (~148 million km²). The planet has Earth's parameters, and the
+   climate, ocean and relief models are calibrated on Earth, where land and ocean are shared in this way. The known
+   world gives ~32 million km² (~6 %).
+5. **The Sunset Sea is an ocean the size of the Pacific**, about 180° of longitude (~15 000 km at mid-latitudes), with
+   islands at most and no continent on the routes west from Westeros. This follows what most in canon believe and
+   explains why no one has crossed it.
+6. **Target areas of the land outside the map** (frames for the geological history, which sets the actual shapes):
+
+   | Land | Area, approx. | Basis |
+   |---|---|---|
+   | Rest of Essos, east of the map | ~34 M km² | "roughly the size of Eurasia" (E2: 55 M km²); 21 M km² on the map |
+   | Rest of Sothoryos, to the south | ~25–30 M km² | "perhaps as long as Essos is wide" (S2); analogue Africa |
+   | Ulthos | ~10 M km² | a large landmass of unknown size (U1) |
+   | South polar continent | ~14 M km² | analogue Antarctica |
+   | Unknown continent in the south of the Sunset Sea | ~25–30 M km² | Martin is not sure whether counterparts of the Americas exist (W4); in the south it lies off the routes from Westeros |
+
+   The whole southern hemisphere lies outside the map (the map covers 6–74° N).
+
 ## 8. Not stated by canon
 
 The shapes of the coasts outside the official maps, the far north of Westeros, the south of Sothoryos, the whole of

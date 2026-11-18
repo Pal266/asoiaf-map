@@ -1,0 +1,1015 @@
+{
+ "description": "Canon relief features of the known world: envelopes (polygons) and points drawn by eye on map M1 (The Known World, 9050 x 6000 px), coordinates in map pixels [x, y]. Envelopes are generous: they contain the drawn feature; the drawn relief inside them is measured by the script. Types: mountains, hills, volcanic, desert, basin, lake, wetland, sunken_bridge.",
+ "features": [
+  {
+   "id": 1,
+   "name": "Frostfangs",
+   "type": "mountains",
+   "region": "Westeros",
+   "polygon_px": [
+    [
+     1230,
+     250
+    ],
+    [
+     1420,
+     200
+    ],
+    [
+     1560,
+     500
+    ],
+    [
+     1640,
+     800
+    ],
+    [
+     1620,
+     990
+    ],
+    [
+     1500,
+     990
+    ],
+    [
+     1380,
+     700
+    ],
+    [
+     1260,
+     450
+    ]
+   ],
+   "canon": "high range north of the Wall, west of the Haunted Forest; drawn with snow",
+   "source": "M1; https://awoiaf.westeros.org/index.php/The_Frostfangs"
+  },
+  {
+   "id": 2,
+   "name": "Northern mountains (mountain clans)",
+   "type": "mountains",
+   "region": "Westeros",
+   "polygon_px": [
+    [
+     1530,
+     1030
+    ],
+    [
+     1720,
+     1030
+    ],
+    [
+     1740,
+     1250
+    ],
+    [
+     1690,
+     1450
+    ],
+    [
+     1560,
+     1420
+    ],
+    [
+     1520,
+     1200
+    ]
+   ],
+   "canon": "mountains north of Winterfell, home of the mountain clans",
+   "source": "M1"
+  },
+  {
+   "id": 3,
+   "name": "Skagos",
+   "type": "mountains",
+   "region": "Westeros",
+   "polygon_px": [
+    [
+     2080,
+     900
+    ],
+    [
+     2220,
+     900
+    ],
+    [
+     2220,
+     1100
+    ],
+    [
+     2080,
+     1100
+    ]
+   ],
+   "canon": "mountainous island",
+   "source": "M1"
+  },
+  {
+   "id": 4,
+   "name": "Lonely Hills",
+   "type": "hills",
+   "region": "Westeros",
+   "polygon_px": [
+    [
+     1640,
+     1330
+    ],
+    [
+     1860,
+     1330
+    ],
+    [
+     1860,
+     1480
+    ],
+    [
+     1640,
+     1480
+    ]
+   ],
+   "canon": "named hills of the North",
+   "source": "M1"
+  },
+  {
+   "id": 5,
+   "name": "Sheepshead Hills",
+   "type": "hills",
+   "region": "Westeros",
+   "polygon_px": [
+    [
+     1760,
+     1620
+    ],
+    [
+     1900,
+     1620
+    ],
+    [
+     1900,
+     1830
+    ],
+    [
+     1760,
+     1830
+    ]
+   ],
+   "canon": "named hills of the North",
+   "source": "M1"
+  },
+  {
+   "id": 6,
+   "name": "The Rills and the Stony Shore",
+   "type": "hills",
+   "region": "Westeros",
+   "polygon_px": [
+    [
+     820,
+     1580
+    ],
+    [
+     960,
+     1560
+    ],
+    [
+     1120,
+     1800
+    ],
+    [
+     1080,
+     1960
+    ],
+    [
+     950,
+     1950
+    ],
+    [
+     830,
+     1800
+    ]
+   ],
+   "canon": "hilly western coast of the North",
+   "source": "M1"
+  },
+  {
+   "id": 7,
+   "name": "The Neck",
+   "type": "wetland",
+   "region": "Westeros",
+   "polygon_px": [
+    [
+     1150,
+     2050
+    ],
+    [
+     1650,
+     2030
+    ],
+    [
+     1650,
+     2350
+    ],
+    [
+     1150,
+     2350
+    ]
+   ],
+   "canon": "bogs and marshes between the North and the Riverlands",
+   "source": "https://awoiaf.westeros.org/index.php/The_Neck"
+  },
+  {
+   "id": 8,
+   "name": "Mountains of the Moon",
+   "type": "mountains",
+   "region": "Westeros",
+   "polygon_px": [
+    [
+     1600,
+     2250
+    ],
+    [
+     1850,
+     2150
+    ],
+    [
+     2280,
+     2200
+    ],
+    [
+     2300,
+     2450
+    ],
+    [
+     2150,
+     2650
+    ],
+    [
+     1950,
+     2780
+    ],
+    [
+     1800,
+     2700
+    ],
+    [
+     1650,
+     2450
+    ]
+   ],
+   "canon": "range of the Vale of Arryn",
+   "source": "M1"
+  },
+  {
+   "id": 9,
+   "name": "Westerlands hills (Golden Tooth)",
+   "type": "hills",
+   "region": "Westeros",
+   "polygon_px": [
+    [
+     1060,
+     2600
+    ],
+    [
+     1460,
+     2600
+    ],
+    [
+     1480,
+     3000
+    ],
+    [
+     1300,
+     3150
+    ],
+    [
+     1060,
+     3050
+    ]
+   ],
+   "canon": "hilly, gold-rich western region",
+   "source": "M1"
+  },
+  {
+   "id": 10,
+   "name": "Red Mountains (Dornish Marches)",
+   "type": "mountains",
+   "region": "Westeros",
+   "polygon_px": [
+    [
+     1150,
+     3600
+    ],
+    [
+     1350,
+     3400
+    ],
+    [
+     1700,
+     3330
+    ],
+    [
+     2000,
+     3350
+    ],
+    [
+     2280,
+     3420
+    ],
+    [
+     2280,
+     3550
+    ],
+    [
+     1900,
+     3560
+    ],
+    [
+     1600,
+     3700
+    ],
+    [
+     1450,
+     3950
+    ],
+    [
+     1250,
+     3950
+    ]
+   ],
+   "canon": "range along Dorne's northern and western borders",
+   "source": "M1; https://awoiaf.westeros.org/index.php/Dornish"
+  },
+  {
+   "id": 11,
+   "name": "Dornish desert",
+   "type": "desert",
+   "region": "Westeros",
+   "polygon_px": [
+    [
+     1300,
+     3760
+    ],
+    [
+     1700,
+     3700
+    ],
+    [
+     2100,
+     3850
+    ],
+    [
+     2150,
+     4000
+    ],
+    [
+     1700,
+     4060
+    ],
+    [
+     1300,
+     4050
+    ]
+   ],
+   "canon": "the only desert of Westeros",
+   "source": "https://awoiaf.westeros.org/index.php/Dornish"
+  },
+  {
+   "id": 12,
+   "name": "Dragonmont (Dragonstone)",
+   "type": "volcanic",
+   "region": "Westeros",
+   "point_px": [
+    2140,
+    2830
+   ],
+   "canon": "active volcano that raised Dragonstone island; steam from its vents, smoke from its peak",
+   "source": "https://awoiaf.westeros.org/index.php/Dragonmount"
+  },
+  {
+   "id": 13,
+   "name": "Stepstones and the Broken Arm",
+   "type": "sunken_bridge",
+   "region": "Narrow sea",
+   "polygon_px": [
+    [
+     2300,
+     3550
+    ],
+    [
+     2850,
+     3500
+    ],
+    [
+     2900,
+     4000
+    ],
+    [
+     2350,
+     4020
+    ]
+   ],
+   "canon": "remnants of the Arm of Dorne, a land bridge to Essos",
+   "source": "https://awoiaf.westeros.org/index.php/Arm_of_Dorne"
+  },
+  {
+   "id": 14,
+   "name": "Braavosian coastlands",
+   "type": "hills",
+   "region": "Essos",
+   "polygon_px": [
+    [
+     2540,
+     2300
+    ],
+    [
+     2800,
+     2280
+    ],
+    [
+     2820,
+     2700
+    ],
+    [
+     2700,
+     2950
+    ],
+    [
+     2560,
+     2800
+    ]
+   ],
+   "canon": "hilly coast around Braavos",
+   "source": "M1"
+  },
+  {
+   "id": 15,
+   "name": "Hills of Norvos",
+   "type": "hills",
+   "region": "Essos",
+   "polygon_px": [
+    [
+     2950,
+     2400
+    ],
+    [
+     3500,
+     2380
+    ],
+    [
+     3520,
+     2780
+    ],
+    [
+     2980,
+     2800
+    ]
+   ],
+   "canon": "named hills of western Essos",
+   "source": "M1"
+  },
+  {
+   "id": 16,
+   "name": "Velvet Hills",
+   "type": "hills",
+   "region": "Essos",
+   "polygon_px": [
+    [
+     2700,
+     2700
+    ],
+    [
+     2970,
+     2700
+    ],
+    [
+     2980,
+     2990
+    ],
+    [
+     2700,
+     2990
+    ]
+   ],
+   "canon": "named hills of western Essos",
+   "source": "M1"
+  },
+  {
+   "id": 17,
+   "name": "Painted Mountains",
+   "type": "mountains",
+   "region": "Essos",
+   "polygon_px": [
+    [
+     3750,
+     3600
+    ],
+    [
+     4200,
+     3480
+    ],
+    [
+     4650,
+     3500
+    ],
+    [
+     4650,
+     3720
+    ],
+    [
+     4200,
+     3780
+    ],
+    [
+     3780,
+     3820
+    ]
+   ],
+   "canon": "range south of the Dothraki sea",
+   "source": "M1; https://awoiaf.westeros.org/index.php/Dothraki_sea"
+  },
+  {
+   "id": 18,
+   "name": "Fourteen Flames and the Valyrian peninsula",
+   "type": "volcanic",
+   "region": "Essos",
+   "polygon_px": [
+    [
+     3750,
+     3950
+    ],
+    [
+     4150,
+     3880
+    ],
+    [
+     4300,
+     4300
+    ],
+    [
+     4200,
+     4850
+    ],
+    [
+     3900,
+     4850
+    ],
+    [
+     3700,
+     4400
+    ]
+   ],
+   "canon": "chain of volcanoes across the peninsula; the Doom shattered it into the Smoking Sea",
+   "source": "https://awoiaf.westeros.org/index.php/Fourteen_Fires"
+  },
+  {
+   "id": 19,
+   "name": "Krazaaj Zasqa and the Bone Mountains",
+   "type": "mountains",
+   "region": "Essos",
+   "polygon_px": [
+    [
+     6230,
+     2230
+    ],
+    [
+     6450,
+     2230
+    ],
+    [
+     6650,
+     2600
+    ],
+    [
+     6680,
+     3200
+    ],
+    [
+     6620,
+     3800
+    ],
+    [
+     6480,
+     4250
+    ],
+    [
+     6300,
+     4420
+    ],
+    [
+     6100,
+     4300
+    ],
+    [
+     6050,
+     3700
+    ],
+    [
+     6100,
+     3100
+    ],
+    [
+     6200,
+     2600
+    ]
+   ],
+   "canon": "longitudinal range from the Shivering Sea to the Jade Gates, dividing Essos",
+   "source": "https://awoiaf.westeros.org/index.php/Essos"
+  },
+  {
+   "id": 20,
+   "name": "Mother of Mountains",
+   "type": "mountains",
+   "region": "Essos",
+   "point_px": [
+    5819,
+    2779
+   ],
+   "canon": "lone mountain by Vaes Dothrak, beside the lake Womb of the World",
+   "source": "M1"
+  },
+  {
+   "id": 21,
+   "name": "Howling Hills",
+   "type": "hills",
+   "region": "Essos",
+   "polygon_px": [
+    [
+     6586,
+     2744
+    ],
+    [
+     6842,
+     2744
+    ],
+    [
+     6842,
+     2930
+    ],
+    [
+     6586,
+     2930
+    ]
+   ],
+   "canon": "named hills north of the Steel Road",
+   "source": "M1"
+  },
+  {
+   "id": 22,
+   "name": "Ibben highlands",
+   "type": "hills",
+   "region": "Essos",
+   "polygon_px": [
+    [
+     5516,
+     1395
+    ],
+    [
+     6074,
+     1395
+    ],
+    [
+     6074,
+     1767
+    ],
+    [
+     5516,
+     1767
+    ]
+   ],
+   "canon": "hilly interior of Ibben",
+   "source": "M1"
+  },
+  {
+   "id": 23,
+   "name": "Great Sand Sea",
+   "type": "desert",
+   "region": "Essos",
+   "polygon_px": [
+    [
+     6600,
+     3080
+    ],
+    [
+     6800,
+     3000
+    ],
+    [
+     6980,
+     3300
+    ],
+    [
+     6990,
+     3990
+    ],
+    [
+     6750,
+     3990
+    ],
+    [
+     6620,
+     3500
+    ]
+   ],
+   "canon": "desert valley and canyon east of the Bone Mountains",
+   "source": "https://awoiaf.westeros.org/index.php/Great_Sand_Sea"
+  },
+  {
+   "id": 24,
+   "name": "Red waste",
+   "type": "desert",
+   "region": "Essos",
+   "polygon_px": [
+    [
+     5550,
+     3600
+    ],
+    [
+     5950,
+     3550
+    ],
+    [
+     6200,
+     3800
+    ],
+    [
+     6250,
+     4450
+    ],
+    [
+     5800,
+     4500
+    ],
+    [
+     5520,
+     4300
+    ],
+    [
+     5480,
+     3900
+    ]
+   ],
+   "canon": "desert south of the Dothraki sea, once fertile",
+   "source": "https://awoiaf.westeros.org/index.php/Red_waste"
+  },
+  {
+   "id": 25,
+   "name": "Shrinking Sea",
+   "type": "lake",
+   "region": "Essos",
+   "polygon_px": [
+    [
+     7300,
+     3350
+    ],
+    [
+     7560,
+     3350
+    ],
+    [
+     7560,
+     3650
+    ],
+    [
+     7300,
+     3650
+    ]
+   ],
+   "canon": "shrinking inland lake on the plains of the Jogos Nhai",
+   "source": "M1"
+  },
+  {
+   "id": 26,
+   "name": "Bleeding Sea",
+   "type": "lake",
+   "region": "Essos",
+   "polygon_px": [
+    [
+     7950,
+     3170
+    ],
+    [
+     8130,
+     3170
+    ],
+    [
+     8130,
+     3720
+    ],
+    [
+     7950,
+     3720
+    ]
+   ],
+   "canon": "red lake south of Mossovy",
+   "source": "M1"
+  },
+  {
+   "id": 27,
+   "name": "Grey Waste and Cannibal Sands",
+   "type": "desert",
+   "region": "Essos",
+   "polygon_px": [
+    [
+     8120,
+     3060
+    ],
+    [
+     8930,
+     3060
+    ],
+    [
+     8930,
+     3700
+    ],
+    [
+     8150,
+     3700
+    ]
+   ],
+   "canon": "desert of eastern Essos",
+   "source": "M1"
+  },
+  {
+   "id": 28,
+   "name": "Dry Deep",
+   "type": "basin",
+   "region": "Essos",
+   "polygon_px": [
+    [
+     8450,
+     3630
+    ],
+    [
+     8830,
+     3630
+    ],
+    [
+     8830,
+     4080
+    ],
+    [
+     8450,
+     4080
+    ]
+   ],
+   "canon": "great canyon of eastern Essos",
+   "source": "M1"
+  },
+  {
+   "id": 29,
+   "name": "Mountains of the Morn",
+   "type": "mountains",
+   "region": "Essos",
+   "polygon_px": [
+    [
+     8050,
+     3800
+    ],
+    [
+     8450,
+     3820
+    ],
+    [
+     8850,
+     4300
+    ],
+    [
+     8850,
+     4760
+    ],
+    [
+     8500,
+     4700
+    ],
+    [
+     8200,
+     4300
+    ]
+   ],
+   "canon": "range of far eastern Essos",
+   "source": "M1"
+  },
+  {
+   "id": 30,
+   "name": "Shadow Lands mountains",
+   "type": "mountains",
+   "region": "Essos",
+   "polygon_px": [
+    [
+     8030,
+     4710
+    ],
+    [
+     8930,
+     4710
+    ],
+    [
+     8930,
+     5560
+    ],
+    [
+     8300,
+     5600
+    ],
+    [
+     8030,
+     5200
+    ]
+   ],
+   "canon": "dark mountainous land around Asshai",
+   "source": "M1"
+  },
+  {
+   "id": 31,
+   "name": "Ghiscar hills",
+   "type": "hills",
+   "region": "Essos",
+   "polygon_px": [
+    [
+     4500,
+     3950
+    ],
+    [
+     5100,
+     3900
+    ],
+    [
+     5200,
+     4300
+    ],
+    [
+     4900,
+     4500
+    ],
+    [
+     4550,
+     4400
+    ]
+   ],
+   "canon": "hilly land of Old Ghis",
+   "source": "M1"
+  },
+  {
+   "id": 32,
+   "name": "Lhazar hills",
+   "type": "hills",
+   "region": "Essos",
+   "polygon_px": [
+    [
+     4935,
+     3598
+    ],
+    [
+     5493,
+     3598
+    ],
+    [
+     5493,
+     3877
+    ],
+    [
+     4935,
+     3877
+    ]
+   ],
+   "canon": "semi-arid land of pastures and hills",
+   "source": "https://awoiaf.westeros.org/index.php/Essos"
+  },
+  {
+   "id": 33,
+   "name": "Marahai",
+   "type": "volcanic",
+   "region": "Jade Sea",
+   "point_px": [
+    7074,
+    5319
+   ],
+   "canon": "ring-shaped island listed among the volcanoes of the known world",
+   "source": "M1; https://awoiaf.westeros.org/index.php/Category:Volcanoes"
+  },
+  {
+   "id": 34,
+   "name": "Jhala highlands (Summer Isles)",
+   "type": "hills",
+   "region": "Summer Isles",
+   "polygon_px": [
+    [
+     2530,
+     5384
+    ],
+    [
+     2990,
+     5384
+    ],
+    [
+     2990,
+     5730
+    ],
+    [
+     2530,
+     5730
+    ]
+   ],
+   "canon": "relief drawn on Jhala, the largest of the Summer Isles",
+   "source": "M1"
+  }
+ ]
+}
