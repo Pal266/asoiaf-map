@@ -2,3 +2,4 @@ numpy>=2.0
 scipy>=1.11
 pillow>=10.0
 scikit-image>=0.22
+matplotlib>=3.7

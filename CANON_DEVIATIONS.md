@@ -32,3 +32,12 @@
   tested, only the sinusoidal one keeps the Wall's length, the outlines of Westeros, all areas and the canon climates
   together; it gives up directions where canon describes the least. Project owner's decision
   (`world/canon_outline/experiments/E02_projection.md`).
+
+## 4. Essos is the size of Asia, not of Eurasia
+
+- **Canon:** Essos is "roughly the size of Eurasia" (~55 million km²), a remark outside the books (grade B)
+  ([A Wiki of Ice and Fire, Across the narrow sea](https://awoiaf.westeros.org/index.php/Across_the_narrow_sea)).
+- **Model:** Essos covers ~41 million km² (~21 on the map, ~20 east of it), about the size of Asia (44.6 million km²).
+- **Why:** on the globe the map's east edge lies at 90–147° E across the latitudes of Essos (15–55° N), and its east coast
+  can lie no farther than ~165–168° E if the Sunset Sea is ~180° wide (`world/canon/CONSTRAINTS.md`, decision 5). That
+  leaves room for ~24 million km² east of the map. Project owner's decision (decision 6, revised 2026-11-18).

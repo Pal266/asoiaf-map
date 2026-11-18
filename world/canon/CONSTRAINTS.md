@@ -113,13 +113,15 @@ each; the source column names the AWOIAF page.
 
    | Land | Area, approx. | Basis |
    |---|---|---|
-   | Rest of Essos, east of the map | ~34 M km² | "roughly the size of Eurasia" (E2: 55 M km²); 21 M km² on the map |
-   | Rest of Sothoryos, to the south | ~25–30 M km² | "perhaps as long as Essos is wide" (S2); analogue Africa |
+   | Rest of Essos, east of the map | ~20 M km² | only ~24 M km² of room lies between the map's east edge and an east coast ~180° from Westeros (decision 5); Essos ~41 M km² in all, the size of Asia (deviation 4) |
+   | Rest of Sothoryos, to the south | ~31 M km² | "perhaps as long as Essos is wide" (S2); analogue Africa (~32 M km² with the part on the map) |
    | Ulthos | ~10 M km² | a large landmass of unknown size (U1) |
    | South polar continent | ~14 M km² | analogue Antarctica |
-   | Unknown continent in the south of the Sunset Sea | ~25–30 M km² | Martin is not sure whether counterparts of the Americas exist (W4); in the south it lies off the routes from Westeros |
+   | Unknown continent in the south of the Sunset Sea | ~39 M km² | Martin is not sure whether counterparts of the Americas exist (W4); in the south it lies off the routes from Westeros |
 
-   The whole southern hemisphere lies outside the map (the map covers 6–74° N).
+   The whole southern hemisphere lies outside the map (the map covers 6–74° N). Revised by the project owner on
+   2026-11-18: the first draft gave the rest of Essos ~34 M km², which does not fit with decision 5; the ~14 M km²
+   difference moved to Sothoryos and the southern continent.
 
 ## 8. Not stated by canon
 
