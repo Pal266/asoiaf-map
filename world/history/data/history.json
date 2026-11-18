@@ -1,0 +1,640 @@
+{
+ "description": "Geological history of the planet (experiment E07): timeline, ocean spreading parameters and continental provinces. Coordinates [longitude, latitude] in degrees; ages in million years before present (Ma).",
+ "timeline": [
+  {
+   "age_ma": 3000,
+   "event": "Oldest cratons form: Ulthos, Sothoryos, the Land of Always Winter",
+   "analogue": "Pilbara, Kaapvaal, Greenland cratons"
+  },
+  {
+   "age_ma": 1800,
+   "event": "Shield of the North of Westeros and the Dothraki craton stabilise",
+   "analogue": "Baltic shield, East European craton"
+  },
+  {
+   "age_ma": 600,
+   "event": "Breakup of an older supercontinent; the proto-narrow sea opens between Westeros and Essos",
+   "analogue": "Iapetus Ocean, opened ~590 Ma"
+  },
+  {
+   "age_ma": 420,
+   "event": "Northern collision: the proto-narrow sea closes in the north; the northern mountains, the Frostfangs core, Skagos and Ibben are folded",
+   "analogue": "Caledonian orogeny (Scandian phase 440-420 Ma)"
+  },
+  {
+   "age_ma": 300,
+   "event": "Assembly of the last supercontinent: Westeros, Essos, Sothoryos and the southern continent join; the Mountains of the Moon and the hills of western Essos rise on both sides of the closed proto-narrow sea; the western and eastern blocks of Essos collide along the Bone Mountains",
+   "analogue": "Variscan and Appalachian orogenies; Uralian orogeny (Late Carboniferous to Triassic)"
+  },
+  {
+   "age_ma": 180,
+   "event": "The supercontinent breaks up: the Sunset Sea widens from its central ridge; the west coast of Westeros becomes a passive margin",
+   "analogue": "breakup of Pangaea, central Atlantic (~180 Ma); oldest ocean floor ~180 Ma"
+  },
+  {
+   "age_ma": 130,
+   "event": "The southern continent separates from Sothoryos: the South Sunset ridge opens a slow southern ocean",
+   "analogue": "opening of the South Atlantic"
+  },
+  {
+   "age_ma": 100,
+   "event": "Ulthos separates from Sothoryos and the south polar continent and starts north",
+   "analogue": "Australia and India leaving Gondwana"
+  },
+  {
+   "age_ma": 60,
+   "event": "Dorne collides with Westeros: the Red Mountains rise; Sothoryos starts to close the Summer Sea",
+   "analogue": "Pyrenees, Iberia against Europe (Late Cretaceous to Miocene)"
+  },
+  {
+   "age_ma": 30,
+   "event": "Collision belt along southern Essos: Painted Mountains, Ghiscar and Lhazar hills; plateau uplift east of the Bone Mountains",
+   "analogue": "Alpine-Himalayan belt; Colorado Plateau"
+  },
+  {
+   "age_ma": 25,
+   "event": "The narrow sea reopens along the old suture between Westeros and Essos (a Wilson cycle)",
+   "analogue": "Red Sea (spreading for ~13 Myr); the Atlantic reopening along the Iapetus suture"
+  },
+  {
+   "age_ma": 20,
+   "event": "Far-field push of the southern collisions lifts the Bone Mountains again",
+   "analogue": "Tian Shan, lifted since the Miocene ~2 000 km from the India-Asia suture"
+  },
+  {
+   "age_ma": 10,
+   "event": "Rifting in eastern Essos: the Bleeding Sea basin",
+   "analogue": "East African Rift, Lake Natron"
+  },
+  {
+   "age_ma": 5,
+   "event": "Ulthos meets the Jade Sea arcs; the Valyrian arc grows above the Summer Sea trench",
+   "analogue": "Australia entering the Banda arc (~3 Ma); Aegean arc"
+  },
+  {
+   "age_ma": 0.4,
+   "event": "The Doom: caldera collapse of the Fourteen Flames floods the Valyrian peninsula (in-world ~400 years ago)",
+   "analogue": "Minoan eruption of Santorini (~1610 BC)"
+  }
+ ],
+ "ridges": [
+  {
+   "boundary": "Narrow sea ridge",
+   "half_rate_km_per_myr": 10,
+   "max_age_ma": 25
+  },
+  {
+   "boundary": "Mid-Sunset ridge",
+   "half_rate_km_per_myr": 55,
+   "max_age_ma": 180
+  },
+  {
+   "boundary": "South Sunset ridge (Southern continent-Sothoryos)",
+   "half_rate_km_per_myr": 15,
+   "max_age_ma": 130
+  },
+  {
+   "boundary": "Sothoryos-Ulthos ridge",
+   "half_rate_km_per_myr": 25,
+   "max_age_ma": 100
+  },
+  {
+   "boundary": "Antarctic ring ridge",
+   "half_rate_km_per_myr": 20,
+   "max_age_ma": 100
+  }
+ ],
+ "ocean_default_age_ma": 120,
+ "shelf_width_km": {
+  "passive": 250,
+  "active": 60
+ },
+ "province_codes": {
+  "0": "ocean floor",
+  "1": "craton (shield)",
+  "2": "platform (old basement under sedimentary cover)",
+  "3": "old orogen (Proterozoic or Palaeozoic mobile belt)",
+  "4": "young orogen (Cenozoic collision)",
+  "5": "active margin or volcanic arc",
+  "6": "rift or young rifted margin",
+  "7": "uplifted plateau or basin"
+ },
+ "blocks": [
+  {
+   "name": "Shield of the North and the Land of Always Winter",
+   "province": 1,
+   "age_ma": 1800,
+   "plate": 1,
+   "polygon": [
+    [
+     -90,
+     50
+    ],
+    [
+     12,
+     50
+    ],
+    [
+     12,
+     89.9
+    ],
+    [
+     -90,
+     89.9
+    ]
+   ]
+  },
+  {
+   "name": "Southern Westeros platform",
+   "province": 2,
+   "age_ma": 600,
+   "plate": 1,
+   "polygon": [
+    [
+     -40,
+     32
+    ],
+    [
+     12,
+     32
+    ],
+    [
+     12,
+     50
+    ],
+    [
+     -40,
+     50
+    ]
+   ]
+  },
+  {
+   "name": "Dorne block",
+   "province": 2,
+   "age_ma": 350,
+   "plate": 1,
+   "polygon": [
+    [
+     -20,
+     20
+    ],
+    [
+     14,
+     20
+    ],
+    [
+     14,
+     32
+    ],
+    [
+     -20,
+     32
+    ]
+   ]
+  },
+  {
+   "name": "Western Essos (counterpart of the Mountains of the Moon)",
+   "province": 3,
+   "age_ma": 300,
+   "plate": 2,
+   "polygon": [
+    [
+     10,
+     30
+    ],
+    [
+     25,
+     30
+    ],
+    [
+     25,
+     52
+    ],
+    [
+     10,
+     52
+    ]
+   ]
+  },
+  {
+   "name": "Dothraki craton",
+   "province": 1,
+   "age_ma": 1800,
+   "plate": 2,
+   "polygon": [
+    [
+     25,
+     20
+    ],
+    [
+     66,
+     20
+    ],
+    [
+     66,
+     60
+    ],
+    [
+     25,
+     60
+    ]
+   ],
+   "belts": {
+    "province": 3,
+    "age_ma": 600,
+    "share": 0.45
+   }
+  },
+  {
+   "name": "Eastern Essos accreted terranes",
+   "province": 3,
+   "age_ma": 350,
+   "plate": 2,
+   "polygon": [
+    [
+     66,
+     5
+    ],
+    [
+     179.9,
+     5
+    ],
+    [
+     179.9,
+     89.9
+    ],
+    [
+     66,
+     89.9
+    ]
+   ]
+  },
+  {
+   "name": "Northern Essos coast and the Shivering Sea islands",
+   "province": 3,
+   "age_ma": 420,
+   "plate": 2,
+   "polygon": [
+    [
+     25,
+     52
+    ],
+    [
+     66,
+     52
+    ],
+    [
+     66,
+     89.9
+    ],
+    [
+     25,
+     89.9
+    ]
+   ]
+  },
+  {
+   "name": "Sothoryos craton",
+   "province": 1,
+   "age_ma": 2500,
+   "plate": 3,
+   "polygon": [
+    [
+     -30,
+     -70
+    ],
+    [
+     70.5,
+     -70
+    ],
+    [
+     70.5,
+     30
+    ],
+    [
+     -30,
+     30
+    ]
+   ],
+   "belts": {
+    "province": 3,
+    "age_ma": 600,
+    "share": 0.45
+   }
+  },
+  {
+   "name": "Ulthos craton",
+   "province": 1,
+   "age_ma": 3000,
+   "plate": 4,
+   "polygon": [
+    [
+     70.5,
+     -70
+    ],
+    [
+     140,
+     -70
+    ],
+    [
+     140,
+     15
+    ],
+    [
+     70.5,
+     15
+    ]
+   ],
+   "belts": {
+    "province": 3,
+    "age_ma": 600,
+    "share": 0.45
+   }
+  },
+  {
+   "name": "Southern continent craton",
+   "province": 1,
+   "age_ma": 2000,
+   "plate": 6,
+   "polygon": [
+    [
+     -150,
+     -70
+    ],
+    [
+     -25,
+     -70
+    ],
+    [
+     -25,
+     10
+    ],
+    [
+     -150,
+     10
+    ]
+   ],
+   "belts": {
+    "province": 3,
+    "age_ma": 600,
+    "share": 0.45
+   }
+  },
+  {
+   "name": "South polar craton",
+   "province": 1,
+   "age_ma": 1500,
+   "plate": 7,
+   "polygon": [
+    [
+     -180,
+     -90
+    ],
+    [
+     180,
+     -90
+    ],
+    [
+     180,
+     -60
+    ],
+    [
+     -180,
+     -60
+    ]
+   ],
+   "belts": {
+    "province": 3,
+    "age_ma": 600,
+    "share": 0.45
+   }
+  }
+ ],
+ "margins": [
+  {
+   "boundary": "East Essos trench (Sunset under Essos)",
+   "side_plate": 2,
+   "province": 5,
+   "age_ma": 5,
+   "width_km": 500
+  },
+  {
+   "boundary": "East Ulthos trench (Sunset under Ulthos)",
+   "side_plate": 4,
+   "province": 5,
+   "age_ma": 5,
+   "width_km": 300
+  },
+  {
+   "boundary": "West Southern trench (Sunset under the southern continent)",
+   "side_plate": 6,
+   "province": 5,
+   "age_ma": 5,
+   "width_km": 700
+  },
+  {
+   "boundary": "Jade arc (Ulthos under Essos)",
+   "side_plate": 4,
+   "province": 4,
+   "age_ma": 3,
+   "width_km": 400
+  },
+  {
+   "boundary": "Jade arc (Ulthos under Essos)",
+   "side_plate": 2,
+   "province": 5,
+   "age_ma": 5,
+   "width_km": 400
+  },
+  {
+   "boundary": "Summer Sea trench (Sothoryos under Essos)",
+   "side_plate": 2,
+   "province": 5,
+   "age_ma": 5,
+   "width_km": 350
+  },
+  {
+   "boundary": "Narrow sea ridge",
+   "side_plate": 1,
+   "province": 6,
+   "age_ma": 25,
+   "width_km": 450
+  },
+  {
+   "boundary": "Narrow sea ridge",
+   "side_plate": 2,
+   "province": 6,
+   "age_ma": 25,
+   "width_km": 450
+  }
+ ],
+ "canon_features": {
+  "1": {
+   "province": 3,
+   "age_ma": 420,
+   "note": "Frostfangs: Caledonian core, high from Cenozoic uplift of the margin and glaciation (Scandinavian mountains)"
+  },
+  "2": {
+   "province": 3,
+   "age_ma": 420,
+   "note": "northern mountains: Caledonian"
+  },
+  "3": {
+   "province": 3,
+   "age_ma": 420,
+   "note": "Skagos: Caledonian"
+  },
+  "4": {
+   "province": 3,
+   "age_ma": 420,
+   "note": "Lonely Hills: worn Caledonian"
+  },
+  "5": {
+   "province": 3,
+   "age_ma": 420,
+   "note": "Sheepshead Hills: worn Caledonian"
+  },
+  "6": {
+   "province": 3,
+   "age_ma": 420,
+   "note": "Rills and Stony Shore: worn Caledonian"
+  },
+  "7": {
+   "province": 7,
+   "age_ma": 0.01,
+   "note": "the Neck: post-glacial wetland basin"
+  },
+  "8": {
+   "province": 3,
+   "age_ma": 300,
+   "note": "Mountains of the Moon: Variscan-Appalachian, rejuvenated on the rift shoulder of the narrow sea"
+  },
+  "9": {
+   "province": 3,
+   "age_ma": 300,
+   "note": "Westerlands hills: Variscan arc terrane (orogenic gold)"
+  },
+  "10": {
+   "province": 4,
+   "age_ma": 40,
+   "note": "Red Mountains: Dorne-Westeros collision (Pyrenees)"
+  },
+  "11": {
+   "province": 2,
+   "age_ma": 350,
+   "note": "Dornish desert: Dorne block platform"
+  },
+  "13": {
+   "province": 6,
+   "age_ma": 0.01,
+   "note": "Stepstones: rifted land bridge drowned after the last glaciation"
+  },
+  "14": {
+   "province": 3,
+   "age_ma": 300,
+   "note": "Braavosian coastlands: Variscan counterpart"
+  },
+  "15": {
+   "province": 3,
+   "age_ma": 300,
+   "note": "Hills of Norvos: Variscan counterpart"
+  },
+  "16": {
+   "province": 3,
+   "age_ma": 300,
+   "note": "Velvet Hills: Variscan counterpart"
+  },
+  "17": {
+   "province": 4,
+   "age_ma": 30,
+   "note": "Painted Mountains: southern collision belt"
+  },
+  "18": {
+   "province": 5,
+   "age_ma": 0.4,
+   "note": "Fourteen Flames: active volcanic arc, the Doom"
+  },
+  "19": {
+   "province": 4,
+   "age_ma": 20,
+   "note": "Bone Mountains: Uralian suture (300 Ma) reactivated (Tian Shan)"
+  },
+  "21": {
+   "province": 3,
+   "age_ma": 300,
+   "note": "Howling Hills: flank of the Bone suture"
+  },
+  "22": {
+   "province": 3,
+   "age_ma": 420,
+   "note": "Ibben: Caledonian"
+  },
+  "23": {
+   "province": 7,
+   "age_ma": 30,
+   "note": "Great Sand Sea: uplifted plateau and canyon"
+  },
+  "24": {
+   "province": 1,
+   "age_ma": 1800,
+   "note": "Red waste: Dothraki craton under desert"
+  },
+  "25": {
+   "province": 7,
+   "age_ma": 2,
+   "note": "Shrinking Sea: endorheic basin"
+  },
+  "26": {
+   "province": 6,
+   "age_ma": 10,
+   "note": "Bleeding Sea: rift basin"
+  },
+  "27": {
+   "province": 7,
+   "age_ma": 30,
+   "note": "Grey Waste: uplifted plateau"
+  },
+  "28": {
+   "province": 7,
+   "age_ma": 30,
+   "note": "Dry Deep: canyon in uplifted plateau"
+  },
+  "29": {
+   "province": 4,
+   "age_ma": 10,
+   "note": "Mountains of the Morn: collision zone of eastern Essos"
+  },
+  "30": {
+   "province": 4,
+   "age_ma": 3,
+   "note": "Shadow Lands: arc-continent collision with Ulthos"
+  },
+  "31": {
+   "province": 4,
+   "age_ma": 30,
+   "note": "Ghiscar hills: southern collision belt"
+  },
+  "32": {
+   "province": 4,
+   "age_ma": 30,
+   "note": "Lhazar hills: southern collision belt"
+  },
+  "34": {
+   "province": 3,
+   "age_ma": 300,
+   "note": "Jhala highlands: Variscan fragment of Sothoryos"
+  }
+ },
+ "seed": 267,
+ "warp": {
+  "wavelengths_km": [
+   4000,
+   2000,
+   1000,
+   500
+  ],
+  "hurst": 0.7,
+  "components_per_octave": 16,
+  "amplitude_deg": 3.0
+ }
+}
