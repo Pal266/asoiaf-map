@@ -2,10 +2,13 @@
 
 The process is described in world/canon_outline/GENERATION.md.
 
-Input:  the land mask made by land_mask.py from map M1 (9050 x 6000 px, white = land).
+Input:  the land mask made by land_mask.py from map M1 (9050 x 6000 px, white = land), and islands_px.json from the
+        same run (polygons of the islands smaller than 2 500 km2, in map pixels).
 Output (in --out):
   canon_outline.npz  land_frac  float32 [6, 1000, 1000]  share of the cell's known area that is land (0..1)
                      known_frac float32 [6, 1000, 1000]  share of the cell covered by the map (0..1)
+  islands.geojson    the islands smaller than 2 500 km2 as polygons in longitude/latitude (degrees), with their
+                     area (km2), centroid and the grid cell of the centroid
   validation.json    the checks of GENERATION.md, with their results
   preview.png        equirectangular preview, 3600 x 1800 (sea blue, land beige, outside the map grey)
 Deterministic: the same mask and parameters give the same files.
@@ -32,7 +35,7 @@ Image.MAX_IMAGE_PIXELS = None
 # Placement of the map on the globe (world/canon/CONSTRAINTS.md, decision 3; experiment E02)
 WALL_LAT_DEG = 63.75            # latitude of the Wall's midpoint
 WALL_LON_DEG = 0.0              # longitude of the Wall's meridian: a free choice, fixed here
-SUB = 3                         # SUB x SUB sample points per cell
+SUB = 8                         # SUB x SUB sample points per cell (~1.2 km apart, about one map pixel)
 ROWS_PER_CHUNK = 125
 
 WALL_MID = ((WALL_WEST[0] + WALL_EAST[0]) / 2, (WALL_WEST[1] + WALL_EAST[1]) / 2)
@@ -101,6 +104,7 @@ def face_seam_check(land_frac, known_frac, n):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--mask", required=True, help="land_mask.png from land_mask.py")
+    ap.add_argument("--islands", required=True, help="islands_px.json from land_mask.py")
     ap.add_argument("--out", required=True)
     args = ap.parse_args()
     out = Path(args.out)
@@ -164,6 +168,27 @@ def main():
 
     np.savez_compressed(out / "canon_outline.npz", land_frac=land_frac, known_frac=known_frac)
 
+    # ---- island polygons in longitude / latitude ----
+    islands_px = json.loads(Path(args.islands).read_text())
+    features = []
+    island_grid_km2 = 0.0
+    for isl in islands_px:
+        px = np.array(isl["polygon_px"], float)
+        la, lo = globe(px[:, 0] + 0.5, px[:, 1] + 0.5)          # pixel centres
+        lo = (lo + np.pi) % (2 * np.pi) - np.pi
+        cla, clo = globe(isl["centroid_px"][0] + 0.5, isl["centroid_px"][1] + 0.5)
+        clo = (clo + np.pi) % (2 * np.pi) - np.pi
+        f_, j_, i_ = cs.latlon_to_cell(np.array([cla]), np.array([clo]), n)
+        ring = [[round(math.degrees(b), 5), round(math.degrees(a), 5)] for a, b in zip(la, lo)]
+        ring.append(ring[0])
+        features.append({"type": "Feature",
+                         "properties": {"id": isl["id"], "area_km2": isl["area_km2"],
+                                        "centroid_lon_lat": [round(math.degrees(clo), 4), round(math.degrees(cla), 4)],
+                                        "cell_face_j_i": [int(f_[0]), int(j_[0]), int(i_[0])]},
+                         "geometry": {"type": "Polygon", "coordinates": [ring]}})
+        island_grid_km2 += isl["area_km2"]
+    (out / "islands.geojson").write_text(json.dumps({"type": "FeatureCollection", "features": features}))
+
     # ---- validation ----
     A = np.broadcast_to(area, (6, n, n))
     grid_known_km2 = float((known_frac * A).sum())
@@ -198,6 +223,9 @@ def main():
             {"map": round(float(m)), "grid": round(float(g)), "rel_diff": round(abs(g - m) / m, 4)}
             for m, g in zip(mass_map_km2, land_area_by_mass)],
         "wall_length_km": round(wall_km, 1),
+        "islands_below_2500_km2": {"count": len(features), "area_km2": round(island_grid_km2, 1),
+                                   "smaller_than_one_cell_100_km2": sum(1 for f in features
+                                                                        if f["properties"]["area_km2"] < 100)},
         "face_seams": face_seam_check(land_frac, known_frac, n),
         "known_share_of_planet": round(grid_known_km2 / total_area, 4),
         "land_share_of_known": round(grid_land_km2 / grid_known_km2, 4),

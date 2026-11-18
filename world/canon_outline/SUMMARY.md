@@ -5,9 +5,11 @@
 - **Placement:** the map's rows are parallels (sinusoidal projection centred on the Wall); the Wall's midpoint is at
   63.75° N, 0° E. Westeros runs from ~74° N (the map's top edge) to ~28° N; the known world spans 6–74° N and ~180°
   of longitude, 16 % of the planet's surface.
-- **Fidelity:** land areas on the grid match the map within 0.04 %; the Wall measures 479.6 km (canon 480 km); every
+- **Fidelity:** land areas on the grid match the map within 0.01 %; the Wall measures 479.6 km (canon 480 km); every
   canon climate region lies in its Earth latitude band (E02). Westeros south of the Wall keeps its drawn shape within
   1.7 % and 11°; eastern Essos is sheared (CANON_DEVIATIONS.md, entry 3).
-- **Experiments:** E01 (land/sea mask and scale), E02 (placement on the sphere).
-- **Open for later layers:** lakes, islands below ~250 km², the lands outside the map (84 % of the planet), and a
+- **Islands:** 286 islands smaller than 2 500 km² (down to 44 km²) are in the mask and stored as polygons for the
+  regional levels; map labels that E01 had kept as land are removed (E03).
+- **Experiments:** E01 (land/sea mask and scale), E02 (placement on the sphere), E03 (small islands and labels).
+- **Open for later layers:** lakes, islets drawn without fill, the lands outside the map (84 % of the planet), and a
   check that the forest north of the Wall gets a warm enough summer at 64–66° N.

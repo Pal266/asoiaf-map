@@ -44,7 +44,7 @@ The mask has 320 land components; the land is 38.6 % of the mapped area.
 
 ## Conclusions
 
-- **Goal 1 reached.** The mask follows the canon coasts. Known defects:
+- **Goal 1 reached.** The mask follows the canon coasts. Known defects (the first was fixed later, in E03):
   - islands smaller than ~150 px (~250 km²) are lost; this is below the 10 km grid (100 km² per cell) for most of them,
     but some named small isles may vanish;
   - the Thousand Islands and the Land of Always Winter keep some noise (blue shading read as water); real lakes of the
