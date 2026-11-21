@@ -3,3 +3,4 @@ scipy>=1.11
 pillow>=10.0
 scikit-image>=0.22
 matplotlib>=3.7
+global-land-mask>=1.0  # Earth land mask for climate validation (world/climate)

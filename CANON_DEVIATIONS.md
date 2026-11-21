@@ -41,3 +41,20 @@
 - **Why:** on the globe the map's east edge lies at 90–147° E across the latitudes of Essos (15–55° N), and its east coast
   can lie no farther than ~165–168° E if the Sunset Sea is ~180° wide (`world/canon/CONSTRAINTS.md`, decision 5). That
   leaves room for ~24 million km² east of the map. Project owner's decision (decision 6, revised 2026-11-18).
+
+## 5. The Haunted Forest is sparse taiga at the edge of the forest-tundra
+
+- **Canon:** the haunted forest is a vast forest beyond the Wall, from the Wall to the lands of Thenn, with ash, oak,
+  chestnut, fir, ironwood, sentinel, soldier pine and weirwood; from the Wall it looks like a vast green expanse
+  ([A Wiki of Ice and Fire, Haunted forest](https://awoiaf.westeros.org/index.php/The_Haunted_Forest),
+  [Beyond the Wall](https://awoiaf.westeros.org/index.php/Beyond-the-Wall)).
+- **Model:** at 64–66° N, just north of the Wall, the warmest month averages ~7.6 °C. That is below the ~10 °C that
+  the polar tree line follows. North of the Wall the land is sparse taiga in sheltered valleys and lowlands, opening
+  into forest-tundra. Dense forest, broadleaf trees included, grows only in the south of the North, below ~60° N:
+  Winterfell's warmest month is ~11.3 °C.
+- **Why:** the climate model (experiment `world/climate/experiments/E09_temperature.md`) is calibrated on 78 Earth
+  stations and reproduces Scandinavian and Alaskan summers within 1–3 °C. It includes the warm drift that the owner
+  chose to keep the North as mild as possible (decision 7). The cool summers come from the world's geography: the
+  lands at 64–70° N lie between two oceans, with an icy polar sea and the Land of Always Winter to the north.
+  Uncertainty is about ±3 °C, so even at its upper end the Haunted Forest stays at the tree line. Project owner's
+  decision, 2026-11-21.

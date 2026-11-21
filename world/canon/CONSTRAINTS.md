@@ -122,6 +122,11 @@ each; the source column names the AWOIAF page.
    The whole southern hemisphere lies outside the map (the map covers 6–74° N). Revised by the project owner on
    2026-11-18: the first draft gave the rest of Essos ~34 M km², which does not fit with decision 5; the ~14 M km²
    difference moved to Sothoryos and the southern continent.
+7. **The northern Sunset Sea has a warm drift like the North Atlantic's** (experiment
+   `world/climate/experiments/E09_temperature.md`). First decided the other way on 2026-11-21 (no warm current,
+   Pacific-type). The same day the model showed that without it the North of Westeros would be like Labrador, with
+   the Haunted Forest as tundra, so the decision was reversed. The drift is a prescribed ocean heat flux calibrated
+   on the North Atlantic and placed on the eastern side of the northern Sunset Sea.
 
 ## 8. Not stated by canon
 

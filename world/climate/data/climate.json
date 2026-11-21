@@ -1,0 +1,91 @@
+{
+ "description": "Parameters of the two-layer seasonal energy balance model (experiment E09), calibrated on Earth (earth_validation.py) before use on the world.",
+ "orbit": {
+  "solar_constant": 1361.0,
+  "eccentricity": 0.0167,
+  "obliquity_deg": 23.44,
+  "perihelion_deg": 283.0,
+  "equinox_day": 79,
+  "note": "Earth (world/planet/PLANET.md); perihelion longitude measured from the vernal equinox (perihelion ~3 January)"
+ },
+ "ebm": {
+  "res_deg": 2.0,
+  "olr_A": 193.0,
+  "olr_B": 1.6,
+  "albedo_a0": 0.282,
+  "albedo_a2": 0.1158,
+  "ice_albedo": 0.62,
+  "snow_T": -10.0,
+  "sea_ice_T": -1.8,
+  "sea_ice_C_factor": 1.0,
+  "diffusion_W_m2_K": 0.828,
+  "mixed_layer_m": 27.51,
+  "C_land": 2173000.0,
+  "C_atm": 10000000.0,
+  "polar_cap_deg": 80.0,
+  "spinup_years": 12,
+  "wind": {
+   "westerly_ms": 5.163,
+   "westerly_lat": 45.0,
+   "westerly_width": 15.0,
+   "trade_ms": 5.0,
+   "trade_lat": 15.0,
+   "trade_width": 10.0,
+   "polar_ms": 2.0,
+   "polar_lat": 75.0,
+   "polar_width": 8.0
+  },
+  "zonal_diffusion_factor": 1.242,
+  "ocean_gyre": {
+   "rho_air": 1.2,
+   "drag": 0.0013,
+   "rho_water": 1025.0,
+   "friction_per_s": 8e-06,
+   "heat_factor": 0.0
+  },
+  "continentality": {
+   "scale_km": 879.1,
+   "albedo_drop": 0.0557,
+   "olr_rise_W_m2": 9.641
+  },
+  "two_layer": {
+   "air_absorption": 0.4282,
+   "window_a": 22.41,
+   "window_b": 0.5,
+   "exchange_unstable": 23.38,
+   "exchange_stable": 2.239
+  },
+  "ocean_heat_under_ice_W_m2": 2.0,
+  "qflux": {
+   "lon_min": -80.0,
+   "lon_max": 40.0,
+   "Q0_W_m2": 88.4,
+   "lat0": 53.85,
+   "width_deg": 14.59,
+   "decay_km": 1863.0,
+   "comp_lat_max": 30.0,
+   "note": "Earth: North Atlantic; the world's basin is set in climate.json 'world_qflux_box'"
+  }
+ },
+ "lapse_rate_K_per_km": 6.5,
+ "station_correction": {
+  "z_cap_km": 2.5,
+  "equator_ramp_deg": 15,
+  "winter": [
+   -1.712,
+   -3.294,
+   7.276
+  ],
+  "summer": [
+   0.412,
+   -2.926,
+   4.485
+  ],
+  "note": "filled from earth_validation.py (fit_correction); residual = b0 + b1 z_km + b2 M is subtracted on land"
+ },
+ "world_qflux_box": {
+  "lon_min": 170.0,
+  "lon_max": -15.0,
+  "note": "Sunset Sea, northern half; owner decision 2026-11-21 (warm drift, reversing decision 7)"
+ }
+}
