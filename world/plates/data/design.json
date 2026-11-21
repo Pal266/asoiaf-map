@@ -568,7 +568,7 @@
   },
   {
    "name": "Equatorial transform (Westeros-Southern continent)",
-   "type": "transform",
+   "type": "ridge",
    "between": [
     1,
     6
@@ -582,7 +582,8 @@
      -25,
      5
     ]
-   ]
+   ],
+   "note": "changed from transform to ridge in E07 run f (Galapagos-type spreading); plate ids are unchanged"
   },
   {
    "name": "Mid-Sunset ridge",

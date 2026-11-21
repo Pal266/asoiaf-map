@@ -104,6 +104,42 @@ def cell_area_km2(n=N, r=R_KM):
     return omega * r * r
 
 
+def halo_index(n=N, p=1):
+    """Indices (face, j, i), each of shape (6, n + 2p, n + 2p), of a face grid padded by p cells: padding cells take the
+    cell of the neighbouring face that contains their centre (equiangular coordinates continued past the face edge),
+    so neighbourhood operations work across face seams."""
+    d = (np.pi / 2) / n
+    a = -np.pi / 4 + (np.arange(-p, n + p) + 0.5) * d
+    t, u = np.meshgrid(np.tan(a), np.tan(a))
+    F, J, I = (np.zeros((6, n + 2 * p, n + 2 * p), int) for _ in range(3))
+    for f in range(6):
+        lat, lon = xyz_to_latlon(*face_xyz(f, t, u))
+        F[f], J[f], I[f] = latlon_to_cell(lat, lon, n)
+    return F, J, I
+
+
+def box_smooth(field, iterations, halo=None):
+    """Repeated 3 x 3 box average across face seams. The result approximates a Gaussian blur with
+    sigma = sqrt(2 * iterations / 3) cells."""
+    n = field.shape[1]
+    F, J, I = halo if halo is not None else halo_index(n, 1)
+    a = field.astype(np.float64)
+    for _ in range(iterations):
+        g = a[F, J, I]
+        a = (g[:, :-2, :-2] + g[:, :-2, 1:-1] + g[:, :-2, 2:] + g[:, 1:-1, :-2] + g[:, 1:-1, 1:-1]
+             + g[:, 1:-1, 2:] + g[:, 2:, :-2] + g[:, 2:, 1:-1] + g[:, 2:, 2:]) / 9.0
+    return a
+
+
+def boundary_cells(mask, halo=None):
+    """Cells of mask with at least one of the 4 edge neighbours outside it, across face seams."""
+    n = mask.shape[1]
+    F, J, I = halo if halo is not None else halo_index(n, 1)
+    g = mask[F, J, I]
+    inner = g[:, :-2, 1:-1] & g[:, 2:, 1:-1] & g[:, 1:-1, :-2] & g[:, 1:-1, 2:]
+    return mask & ~inner
+
+
 if __name__ == "__main__":
     area = cell_area_km2()
     total = 6 * area.sum()

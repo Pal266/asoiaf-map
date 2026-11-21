@@ -1,0 +1,315 @@
+{
+ "description": "Parameters of the relief layer (experiment E08). Elevations in metres above sea level. 'peak_m' is the highest summit of the Earth analogue; the mean elevation of a 10 km cell on the crest of a range is crest_factor x peak_m above the surrounding plain.",
+ "seed": 268,
+ "crest_factor": 0.6,
+ "noise": {
+  "wavelengths_km": [
+   2000,
+   1000,
+   500,
+   250,
+   125,
+   62
+  ],
+  "hurst": 0.8,
+  "components_per_octave": 16
+ },
+ "plain_m": {
+  "1": {
+   "mean": 450,
+   "amplitude": 250,
+   "note": "shields: Canadian, Baltic, African shields 300-600 m"
+  },
+  "2": {
+   "mean": 250,
+   "amplitude": 120,
+   "note": "platforms: Russian and Great Plains platforms 100-400 m"
+  },
+  "3": {
+   "mean": 400,
+   "amplitude": 150,
+   "note": "worn mobile belts"
+  },
+  "4": {
+   "mean": 600,
+   "amplitude": 200,
+   "note": "forelands of young belts"
+  },
+  "5": {
+   "mean": 400,
+   "amplitude": 200,
+   "note": "arc lowlands"
+  },
+  "6": {
+   "mean": 300,
+   "amplitude": 150,
+   "note": "rifted margins"
+  },
+  "7": {
+   "mean": 1500,
+   "amplitude": 300,
+   "note": "plateaus: Colorado Plateau ~1500-2000 m"
+  },
+  "8": {
+   "mean": 100,
+   "amplitude": 50,
+   "note": "sedimentary and endorheic basins: West Siberian Plain, Caspian lowland, 0-200 m"
+  }
+ },
+ "coastal_plain_km": {
+  "passive": 150,
+  "active": 40
+ },
+ "generic_ranges": {
+  "3": {
+   "peak_m": 1200,
+   "half_width_km": 150,
+   "analogue": "worn Palaeozoic belts (Appalachians, Mount Mitchell 2037 m; Urals, Narodnaya 1894 m) after further wear"
+  },
+  "4": {
+   "peak_m": 2963,
+   "half_width_km": 120,
+   "analogue": "Timor, arc-continent collision (Mount Ramelau 2963 m)"
+  },
+  "5": {
+   "peak_m": 2917,
+   "half_width_km": 120,
+   "analogue": "Hellenic arc (Mount Olympus 2917 m)"
+  },
+  "6": {
+   "peak_m": 600,
+   "half_width_km": 150,
+   "analogue": "low rift shoulders away from the canon ranges"
+  }
+ },
+ "margin_ranges": [
+  {
+   "boundary": "West Southern trench (Sunset under the southern continent)",
+   "side_plate": 6,
+   "width_km": 700,
+   "peak_m": 6961,
+   "half_width_km": 250,
+   "analogue": "Andes (Aconcagua 6961 m)"
+  },
+  {
+   "boundary": "East Essos trench (Sunset under Essos)",
+   "side_plate": 2,
+   "width_km": 500,
+   "peak_m": 3776,
+   "half_width_km": 150,
+   "analogue": "Japan arc (Mount Fuji 3776 m)"
+  },
+  {
+   "boundary": "East Ulthos trench (Sunset under Ulthos)",
+   "side_plate": 4,
+   "width_km": 300,
+   "peak_m": 3776,
+   "half_width_km": 120,
+   "analogue": "Japan arc (Mount Fuji 3776 m)"
+  },
+  {
+   "boundary": "Jade arc (Ulthos under Essos)",
+   "side_plate": 2,
+   "width_km": 400,
+   "peak_m": 3805,
+   "half_width_km": 150,
+   "analogue": "Sumatra (Kerinci 3805 m)"
+  }
+ ],
+ "canon_ranges": {
+  "1": {
+   "peak_m": 2469,
+   "analogue": "Scandinavian Mountains (Galdhopiggen 2469 m)"
+  },
+  "2": {
+   "peak_m": 1345,
+   "analogue": "Scottish Highlands (Ben Nevis 1345 m)"
+  },
+  "3": {
+   "peak_m": 992,
+   "analogue": "Skye Cuillin (Sgurr Alasdair 992 m)"
+  },
+  "4": {
+   "peak_m": 843,
+   "analogue": "Southern Uplands (Merrick 843 m)"
+  },
+  "5": {
+   "peak_m": 843,
+   "analogue": "Southern Uplands (Merrick 843 m)"
+  },
+  "6": {
+   "peak_m": 843,
+   "analogue": "Southern Uplands (Merrick 843 m)"
+  },
+  "8": {
+   "peak_m": 3000,
+   "analogue": "Sarawat-Asir, Red Sea rift shoulder on an old belt (Jabal Sawda ~3000 m; officially 3015 m, surveyed 2999 m in 2018)"
+  },
+  "9": {
+   "peak_m": 1141,
+   "analogue": "Harz, Variscan (Brocken 1141 m)"
+  },
+  "10": {
+   "peak_m": 3404,
+   "analogue": "Pyrenees (Aneto 3404 m)"
+  },
+  "14": {
+   "peak_m": 694,
+   "analogue": "Ardennes, Variscan (Signal de Botrange 694 m)"
+  },
+  "15": {
+   "peak_m": 1424,
+   "analogue": "Vosges, Variscan (Grand Ballon 1424 m)"
+  },
+  "16": {
+   "peak_m": 694,
+   "analogue": "Ardennes, Variscan (Signal de Botrange 694 m)"
+  },
+  "17": {
+   "peak_m": 4409,
+   "analogue": "Zagros (Dena 4409 m)"
+  },
+  "18": {
+   "peak_m": 3326,
+   "analogue": "Etna, arc-related volcano (3326 m; quoted 3326-3357 m, the summit changes with eruptions)"
+  },
+  "19": {
+   "peak_m": 7439,
+   "analogue": "Tian Shan (Jengish Chokusu 7439 m)"
+  },
+  "21": {
+   "peak_m": 1894,
+   "analogue": "Urals (Narodnaya 1894 m)"
+  },
+  "22": {
+   "peak_m": 1345,
+   "analogue": "Scottish Highlands (Ben Nevis 1345 m)"
+  },
+  "29": {
+   "peak_m": 5642,
+   "analogue": "Caucasus (Elbrus 5642 m)"
+  },
+  "30": {
+   "peak_m": 4884,
+   "analogue": "New Guinea Highlands (Puncak Jaya 4884 m)"
+  },
+  "31": {
+   "peak_m": 1500,
+   "analogue": "Zagros foothills"
+  },
+  "32": {
+   "peak_m": 1500,
+   "analogue": "Zagros foothills"
+  },
+  "34": {
+   "peak_m": 1000,
+   "analogue": "worn Variscan uplands"
+  }
+ },
+ "canon_basins": {
+  "23": {
+   "depth_m": 1000,
+   "analogue": "canyon cut into a plateau (Grand Canyon up to ~1800 m deep)"
+  },
+  "28": {
+   "depth_m": 1500,
+   "analogue": "canyon cut into a plateau (Grand Canyon up to ~1800 m deep)"
+  }
+ },
+ "canon_lowlands": {
+  "7": {
+   "max_m": 30,
+   "note": "the Neck: wetland"
+  }
+ },
+ "canon_sunken": {
+  "13": {
+   "depth_m": 40,
+   "note": "Stepstones: drowned land bridge"
+  }
+ },
+ "ocean": {
+  "shelf_break_m": 130,
+  "shelf_share_of_margin": 0.4,
+  "trench_extra_m": 3000,
+  "trench_halfwidth_km": 50,
+  "abyssal_hill_amplitude_m": 150,
+  "sediment": {
+   "pelagic_m_per_myr": 3.25,
+   "pelagic_max_m": 1000,
+   "apron_m": 3134,
+   "apron_scale_km": 554,
+   "apron_shape": "exp(-(d/scale)^2)",
+   "density_kg_m3": {
+    "mantle": 3300,
+    "sediment": 2000,
+    "water": 1030
+   },
+   "calibration": "fitted (E08 run o, against E07 run g) so that, as in GlobSed (Straume et al. 2019): the 12.9 % of the ocean nearest land holds 3044 m on average, ocean floor more than 200 km beyond that zone 404 m, and the oceans 337 million km3 in all",
+   "note": "isostatic surface rise = thickness x (mantle - sediment) / (mantle - water)"
+  },
+  "plateau_height_m": 2000,
+  "residual_depth": {
+   "rms_m": 261,
+   "wavelengths_km": [
+    4000,
+    2000,
+    1000,
+    500
+   ],
+   "hurst": 0.5,
+   "components_per_octave": 16,
+   "note": "dynamic topography of the ocean floor: residual depth anomalies of about +-1 km at wavelengths of ~1000 km (Hoggard et al. 2016); zero mean",
+   "calibration": "rms chosen (E08 run o) so that 6.3 % of the ocean is deeper than 5.5 km, as on Earth (1-degree hypsometry); peaks of about +-0.8 km stay within the observed +-1 km"
+  }
+ },
+ "subgrid_relief": {
+  "base_m": 40,
+  "per_metre_of_range": 0.9,
+  "note": "expected peak-to-valley relief within a 10 km cell"
+ },
+ "profile_exponent": 1.0,
+ "plain_smoothing_iterations": 40,
+ "canon_peaks": {
+  "12": {
+   "lon": 6.1534,
+   "lat": 42.1972,
+   "radius_km": 10,
+   "peak_m": 924,
+   "analogue": "Stromboli, island volcano (924 m)",
+   "shape": "cone"
+  },
+  "20": {
+   "lon": 64.8917,
+   "lat": 42.7941,
+   "radius_km": 60,
+   "peak_m": 3415,
+   "analogue": "Tibesti, plume massif on a craton (Emi Koussi 3415 m)",
+   "shape": "cone"
+  },
+  "33": {
+   "lon": 63.962,
+   "lat": 13.066,
+   "radius_km": 200,
+   "peak_m": 924,
+   "analogue": "curved island arc around a small sea (Banda arc); arc volcano Stromboli (924 m)",
+   "shape": "island",
+   "note": "the island is a ring ~300 km across with a lagoon; the E04 point lies in the lagoon, so the island's own land cells within radius_km take a range profile instead of a cone"
+  },
+  "note": "point features of E04 drawn as cones; positions from canon_features.geojson"
+ },
+ "range_smoothing_iterations": 10,
+ "range_noise": {
+  "wavelengths_km": [
+   400,
+   200,
+   100,
+   50,
+   25
+  ],
+  "hurst": 0.6,
+  "components_per_octave": 16,
+  "note": "ridged field 1-|f| breaks envelopes into ridges and valleys"
+ },
+ "peak_heights_verified": "2026-11-18: every peak_m checked against summit lists and encyclopaedias; see experiments/E08_relief.md"
+}

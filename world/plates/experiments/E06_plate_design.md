@@ -79,3 +79,9 @@
   their places and sizes. The boundaries are schematic polylines, to be refined by the history.
 - The Land of Always Winter frame reaches near the north pole, forming land under the polar cap north of the
   Shivering Sea, which canon describes as a polar cap.
+
+## Later change (from E07 run f, 2026-11-18)
+
+The Equatorial boundary between the Westeros and southern-continent plates is now a **ridge** (it was a transform):
+spreading since 40 Ma, like the Galápagos spreading centre between the Cocos and Nazca plates. Only the type in
+`design.json` changed; the plate map (`plates.npz`) is the same.

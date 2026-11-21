@@ -85,12 +85,12 @@
   },
   {
    "boundary": "Mid-Sunset ridge",
-   "half_rate_km_per_myr": 55,
+   "half_rate_km_per_myr": 75,
    "max_age_ma": 180
   },
   {
    "boundary": "South Sunset ridge (Southern continent-Sothoryos)",
-   "half_rate_km_per_myr": 15,
+   "half_rate_km_per_myr": 25,
    "max_age_ma": 130
   },
   {
@@ -100,13 +100,20 @@
   },
   {
    "boundary": "Antarctic ring ridge",
-   "half_rate_km_per_myr": 20,
-   "max_age_ma": 100
+   "half_rate_km_per_myr": 32,
+   "max_age_ma": 100,
+   "note": "full rate 64 mm/yr, intermediate class like the Southeast Indian Ridge"
+  },
+  {
+   "boundary": "Equatorial transform (Westeros-Southern continent)",
+   "half_rate_km_per_myr": 30,
+   "max_age_ma": 40,
+   "note": "spreading since 40 Ma between the Westeros and southern-continent plates (Galapagos spreading centre between the Cocos and Nazca plates, half-rate ~30 km/Myr); E06 boundary type changed from transform to ridge"
   }
  ],
- "ocean_default_age_ma": 120,
+ "ocean_default_age_ma": 160,
  "shelf_width_km": {
-  "passive": 250,
+  "passive": 300,
   "active": 60
  },
  "province_codes": {
@@ -117,7 +124,9 @@
   "4": "young orogen (Cenozoic collision)",
   "5": "active margin or volcanic arc",
   "6": "rift or young rifted margin",
-  "7": "uplifted plateau or basin"
+  "7": "uplifted plateau",
+  "8": "sedimentary or endorheic basin",
+  "9": "oceanic plateau"
  },
  "blocks": [
   {
@@ -458,14 +467,14 @@
    "side_plate": 1,
    "province": 6,
    "age_ma": 25,
-   "width_km": 450
+   "width_km": 200
   },
   {
    "boundary": "Narrow sea ridge",
    "side_plate": 2,
    "province": 6,
    "age_ma": 25,
-   "width_km": 450
+   "width_km": 200
   }
  ],
  "canon_features": {
@@ -500,7 +509,7 @@
    "note": "Rills and Stony Shore: worn Caledonian"
   },
   "7": {
-   "province": 7,
+   "province": 8,
    "age_ma": 0.01,
    "note": "the Neck: post-glacial wetland basin"
   },
@@ -580,7 +589,7 @@
    "note": "Red waste: Dothraki craton under desert"
   },
   "25": {
-   "province": 7,
+   "province": 8,
    "age_ma": 2,
    "note": "Shrinking Sea: endorheic basin"
   },
@@ -636,5 +645,85 @@
   "hurst": 0.7,
   "components_per_octave": 16,
   "amplitude_deg": 3.0
- }
+ },
+ "oceanic_plateaus": {
+  "share_of_ocean": 0.0511,
+  "height_m": 2000,
+  "min_floor_age_ma": 30,
+  "min_distance_km": 300,
+  "noise": {
+   "wavelengths_km": [
+    1500,
+    750,
+    375,
+    190
+   ],
+   "hurst": 0.7,
+   "components_per_octave": 16
+  },
+  "note": "Earth: 184 oceanic plateaus cover ~18.5 M km2, 5.1% of the oceans, and rise 2-3 km above the floor; placed by a seeded fractal field on oceanic floor older than 30 Ma and >300 km from trenches and land"
+ },
+ "fossil_ridges": [
+  {
+   "name": "East Ulthos back-arc ridge (extinct)",
+   "plates": [
+    4
+   ],
+   "half_rate_km_per_myr": 25,
+   "start_ma": 100,
+   "end_ma": 45,
+   "line": [
+    [
+     122,
+     6
+    ],
+    [
+     130,
+     -18
+    ],
+    [
+     118,
+     -40
+    ],
+    [
+     116,
+     -62
+    ]
+   ],
+   "analogue": "Tasman Sea: opened between Australia and the Lord Howe Rise 84-52 Ma, then spreading stopped"
+  },
+  {
+   "name": "Shivering Sea ridge (extinct)",
+   "plates": [
+    2
+   ],
+   "half_rate_km_per_myr": 30,
+   "start_ma": 90,
+   "end_ma": 35,
+   "line": [
+    [
+     25,
+     72
+    ],
+    [
+     60,
+     73
+    ],
+    [
+     100,
+     72
+    ],
+    [
+     140,
+     72
+    ],
+    [
+     175,
+     72
+    ]
+   ],
+   "analogue": "Labrador Sea and Canada Basin: Arctic and sub-Arctic basins opened by ridges that later died (Labrador Sea spreading ended ~35 Ma)"
+  }
+ ],
+ "ocean_default_note": "floor beyond the reach of every ridge of its plate predates them: older than the breakup ocean (Ionian Sea floor is Triassic-Permian)"
 }

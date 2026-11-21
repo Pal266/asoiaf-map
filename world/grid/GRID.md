@@ -24,3 +24,7 @@
   centred on the equator at longitudes 0°, 90° E, 180° and 90° W, face 4 is the north pole, face 5 the south pole;
   arrays are indexed `[face, j, i]`. Cell areas are computed exactly (solid angle of each cell); the 6 faces add up
   to the sphere's area to a relative error of 5 × 10⁻¹⁶ (`python3 scripts/cubesphere.py`).
+- Neighbours across face seams: `halo_index(n, p)` gives, for each face padded by `p` cells, the real cell under
+  every padding cell (equiangular coordinates continued past the edge). `box_smooth` (repeated 3 × 3 average,
+  Gaussian with σ ≈ √(2k/3) cells after k passes) and `boundary_cells` (cells of a mask with a neighbour outside it)
+  use it, so smoothing and edge detection have no seams.
