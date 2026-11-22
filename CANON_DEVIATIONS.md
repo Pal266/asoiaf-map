@@ -42,22 +42,34 @@
   can lie no farther than ~165–168° E if the Sunset Sea is ~180° wide (`world/canon/CONSTRAINTS.md`, decision 5). That
   leaves room for ~24 million km² east of the map. Project owner's decision (decision 6, revised 2026-11-18).
 
-## 5. The Haunted Forest is sparse taiga at the edge of the forest-tundra
+## 5. The Haunted Forest is tundra; the North is forest-tundra and bog, with taiga in its south
 
 - **Canon:** the haunted forest is a vast forest beyond the Wall, from the Wall to the lands of Thenn, with ash, oak,
   chestnut, fir, ironwood, sentinel, soldier pine and weirwood; from the Wall it looks like a vast green expanse
   ([A Wiki of Ice and Fire, Haunted forest](https://awoiaf.westeros.org/index.php/The_Haunted_Forest),
-  [Beyond the Wall](https://awoiaf.westeros.org/index.php/Beyond-the-Wall)).
-- **Model:** at 64–66° N, just north of the Wall, the warmest month averages ~7 °C (7.6 before the ice layer, 7.0
-  with it). That is below the ~10 °C that the polar tree line follows. North of the Wall the land is sparse taiga in
-  sheltered valleys and lowlands, opening into forest-tundra. Dense forest, broadleaf trees included, grows only in
-  the south of the North, below ~60° N: Winterfell's warmest month is ~11 °C.
-- **Why:** the climate model (experiment `world/climate/experiments/E09_temperature.md`) is calibrated on 78 Earth
-  stations and reproduces Scandinavian and Alaskan summers within 1–3 °C. It includes the warm drift that the owner
-  chose to keep the North as mild as possible (decision 7). The cool summers come from the world's geography: the
-  lands at 64–70° N lie between two oceans, with an icy polar sea and the Land of Always Winter to the north.
-  Uncertainty is about ±3 °C, so even at its upper end the Haunted Forest stays at the tree line. Project owner's
-  decision, 2026-11-21.
+  [Beyond the Wall](https://awoiaf.westeros.org/index.php/Beyond-the-Wall)). The North has large forests, such as
+  the wolfswood around Winterfell.
+- **Model:**
+  - at 64–66° N, just north of the Wall, the warmest month averages ~7 °C and summers have ~90 degree-days above
+    5 °C, a quarter of what trees need. The vegetation layer (E15) makes the Haunted Forest tundra (59 %) and bog
+    (41 %); trees grow there only as scattered krummholz in sheltered valleys;
+  - south of the Wall the North is open:
+    - 60–63.75° N: tundra 73 %, bog 22 %;
+    - 56–60° N: bog 35 %, tundra 31 %, forest-tundra 30 %;
+    - 52–56° N: bog 39 %, forest-tundra 38 %, taiga 15 %;
+  - Winterfell (warmest month ~11 °C) stands in bog and forest-tundra, the open, park-like edge of the taiga;
+  - closed forest begins at the Neck.
+- **Why:**
+  - the climate model (experiment `world/climate/experiments/E09_temperature.md`) is calibrated on 78 Earth
+    stations. It includes the warm drift that the owner chose to keep the North as mild as possible (decision 7);
+  - re-examined for the vegetation layer (E09, addendum 2): at Earth's maritime subarctic stations the model's
+    summers have no cold error (mean +0.1 °C north of 55° N). The cool summers come from the world's geography.
+    The seas on both sides of the North are cold (July at 56° N: 10 °C to the west, 5 °C to the east), and the polar
+    sea keeps ice into July. The land does not warm above the sea. On Earth, forest at 64–66° N grows only in
+    continental interiors with warm summers, not on maritime coasts such as Iceland's;
+  - the forest limit (350 degree-days above 5 °C) is the BIOME1 value (Prentice et al. 1992).
+- **Decision:** project owner, 2026-11-21 (sparse taiga, after E09), extended 2026-11-22 after E15. The owner
+  preferred this to moving the map south.
 
 ## 6. The Land of Always Winter has no ice sheet
 

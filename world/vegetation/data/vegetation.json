@@ -1,0 +1,226 @@
+{
+ "biomes": [
+  "Water",
+  "Ice",
+  "Polar desert",
+  "Tundra",
+  "Alpine",
+  "Forest-tundra",
+  "Boreal forest",
+  "Temperate conifer forest",
+  "Temperate mixed forest",
+  "Temperate broadleaf forest",
+  "Subtropical evergreen forest",
+  "Mediterranean woodland",
+  "Temperate grassland",
+  "Tropical rainforest",
+  "Tropical dry forest",
+  "Savanna",
+  "Xeric shrubland",
+  "Desert",
+  "Wetland",
+  "Swamp forest",
+  "Riparian woodland",
+  "Salt flat"
+ ],
+ "key": {
+  "_note": "Starting values from BIOME1 (Prentice et al. 1992) and the BIOME4 mega-biome limits (Kaplan et al. 2003, as tabulated by Dallmeyer et al. 2019); tuned on the Earth test (E15).",
+  "bucket_mm": 150,
+  "polar_gdd0": 100,
+  "tree_gdd5": 350,
+  "forest_tundra_gdd5": 600,
+  "boreal_gdd5": 900,
+  "boreal_alpha": 0.35,
+  "alpine_lat_max": 55,
+  "alpine_elev_min_m": 1500,
+  "desert_alpha": 0.15,
+  "xeric_alpha": 0.3,
+  "tropical_tc": 12,
+  "savanna_alpha": 0.45,
+  "tropical_moist_alpha": 0.75,
+  "med_tc": 2,
+  "med_alpha_max": 0.65,
+  "forest_alpha": 0.5,
+  "warm_temperate_tc": 5,
+  "warm_temperate_gdd5": 3000,
+  "conifer_elev_m": 800,
+  "mixed_gdd5": 1200,
+  "broadleaf_tc_min": -15,
+  "riparian_q_m3s": 100,
+  "med_cool_share": 0.6,
+  "swamp_forest_gdd5": 900,
+  "savanna_dry_months": 6,
+  "boreal_gdd5_cold": 1500,
+  "montane_elev_m": 2500,
+  "temperate_rainforest_p_mm": 1500,
+  "temperate_rainforest_tw_max": 19
+ },
+ "wwf_map": {
+  "Polar desert": "Tundra",
+  "Tundra": "Tundra",
+  "Alpine": "Montane grasslands",
+  "Forest-tundra": "Boreal forests",
+  "Boreal forest": "Boreal forests",
+  "Temperate conifer forest": "Temperate coniferous forests",
+  "Temperate mixed forest": "Temperate broadleaf and mixed forests",
+  "Temperate broadleaf forest": "Temperate broadleaf and mixed forests",
+  "Subtropical evergreen forest": "Tropical and subtropical moist broadleaf forests",
+  "Mediterranean woodland": "Mediterranean forests",
+  "Temperate grassland": "Temperate grasslands",
+  "Tropical rainforest": "Tropical and subtropical moist broadleaf forests",
+  "Tropical dry forest": "Tropical and subtropical dry broadleaf forests",
+  "Savanna": "Tropical grasslands and savannas",
+  "Xeric shrubland": "Deserts and xeric shrublands",
+  "Desert": "Deserts and xeric shrublands",
+  "Riparian woodland": "Deserts and xeric shrublands",
+  "Salt flat": "Deserts and xeric shrublands",
+  "Swamp forest": null
+ },
+ "wwf_area_Mkm2": {
+  "_source": "Olson et al. (2001) biomes, areas as tabulated by Bertzky et al. (2013, IUCN), excluding lakes and rock and ice",
+  "Tropical and subtropical moist broadleaf forests": 19.89,
+  "Tropical and subtropical dry broadleaf forests": 3.03,
+  "Tropical and subtropical coniferous forests": 0.71,
+  "Temperate broadleaf and mixed forests": 12.84,
+  "Temperate coniferous forests": 4.09,
+  "Boreal forests": 15.08,
+  "Tropical grasslands and savannas": 20.3,
+  "Temperate grasslands": 10.1,
+  "Flooded grasslands": 1.1,
+  "Montane grasslands": 5.2,
+  "Tundra": 11.6,
+  "Mediterranean forests": 3.23,
+  "Deserts and xeric shrublands": 27.98,
+  "Mangroves": 0.35
+ },
+ "wetland_wwf": {
+  "_note": "wetlands count as the climatic biome below GDD5 900 (WWF puts peatlands in boreal and tundra), else as flooded grasslands",
+  "boreal_gdd5": 900
+ },
+ "npp_reference": {
+  "_source": "global terrestrial NPP ~56 Pg C/yr (Field et al. 1998), ~120 Pg dry matter/yr at 0.47 g C per g; potential vegetation somewhat higher",
+  "global_Pg_dm": 120
+ },
+ "colours": {
+  "Water": [
+   60,
+   110,
+   190
+  ],
+  "Ice": [
+   245,
+   248,
+   252
+  ],
+  "Polar desert": [
+   200,
+   200,
+   195
+  ],
+  "Tundra": [
+   170,
+   180,
+   150
+  ],
+  "Alpine": [
+   175,
+   160,
+   140
+  ],
+  "Forest-tundra": [
+   120,
+   150,
+   110
+  ],
+  "Boreal forest": [
+   40,
+   95,
+   70
+  ],
+  "Temperate conifer forest": [
+   30,
+   110,
+   90
+  ],
+  "Temperate mixed forest": [
+   70,
+   140,
+   70
+  ],
+  "Temperate broadleaf forest": [
+   100,
+   170,
+   60
+  ],
+  "Subtropical evergreen forest": [
+   40,
+   150,
+   100
+  ],
+  "Mediterranean woodland": [
+   170,
+   160,
+   70
+  ],
+  "Temperate grassland": [
+   215,
+   205,
+   120
+  ],
+  "Tropical rainforest": [
+   10,
+   100,
+   30
+  ],
+  "Tropical dry forest": [
+   130,
+   150,
+   40
+  ],
+  "Savanna": [
+   200,
+   180,
+   80
+  ],
+  "Xeric shrubland": [
+   220,
+   190,
+   140
+  ],
+  "Desert": [
+   240,
+   225,
+   180
+  ],
+  "Wetland": [
+   90,
+   160,
+   170
+  ],
+  "Riparian woodland": [
+   60,
+   170,
+   90
+  ],
+  "Salt flat": [
+   250,
+   250,
+   250
+  ],
+  "Swamp forest": [
+   50,
+   130,
+   120
+  ]
+ },
+ "forest_biomes": [
+  "Forest-tundra",
+  "Boreal forest",
+  "Temperate conifer forest",
+  "Temperate mixed forest",
+  "Temperate broadleaf forest",
+  "Subtropical evergreen forest",
+  "Tropical rainforest",
+  "Tropical dry forest"
+ ]
+}

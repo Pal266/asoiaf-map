@@ -1,0 +1,709 @@
+{
+ "_note": "Textbook locations of the major biomes (WWF / Olson et al. 2001 biome at the site); several groups are accepted where the site lies in a transition. Sixteen sites along the arctic tree line test the forest limit directly.",
+ "sites": [
+  [
+   "Manaus",
+   -3.1,
+   -60.0,
+   [
+    "Tropical rainforest"
+   ]
+  ],
+  [
+   "Iquitos",
+   -3.75,
+   -73.25,
+   [
+    "Tropical rainforest"
+   ]
+  ],
+  [
+   "Kisangani",
+   0.5,
+   25.2,
+   [
+    "Tropical rainforest"
+   ]
+  ],
+  [
+   "Pontianak",
+   -0.03,
+   109.3,
+   [
+    "Tropical rainforest"
+   ]
+  ],
+  [
+   "Lagos",
+   6.5,
+   3.4,
+   [
+    "Tropical rainforest",
+    "Tropical dry forest"
+   ]
+  ],
+  [
+   "Chiang Mai",
+   18.8,
+   99.0,
+   [
+    "Tropical dry forest",
+    "Tropical rainforest"
+   ]
+  ],
+  [
+   "Nagpur",
+   21.1,
+   79.1,
+   [
+    "Tropical dry forest",
+    "Savanna"
+   ]
+  ],
+  [
+   "Brasilia",
+   -15.8,
+   -47.9,
+   [
+    "Savanna",
+    "Tropical dry forest"
+   ]
+  ],
+  [
+   "Ciudad Bolivar",
+   8.1,
+   -63.5,
+   [
+    "Savanna",
+    "Tropical dry forest"
+   ]
+  ],
+  [
+   "Kano",
+   12.0,
+   8.5,
+   [
+    "Savanna"
+   ]
+  ],
+  [
+   "Niamey",
+   13.5,
+   2.1,
+   [
+    "Savanna",
+    "Xeric shrubland"
+   ]
+  ],
+  [
+   "Darwin hinterland",
+   -13.5,
+   131.5,
+   [
+    "Savanna",
+    "Tropical dry forest"
+   ]
+  ],
+  [
+   "Nairobi",
+   -1.3,
+   36.8,
+   [
+    "Savanna",
+    "Alpine",
+    "Tropical dry forest"
+   ]
+  ],
+  [
+   "Sudd",
+   7.5,
+   30.5,
+   [
+    "Wetland",
+    "Savanna"
+   ]
+  ],
+  [
+   "Timbuktu",
+   16.8,
+   -3.0,
+   [
+    "Xeric shrubland",
+    "Desert",
+    "Savanna"
+   ]
+  ],
+  [
+   "In Salah",
+   27.2,
+   2.5,
+   [
+    "Desert"
+   ]
+  ],
+  [
+   "Riyadh",
+   24.7,
+   46.7,
+   [
+    "Desert",
+    "Xeric shrubland"
+   ]
+  ],
+  [
+   "Kashgar",
+   39.5,
+   76.0,
+   [
+    "Desert",
+    "Xeric shrubland",
+    "Riparian woodland"
+   ]
+  ],
+  [
+   "Alice Springs",
+   -23.7,
+   133.9,
+   [
+    "Desert",
+    "Xeric shrubland"
+   ]
+  ],
+  [
+   "Phoenix",
+   33.4,
+   -112.1,
+   [
+    "Desert",
+    "Xeric shrubland"
+   ]
+  ],
+  [
+   "Las Vegas",
+   36.2,
+   -115.1,
+   [
+    "Desert",
+    "Xeric shrubland"
+   ]
+  ],
+  [
+   "Tehran",
+   35.7,
+   51.4,
+   [
+    "Xeric shrubland",
+    "Desert",
+    "Temperate grassland"
+   ]
+  ],
+  [
+   "Los Angeles",
+   34.1,
+   -118.2,
+   [
+    "Mediterranean woodland"
+   ]
+  ],
+  [
+   "Rome",
+   41.9,
+   12.5,
+   [
+    "Mediterranean woodland"
+   ]
+  ],
+  [
+   "Athens",
+   38.0,
+   23.7,
+   [
+    "Mediterranean woodland"
+   ]
+  ],
+  [
+   "Madrid",
+   40.4,
+   -3.7,
+   [
+    "Mediterranean woodland"
+   ]
+  ],
+  [
+   "Perth",
+   -31.95,
+   115.9,
+   [
+    "Mediterranean woodland"
+   ]
+  ],
+  [
+   "Santiago",
+   -33.45,
+   -70.65,
+   [
+    "Mediterranean woodland"
+   ]
+  ],
+  [
+   "Cape Town",
+   -33.9,
+   18.5,
+   [
+    "Mediterranean woodland"
+   ]
+  ],
+  [
+   "Guangzhou",
+   23.1,
+   113.3,
+   [
+    "Subtropical evergreen forest",
+    "Tropical rainforest"
+   ]
+  ],
+  [
+   "Hangzhou",
+   30.3,
+   120.2,
+   [
+    "Subtropical evergreen forest"
+   ]
+  ],
+  [
+   "Tokyo",
+   35.7,
+   139.7,
+   [
+    "Subtropical evergreen forest",
+    "Temperate broadleaf forest"
+   ]
+  ],
+  [
+   "Atlanta",
+   33.7,
+   -84.4,
+   [
+    "Subtropical evergreen forest",
+    "Temperate broadleaf forest",
+    "Temperate conifer forest"
+   ]
+  ],
+  [
+   "Columbus",
+   40.0,
+   -83.0,
+   [
+    "Temperate broadleaf forest",
+    "Temperate mixed forest"
+   ]
+  ],
+  [
+   "Paris",
+   48.9,
+   2.3,
+   [
+    "Temperate broadleaf forest",
+    "Temperate mixed forest"
+   ]
+  ],
+  [
+   "Berlin",
+   52.5,
+   13.4,
+   [
+    "Temperate broadleaf forest",
+    "Temperate mixed forest"
+   ]
+  ],
+  [
+   "Melbourne",
+   -37.8,
+   145.0,
+   [
+    "Temperate broadleaf forest",
+    "Mediterranean woodland",
+    "Temperate grassland"
+   ]
+  ],
+  [
+   "Moscow",
+   55.75,
+   37.6,
+   [
+    "Temperate mixed forest",
+    "Temperate broadleaf forest",
+    "Boreal forest"
+   ]
+  ],
+  [
+   "Kyiv",
+   50.45,
+   30.5,
+   [
+    "Temperate mixed forest",
+    "Temperate broadleaf forest",
+    "Temperate grassland"
+   ]
+  ],
+  [
+   "Kharkiv",
+   50.0,
+   36.2,
+   [
+    "Temperate grassland",
+    "Temperate broadleaf forest",
+    "Temperate mixed forest"
+   ]
+  ],
+  [
+   "Volgograd",
+   48.7,
+   44.5,
+   [
+    "Temperate grassland",
+    "Xeric shrubland"
+   ]
+  ],
+  [
+   "Astana",
+   51.2,
+   71.4,
+   [
+    "Temperate grassland"
+   ]
+  ],
+  [
+   "Ulaanbaatar",
+   47.9,
+   106.9,
+   [
+    "Temperate grassland",
+    "Alpine",
+    "Boreal forest",
+    "Forest-tundra"
+   ]
+  ],
+  [
+   "Wichita",
+   37.7,
+   -97.3,
+   [
+    "Temperate grassland"
+   ]
+  ],
+  [
+   "Cheyenne",
+   41.1,
+   -104.8,
+   [
+    "Temperate grassland",
+    "Alpine"
+   ]
+  ],
+  [
+   "Buenos Aires",
+   -34.6,
+   -58.4,
+   [
+    "Temperate grassland"
+   ]
+  ],
+  [
+   "Winnipeg",
+   49.9,
+   -97.1,
+   [
+    "Temperate grassland",
+    "Temperate mixed forest",
+    "Temperate broadleaf forest"
+   ]
+  ],
+  [
+   "Ankara",
+   39.9,
+   32.9,
+   [
+    "Temperate grassland",
+    "Mediterranean woodland",
+    "Xeric shrubland"
+   ]
+  ],
+  [
+   "Seattle",
+   47.6,
+   -122.3,
+   [
+    "Temperate conifer forest"
+   ]
+  ],
+  [
+   "Banff",
+   51.2,
+   -115.6,
+   [
+    "Temperate conifer forest",
+    "Boreal forest",
+    "Alpine"
+   ]
+  ],
+  [
+   "Mexico City",
+   19.4,
+   -99.1,
+   [
+    "Temperate conifer forest",
+    "Subtropical evergreen forest",
+    "Tropical dry forest",
+    "Alpine"
+   ]
+  ],
+  [
+   "Fairbanks",
+   64.8,
+   -147.7,
+   [
+    "Boreal forest",
+    "Forest-tundra"
+   ]
+  ],
+  [
+   "Yakutsk",
+   62.0,
+   129.7,
+   [
+    "Boreal forest",
+    "Forest-tundra"
+   ]
+  ],
+  [
+   "Krasnoyarsk",
+   56.0,
+   92.9,
+   [
+    "Boreal forest",
+    "Temperate mixed forest",
+    "Temperate grassland"
+   ]
+  ],
+  [
+   "Arkhangelsk",
+   64.5,
+   40.5,
+   [
+    "Boreal forest",
+    "Wetland"
+   ]
+  ],
+  [
+   "Moosonee",
+   51.3,
+   -80.6,
+   [
+    "Boreal forest",
+    "Wetland"
+   ]
+  ],
+  [
+   "Norilsk",
+   69.3,
+   88.2,
+   [
+    "Tundra",
+    "Forest-tundra",
+    "Boreal forest"
+   ]
+  ],
+  [
+   "Utqiagvik",
+   71.3,
+   -156.8,
+   [
+    "Tundra",
+    "Wetland"
+   ]
+  ],
+  [
+   "Resolute",
+   74.7,
+   -95.0,
+   [
+    "Polar desert",
+    "Tundra"
+   ]
+  ],
+  [
+   "Lhasa",
+   29.65,
+   91.1,
+   [
+    "Alpine",
+    "Temperate grassland",
+    "Xeric shrubland"
+   ]
+  ],
+  [
+   "La Paz",
+   -16.5,
+   -68.15,
+   [
+    "Alpine",
+    "Xeric shrubland"
+   ]
+  ],
+  [
+   "Johannesburg",
+   -26.2,
+   28.0,
+   [
+    "Temperate grassland",
+    "Savanna",
+    "Alpine"
+   ]
+  ],
+  [
+   "Inuvik",
+   68.3,
+   -133.7,
+   [
+    "Forest-tundra",
+    "Boreal forest"
+   ]
+  ],
+  [
+   "Churchill",
+   58.8,
+   -94.2,
+   [
+    "Forest-tundra",
+    "Tundra",
+    "Wetland"
+   ]
+  ],
+  [
+   "Kuujjuaq",
+   58.1,
+   -68.4,
+   [
+    "Forest-tundra",
+    "Tundra"
+   ]
+  ],
+  [
+   "Murmansk",
+   68.97,
+   33.1,
+   [
+    "Forest-tundra",
+    "Boreal forest"
+   ]
+  ],
+  [
+   "Salekhard",
+   66.5,
+   66.6,
+   [
+    "Forest-tundra",
+    "Tundra",
+    "Wetland"
+   ]
+  ],
+  [
+   "Khatanga",
+   71.98,
+   102.5,
+   [
+    "Tundra",
+    "Forest-tundra"
+   ]
+  ],
+  [
+   "Anadyr",
+   64.7,
+   177.5,
+   [
+    "Tundra"
+   ]
+  ],
+  [
+   "Nome",
+   64.5,
+   -165.4,
+   [
+    "Tundra"
+   ]
+  ],
+  [
+   "Baker Lake",
+   64.3,
+   -96.1,
+   [
+    "Tundra"
+   ]
+  ],
+  [
+   "Iqaluit",
+   63.75,
+   -68.5,
+   [
+    "Tundra"
+   ]
+  ],
+  [
+   "Kangerlussuaq",
+   67.0,
+   -50.7,
+   [
+    "Tundra",
+    "Polar desert"
+   ]
+  ],
+  [
+   "Kiruna",
+   67.85,
+   20.2,
+   [
+    "Boreal forest",
+    "Forest-tundra"
+   ]
+  ],
+  [
+   "Yellowknife",
+   62.45,
+   -114.4,
+   [
+    "Boreal forest",
+    "Forest-tundra",
+    "Wetland"
+   ]
+  ],
+  [
+   "Whitehorse",
+   60.7,
+   -135.1,
+   [
+    "Boreal forest",
+    "Forest-tundra",
+    "Alpine"
+   ]
+  ],
+  [
+   "Magadan",
+   59.6,
+   150.8,
+   [
+    "Boreal forest",
+    "Forest-tundra"
+   ]
+  ],
+  [
+   "Verkhoyansk",
+   67.55,
+   133.4,
+   [
+    "Boreal forest",
+    "Forest-tundra"
+   ]
+  ]
+ ]
+}

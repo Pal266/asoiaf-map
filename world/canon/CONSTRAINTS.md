@@ -143,6 +143,12 @@ each; the source column names the AWOIAF page.
     Lake, the Shrinking Sea (its two remaining pools) and the Bleeding Sea are taken from M1. Their water balance
     decides whether they overflow; the Shrinking Sea and the Bleeding Sea, in a dry interior, are terminal lakes
     losing more by evaporation than they receive.
+11. **The climate of the North is kept; its vegetation follows the plants' physiology** (experiments
+    `world/vegetation/experiments/E15_vegetation.md` and E09, addendum 2; decided 2026-11-22). With the forest
+    limit of the BIOME models the North of Westeros is forest-tundra and bog with taiga in its south, and the Haunted
+    Forest is tundra. The owner had the climate of the North re-examined first: the model shows no cold error at
+    Earth's maritime subarctic stations, and the cool summers come from the cold seas around the North. He chose
+    the canon deviation (deviation 5, extended) over moving the map south.
 
 ## 8. Not stated by canon
 

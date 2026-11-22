@@ -223,6 +223,33 @@ refitted. Details and Antarctic and Greenland values are in E11.
 
 The world's climate code moved to `scripts/world_climate.py`, shared with the precipitation and ice layers.
 
+## Addendum 2 (2026-11-22, from E15): is the North's summer a model error?
+
+The vegetation layer (E15) found the North of Westeros forest-tundra and bog, and the Haunted Forest tundra. The
+owner had the climate of the North re-examined before accepting that. Nothing in the model was changed.
+
+- **Stations.** The "subarctic summers 4–8 °C too cold" of the first run belonged to the one-layer model. With the
+  two-layer model and the station correction, the July error north of 55° N averages +0.1 °C (leave-one-out):
+  - maritime stations are right or too warm: Bergen +0.1, Reykjavik −0.5, Helsinki +0.2, Tromsø +1.2, Murmansk +4.4,
+    Nuuk +5.3, Iqaluit +6.8 °C;
+  - only the North American interior is too cold: Fairbanks −3.9, Yellowknife −3.3 °C.
+- **Station correction.** In July it cools the North by 0.5–1.4 °C on average (Winterfell 2.1 °C, where the
+  continentality index is 0.57). Fading its continentality term poleward of 45–70° N does not improve the
+  leave-one-out error (3.23 → 3.25–3.32 °C), so the data do not support weakening it.
+- **The seas.** July sea-level temperatures:
+
+| Latitude | World, sea west of the North | World, sea east of the North | World, land of the North | Earth model, NE Atlantic | Earth model, Europe |
+|---|---|---|---|---|---|
+| 56° N | 10.0 | 5.2 | 10.1 | 13.0 | 20.3 |
+| 60° N | 7.7 | 3.5 | 8.9 | 9.4 | 18.8 |
+| 64° N | 6.0 | 0.6 | 7.0 | 7.7 | 17.6 |
+
+  The world's northern sea keeps ice into July (a third of the sea at 67° N, two-thirds and more north of 69° N).
+  The North sits between this cold water on both sides, and its land does not warm above the sea as Europe's does.
+
+**Conclusion.** The cool summers of the North are a consequence of the world's geography, not a model error. The owner
+kept the climate and extended canon deviation 5 (CONSTRAINTS decision 11) rather than move the map south.
+
 ## Sources
 
 - Station climatology: "List of cities by average temperature", Wikipedia (read 2026-11-21).
