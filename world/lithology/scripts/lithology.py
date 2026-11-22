@@ -6,7 +6,8 @@ Rock classes are those of the Global Lithological Map (GLiM, Hartmann & Moosdorf
    assumed composition (data/lithology.json); cratons are split between exposed shield and platform cover by local relief (shields
    crop out where erosion has stripped the cover). Within a province the class of a cell comes from one smooth
    random field (two octaves, ~130 km and ~30 km), so that rocks form coherent outcrops with the province's shares.
-2. Canon volcanic relief: intermediate volcanics and pyroclastics.
+2. Canon volcanic relief: intermediate volcanics and pyroclastics (volcanoes drawn as points, such as Dragonmont,
+   within 30 km of the point).
 3. Surface deposits over the bedrock (GLiM "unconsolidated sediments"), from the hydrology and climate:
    alluvium along large rivers and in marshes, evaporites on salt flats, aeolian sand seas on low desert plains,
    loess on low semi-arid to subhumid plains within reach of the deserts' dust.
@@ -142,10 +143,39 @@ def main():
             bed[m] = b
         else:
             bed[m] = pick(U[m], comp[str(code)], order)
+    # terranes with a composition of their own (a block of the history with "warp": false, tested in true
+    # coordinates, or a canon feature), drawn with the fine (~30 km) field only: small islands need contacts
+    # within each island
+    hist_blocks = {b["name"]: b for b in json.loads((WORLD / "history" / "data" / "history.json").read_text())["blocks"]}
+    from matplotlib.path import Path as MPath
+    from scipy.special import ndtr
+    feats0 = json.loads((WORLD / "canon_relief" / "data" / "canon_features.json").read_text())["features"]
+    fid0 = np.load(args.canon_relief)["feature_id"]
+    for ter in cfg.get("terranes", []):
+        if "history_block" in ter:
+            poly = np.array(hist_blocks[ter["history_block"]]["polygon"])
+            inside = MPath(poly).contains_points(np.c_[clon.ravel(), clat.ravel()]).reshape(land.shape) & land
+        else:                                       # a canon feature of the relief (its polygon on the map)
+            inside = land & (fid0 == [f["name"] for f in feats0].index(ter["canon_feature"]) + 1)
+        Uf = ndtr(smooth_field(nz["fine_n"], nz["fine_smooth"], n, rng))
+        # classes are laid out along the field in the terrane's own sequence: only neighbours in the sequence
+        # touch, so the intrusions follow the limestones to make contacts (skarns)
+        seq = ter["sequence"]
+        bed[inside] = np.array([order.index(c) for c in seq])[pick(Uf[inside], ter["composition"], seq)]
     # 2. canon volcanic relief
     feats = json.loads((WORLD / "canon_relief" / "data" / "canon_features.json").read_text())["features"]
     volc = land & np.isin(np.load(args.canon_relief)["feature_id"],
                           [i + 1 for i, f in enumerate(feats) if f["type"] == "volcanic"])
+    # volcanoes drawn as points on the map (Dragonmont) are not in the feature raster: the land within
+    # volcano_point_radius_km of the point is volcanic
+    sys.path.insert(0, str(WORLD / "canon_outline" / "scripts"))
+    import canon_outline as co
+    for f in feats:
+        if f["type"] == "volcanic" and "point_px" in f:
+            la, lo = co.globe(*f["point_px"])
+            dlat, dlon = np.radians(clat) - la, np.radians(clon) - lo
+            hav = np.sin(dlat / 2) ** 2 + np.cos(la) * np.cos(np.radians(clat)) * np.sin(dlon / 2) ** 2
+            volc |= land & (2 * cs.R_KM * np.arcsin(np.sqrt(np.minimum(hav, 1))) < cfg["volcano_point_radius_km"])
     bed[volc] = np.where(U[volc] < 0.75, O["vi"], O["py"])
 
     # 3. surface deposits

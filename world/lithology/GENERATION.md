@@ -8,6 +8,7 @@
 - `hydrology.npz` (lake, discharge_m3s) from `world/hydrology/scripts/hydrology.py`
 - `temperature.npz` and `precipitation.npz` from the climate layers run with `--ice ice.npz`
 - `canon_relief.npz` (feature_id) from `world/canon_relief/scripts/canon_relief.py`: volcanic relief
+- `world/history/data/history.json` (block outlines of the terranes)
 - `data/lithology.json`: classes, province compositions, noise, deposit thresholds, GLiM shares
 
 ## Command

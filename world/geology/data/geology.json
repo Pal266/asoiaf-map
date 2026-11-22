@@ -200,6 +200,14 @@
    "dormant",
    "inactive"
   ],
-  "_activity_note": "plate contacts are active; faults of rifted margins went dormant when spreading began; continental rifts (1-15 Ma) are active; other contacts by the age of their event: <= 30 Ma active, <= 66 Ma dormant, older inactive. Contacts of canon features dated < 1 Ma (post-glacial wetland and drowned land bridge) are not faults."
+  "_activity_note": "plate contacts are active; faults of rifted margins went dormant when spreading began; continental rifts (1-15 Ma) are active; other contacts by the age of their event: <= 30 Ma active, <= 66 Ma dormant, older inactive. Contacts of canon features dated < 1 Ma (post-glacial wetland and drowned land bridge) are not faults.",
+  "shear_zones": [
+   {
+    "canon_feature": "Westerlands hills (Golden Tooth)",
+    "field_n": 500,
+    "field_smooth": 3,
+    "note": "accreted arc terrane with pervasive shear zones, as the Lachlan orogen of Victoria (CONSTRAINTS decision 13)"
+   }
+  ]
  }
 }

@@ -93,6 +93,19 @@ rules apply when the lithology is absent.
 - No age of rocks, no faults, no ore bodies; the resource layer will need them.
 - Glacial till and outwash are not mapped: the ice layer gives only today's sheets.
 
+## Addendum (2026-11-22, from E17): terranes and point volcanoes
+
+- **Terranes with a composition of their own** (`terranes` in `lithology.json`). A terrane is a history block
+  (tested in true coordinates) or a canon feature. It is drawn with the ~30 km field only, in its own class
+  sequence. The fixed class order of the provinces lets only neighbours in the order touch, so limestone never meets
+  granite; a terrane's sequence can put them side by side.
+  - Iron Islands (decision 12): granite and diorite bosses in slate, limestone and greenstone (Cornwall).
+  - Westerlands hills (decision 13): turbidites, metavolcanics, greenstones, felsic volcanics and granitoids
+    (Lachlan orogen).
+- **Point volcanoes.** Volcanoes drawn as points on the map (Dragonmont) are not in the feature raster. The land
+  within 30 km of the point is now volcanic, so Dragonstone has andesite and obsidian.
+- **Effect.** The world's lithology shares are unchanged to three decimals.
+
 ## Sources
 
 - Hartmann, J., Moosdorf, N. (2012), The new global lithological map database GLiM, G3 13, Q12004.

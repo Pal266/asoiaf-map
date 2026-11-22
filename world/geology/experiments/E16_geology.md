@@ -171,6 +171,12 @@ Run d is deterministic (two runs are identical) and takes ~110 s.
   lithology's 0.8° warp.
 - **No ore bodies yet.** They are the next layer, built on these ages, faults and the lithology.
 
+## Addendum (2026-11-22, from E17): shear zones of the Westerlands
+
+The Westerlands hills, an accreted arc terrane since decision 13, carry a dense network of shear zones: the zero
+lines of a smooth random field, ~30 km apart, as inactive thrusts of the terrane's age (300 Ma). They add 6 300 km
+of inactive thrusts (177 200 → 183 500 km). Hazard and ages are unchanged.
+
 ## Sources
 
 - Wilkinson, B. H., McElroy, B. J., Kesler, S. E., Peters, S. E., Rothman, E. D. (2009), Global geologic maps are

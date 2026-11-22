@@ -40,6 +40,8 @@ each; the source column names the AWOIAF page.
 | WE8 | The North is cold and harsh in winter, with occasional snow even in summer. | A | [Westeros](https://awoiaf.westeros.org/index.php/Climate) |
 | WE9 | Dorne is the hottest region, rocky, mountainous and arid, with the only desert on the continent. | A | [Dorne](https://awoiaf.westeros.org/index.php/Dornish) |
 | WE10 | The Reach is the most fertile region and the largest after the North. | A | [Westeros](https://awoiaf.westeros.org/index.php/Westeros) |
+| WE11 | The westerlands are full of hills and crags with gold and silver mines (Casterly Rock, the Golden Tooth, Castamere, Nunn's Deep, the Pendric Hills). | A | [Westerlands](https://awoiaf.westeros.org/index.php/Westerlands) |
+| WE12 | The Iron Islands have no precious metals, but iron ore is abundant under the hills of Great Wyk, Orkmont, Harlaw and Pyke, with plentiful lead and tin. | A | [Iron Islands](https://awoiaf.westeros.org/index.php/Kingdom_of_the_Iron_Islands) |
 
 ## 3. Essos
 
@@ -149,6 +151,18 @@ each; the source column names the AWOIAF page.
     Forest is tundra. The owner had the climate of the North re-examined first: the model shows no cold error at
     Earth's maritime subarctic stations, and the cool summers come from the cold seas around the North. He chose
     the canon deviation (deviation 5, extended) over moving the map south.
+12. **A Variscan terrane under the Iron Islands** (experiment `world/resources/experiments/E17_resources.md`,
+    decided 2026-11-22). In the geological history the islands were young platform limestone, which can hold lead
+    but neither iron nor tin (WE12). The Variscan arc terrane of the Westerlands hills (300 Ma) now continues north
+    under Ironman's Bay, as Cornwall's granites continue into the Scilly Isles. Its granites, skarns and veins carry
+    tin, lead and iron. In the lithology the terrane has its own composition (granite and diorite bosses in slate,
+    limestone and greenstone, as in Cornwall), drawn at a ~30 km outcrop scale with the intrusions next to the
+    limestone, so that the small islands have the contacts that make skarns.
+13. **The Westerlands hills are a gold belt** (experiment E17, decided 2026-11-22). Treated like every other old fold
+    belt, the Westerlands held 5.7 % of Westeros's gold on 9.3 % of its area, against canon (WE11). The hills are
+    now an accreted Variscan island-arc terrane: turbidites, greenstones, metavolcanics and granitoids, cut by a
+    dense network of shear zones, like the Lachlan orogen of Victoria. They then hold 23 % of Westeros's gold and
+    56 % of its silver.
 
 ## 8. Not stated by canon
 

@@ -180,8 +180,11 @@ def main():
     wlon = (wlon + 180) % 360 - 180
     pts = np.c_[wlon.ravel(), wlat.ravel()]
     belt_field = fractal(xyz, hist["warp"], rng)
+    pts_true = np.c_[lon.ravel(), lat.ravel()]
     for blk in hist["blocks"]:
-        inside = MPath(np.array(blk["polygon"])).contains_points(pts).reshape(lat.shape)
+        # a block with "warp": false is tested in true coordinates (islands that must be hit exactly)
+        inside = MPath(np.array(blk["polygon"])).contains_points(
+            pts if blk.get("warp", True) else pts_true).reshape(lat.shape)
         m = land & inside & (plate == blk["plate"]) & (province == 0)
         province[m] = blk["province"]
         event_age[m] = blk["age_ma"]

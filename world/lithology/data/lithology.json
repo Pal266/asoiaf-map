@@ -134,5 +134,50 @@
   "unconsolidated": 0.246,
   "note": "GLiM: 64 % sediments (a third of them carbonates), 13 % metamorphics, 7 % plutonics, 6 % volcanics, 10 % water and ice; unconsolidated sediments 24.6 % of land (Hartmann & Moosdorf 2012; Boerker et al. 2018)."
  },
- "province_warp_deg": 0.8
+ "province_warp_deg": 0.8,
+ "volcano_point_radius_km": 30,
+ "terranes": [
+  {
+   "history_block": "Iron Islands Variscan terrane",
+   "composition": {
+    "mt": 0.3,
+    "sm": 0.15,
+    "sc": 0.2,
+    "pi": 0.1,
+    "pa": 0.2,
+    "vb": 0.05
+   },
+   "note": "Variscan granite and diorite bosses intruding slates (metamorphosed shales), limestones and greenstones, as in Cornwall and the Variscan belt of central Europe; intrusions about a third of the land (owner's decision, CONSTRAINTS decision 12)",
+   "sequence": [
+    "mt",
+    "sm",
+    "sc",
+    "pi",
+    "pa",
+    "vb"
+   ]
+  },
+  {
+   "canon_feature": "Westerlands hills (Golden Tooth)",
+   "sequence": [
+    "ss",
+    "sm",
+    "mt",
+    "va",
+    "vb",
+    "pi",
+    "pa"
+   ],
+   "composition": {
+    "ss": 0.15,
+    "sm": 0.25,
+    "mt": 0.2,
+    "va": 0.05,
+    "vb": 0.15,
+    "pi": 0.1,
+    "pa": 0.1
+   },
+   "note": "accreted Variscan island-arc terrane: turbidites (sandstone, shale), metavolcanics and greenstones, felsic volcanics and granitoids, as in the Lachlan orogen of Victoria (owner's decision, CONSTRAINTS decision 13)"
+  }
+ ]
 }

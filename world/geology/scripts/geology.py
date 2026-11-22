@@ -16,7 +16,8 @@
    - contacts of tectonic provinces on continental crust: thrusts at young orogens, arcs and plateaus, normal faults
      at rifts and basins, old thrust fronts and sutures between blocks of different ages. A contact takes the age
      of its younger side's event; active if it moved within 30 Myr, dormant within 66 Myr. Faults of rifted
-     margins went dormant when spreading began; continental rifts are active.
+     margins went dormant when spreading began; continental rifts are active. Accreted terranes listed in
+     faults.shear_zones (the Westerlands hills) carry a dense network of shear zones.
 3. Seismic hazard (hazard.py, calibrated on Earth): plate boundaries weighted by class and velocity, active
    deforming zones (young orogens, arcs, plateaus, continental rifts) and dormant ones, cut into the four GSHAP
    classes. Rifted margins are passive.
@@ -218,6 +219,18 @@ def main():
                        ACT["inactive"])
     rift_margin = (prov == 6) & (event > fc["continental_rift_max_ma"])
     fact[edge] = np.where(rift_margin, ACT["dormant"], by_age)[edge]
+    # shear zones inside accreted terranes: the zero lines of a smooth random field (~30 km apart), thrusts of the
+    # terrane's age (the dense fault networks of greenstone and turbidite belts)
+    feats = json.loads((WORLD / "canon_relief" / "data" / "canon_features.json").read_text())["features"]
+    srng = np.random.default_rng(cfg["age"]["noise"]["seed"] + 1)
+    for sz in fc.get("shear_zones", []):
+        m = land & (fid == [f["name"] for f in feats].index(sz["canon_feature"]) + 1)
+        fld = lt.smooth_field(sz["field_n"], sz["field_smooth"], n, srng)
+        has_sz, _ = contacts((fld > 0).astype(np.int8), halo)
+        line = m & has_sz & (fld > 0) & (ftype == 0)
+        ftype[line] = T["thrust"]
+        fage[line] = event[line]
+        fact[line] = by_age[line]
 
     # ---- 3. seismic hazard ----
     hc = cfg["hazard"]

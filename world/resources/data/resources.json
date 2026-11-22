@@ -1,0 +1,781 @@
+{
+ "description": "Mineral deposits and area resources (experiment E17).",
+ "seed": 20261124,
+ "density": {
+  "_source": "Singer (2008), Math. Geosci. 40, 33: log10(density per 100,000 km2) = 4.2474 - 0.5146 log10(A km2) - 0.2254 log10(median tonnage Mt)",
+  "a": 4.2474,
+  "b_area": -0.5146,
+  "c_size": -0.2254
+ },
+ "min_tract_km2": 200,
+ "models": {
+  "porphyry_cu": {
+   "name": "porphyry copper",
+   "commodities": {
+    "Cu": 0.44,
+    "Ag": 1.2,
+    "Au": 0.077
+   },
+   "units": {
+    "Cu": "%",
+    "Ag": "g/t",
+    "Au": "g/t"
+   },
+   "tonnage_mt": 140,
+   "sd_log10": 0.69,
+   "source": "USGS OFR 90-412 (Application of grade and tonnage deposit models), Table 1 (median tonnage, sd of log tonnage); grades OFR 2007-1214 Table 5.1-1 (model 17)",
+   "tract": {
+    "province": [
+     4,
+     5
+    ],
+    "rock": [
+     "pi",
+     "pa",
+     "vi",
+     "va"
+    ],
+    "age_max_ma": 200
+   },
+   "place": "any"
+  },
+  "epithermal_au_ag": {
+   "name": "epithermal gold-silver veins (Comstock)",
+   "commodities": {
+    "Au": 7.5,
+    "Ag": 110
+   },
+   "units": {
+    "Au": "g/t",
+    "Ag": "g/t"
+   },
+   "tonnage_mt": 0.77,
+   "sd_log10": 0.84,
+   "source": "USGS OFR 90-412 (Application of grade and tonnage deposit models), Table 1 (median tonnage, sd of log tonnage); grades approximate typical grade, not from a cited grade-tonnage table",
+   "tract": {
+    "province": [
+     4,
+     5,
+     6
+    ],
+    "rock": [
+     "va",
+     "vi",
+     "py"
+    ],
+    "age_max_ma": 50
+   },
+   "place": "faults"
+  },
+  "cu_skarn": {
+   "name": "copper skarn",
+   "commodities": {
+    "Cu": 1.7
+   },
+   "units": {
+    "Cu": "%"
+   },
+   "tonnage_mt": 0.56,
+   "sd_log10": 0.95,
+   "source": "USGS OFR 90-412 (Application of grade and tonnage deposit models), Table 1 (median tonnage, sd of log tonnage); grade OFR 2007-1214 Table 5.1-1 (model 18b)",
+   "tract": {
+    "province": [
+     3,
+     4,
+     5
+    ],
+    "rock": [
+     "sc"
+    ],
+    "near_rock": [
+     "pi",
+     "pa"
+    ],
+    "near_cells": 1
+   },
+   "place": "any"
+  },
+  "fe_skarn": {
+   "name": "iron skarn",
+   "commodities": {
+    "Fe": 50
+   },
+   "units": {
+    "Fe": "%"
+   },
+   "tonnage_mt": 7.2,
+   "sd_log10": 1.05,
+   "source": "USGS OFR 90-412 (Application of grade and tonnage deposit models), Table 1 (median tonnage, sd of log tonnage); grade OFR 2007-1214 Table 5.1-1 (model 18d)",
+   "tract": {
+    "province": [
+     3,
+     4,
+     5
+    ],
+    "rock": [
+     "sc"
+    ],
+    "near_rock": [
+     "pi",
+     "pb"
+    ],
+    "near_cells": 1
+   },
+   "place": "any"
+  },
+  "znpb_skarn": {
+   "name": "zinc-lead skarn",
+   "commodities": {
+    "Zn": 5.9,
+    "Pb": 2.8,
+    "Ag": 58
+   },
+   "units": {
+    "Zn": "%",
+    "Pb": "%",
+    "Ag": "g/t"
+   },
+   "tonnage_mt": 1.4,
+   "sd_log10": 0.73,
+   "source": "USGS OFR 90-412 (Application of grade and tonnage deposit models), Table 1 (median tonnage, sd of log tonnage); grades OFR 2007-1214 Table 5.1-1 (model 18c)",
+   "tract": {
+    "province": [
+     3,
+     4,
+     5
+    ],
+    "rock": [
+     "sc"
+    ],
+    "near_rock": [
+     "pa"
+    ],
+    "near_cells": 1
+   },
+   "place": "any"
+  },
+  "polymetallic_replacement": {
+   "name": "polymetallic replacement (lead-silver)",
+   "commodities": {
+    "Pb": 5.2,
+    "Zn": 3.9,
+    "Ag": 150,
+    "Au": 0.19
+   },
+   "units": {
+    "Pb": "%",
+    "Zn": "%",
+    "Ag": "g/t",
+    "Au": "g/t"
+   },
+   "tonnage_mt": 1.8,
+   "sd_log10": 0.73,
+   "source": "OFR 2007-1214 Table 5.1-1 (model 19a: tonnage and grades); sd taken from Zn-Pb skarn",
+   "tract": {
+    "province": [
+     3,
+     4,
+     5
+    ],
+    "rock": [
+     "sc",
+     "sm"
+    ],
+    "near_rock": [
+     "pa",
+     "pi"
+    ],
+    "near_cells": 3
+   },
+   "place": "faults"
+  },
+  "polymetallic_veins": {
+   "name": "polymetallic veins (lead-silver)",
+   "commodities": {
+    "Pb": 5.2,
+    "Zn": 3.9,
+    "Ag": 150,
+    "Au": 0.19
+   },
+   "units": {
+    "Pb": "%",
+    "Zn": "%",
+    "Ag": "g/t",
+    "Au": "g/t"
+   },
+   "tonnage_mt": 0.0076,
+   "sd_log10": 1.11,
+   "source": "USGS OFR 90-412 (Application of grade and tonnage deposit models), Table 1: polymetallic veins (tonnage, sd); grades of polymetallic replacement (OFR 2007-1214, model 19a) as a proxy: the vein model's grades were not available",
+   "tract": {
+    "province": [
+     3,
+     4,
+     5
+    ],
+    "rock": [
+     "mt",
+     "sm",
+     "ss",
+     "sc",
+     "pa",
+     "pi",
+     "va",
+     "vi",
+     "vb"
+    ],
+    "near_rock": [
+     "pa",
+     "pi"
+    ],
+    "near_cells": 2
+   },
+   "tract_note": "veins in any rock around granitic intrusions (Cornwall, Freiberg): the main medieval source of lead and silver",
+   "place": "faults"
+  },
+  "vms_felsic": {
+   "name": "felsic volcanogenic massive sulfide (kuroko)",
+   "commodities": {
+    "Cu": 1.2,
+    "Zn": 3.2,
+    "Pb": 0.42,
+    "Ag": 25,
+    "Au": 0.4
+   },
+   "units": {
+    "Cu": "%",
+    "Zn": "%",
+    "Pb": "%",
+    "Ag": "g/t",
+    "Au": "g/t"
+   },
+   "tonnage_mt": 3.0,
+   "sd_log10": 0.85,
+   "source": "Mosier & others, USGS OFR 2009-1034, Table 2 (felsic); sd OFR 90-412 (kuroko)",
+   "tract": {
+    "province": [
+     3,
+     5
+    ],
+    "rock": [
+     "va",
+     "vi",
+     "py"
+    ]
+   },
+   "place": "any"
+  },
+  "vms_mafic": {
+   "name": "mafic volcanogenic massive sulfide (Cyprus)",
+   "commodities": {
+    "Cu": 1.7
+   },
+   "units": {
+    "Cu": "%"
+   },
+   "tonnage_mt": 0.74,
+   "sd_log10": 0.87,
+   "source": "OFR 2009-1034, Table 2 (mafic); sd OFR 90-412 (Cyprus)",
+   "tract": {
+    "province": [
+     3,
+     9
+    ],
+    "rock": [
+     "vb",
+     "pb"
+    ]
+   },
+   "place": "any"
+  },
+  "orogenic_gold": {
+   "name": "orogenic gold (low-sulfide gold-quartz veins)",
+   "commodities": {
+    "Au": 14,
+    "Ag": 2.8
+   },
+   "units": {
+    "Au": "g/t",
+    "Ag": "g/t"
+   },
+   "tonnage_mt": 0.03,
+   "sd_log10": 1.15,
+   "source": "USGS OFR 90-412 (Application of grade and tonnage deposit models), Table 1 (median tonnage, sd of log tonnage) (Phanerozoic, Bliss 1986); grade: tonnage-weighted average of California mines ~14 g/t and Au:Ag 5:1 (USGS OFR 2002-195K)",
+   "tract": {
+    "province": [
+     3
+    ],
+    "rock": [
+     "mt",
+     "vb",
+     "ss",
+     "sm",
+     "pa",
+     "pi"
+    ],
+    "age_max_ma": 541,
+    "near_fault": {
+     "types": [
+      3,
+      4,
+      5,
+      6
+     ],
+     "cells": 3
+    }
+   },
+   "place": "faults"
+  },
+  "archean_gold": {
+   "name": "Archean lode gold",
+   "commodities": {
+    "Au": 14,
+    "Ag": 2.8
+   },
+   "units": {
+    "Au": "g/t",
+    "Ag": "g/t"
+   },
+   "tonnage_mt": 1.1,
+   "sd_log10": 0.84,
+   "source": "Klein & Day 1994 via OFR 2002-195K Table 1 (median 1.1 Mt, 10-90 % 0.089-13 Mt -> sd 0.84); grade as orogenic gold",
+   "tract": {
+    "province": [
+     1
+    ],
+    "rock": [
+     "vb",
+     "mt"
+    ],
+    "age_min_ma": 2400
+   },
+   "place": "any"
+  },
+  "placer_gold": {
+   "name": "placer gold",
+   "commodities": {
+    "Au": 0.3
+   },
+   "units": {
+    "Au": "g/t"
+   },
+   "tonnage_mt": 1.1,
+   "sd_log10": 1.31,
+   "source": "USGS OFR 90-412 (Application of grade and tonnage deposit models), Table 1 (median tonnage, sd of log tonnage) (Au-PGE placers); grade approximate typical grade, not from a cited grade-tonnage table",
+   "tract": {
+    "deposit": [
+     1
+    ],
+    "near_types": [
+     "orogenic_gold",
+     "archean_gold",
+     "epithermal_au_ag",
+     "porphyry_cu"
+    ],
+    "near_km": 150
+   },
+   "place": "any"
+  },
+  "mvt_znpb": {
+   "name": "Mississippi Valley-type zinc-lead",
+   "commodities": {
+    "Zn": 4.0,
+    "Pb": 1.5
+   },
+   "units": {
+    "Zn": "%",
+    "Pb": "%"
+   },
+   "tonnage_mt": 35,
+   "sd_log10": 0.93,
+   "source": "USGS OFR 90-412 (Application of grade and tonnage deposit models), Table 1 (median tonnage, sd of log tonnage) (SE Missouri Pb-Zn and Appalachian Zn); grades approximate typical grade, not from a cited grade-tonnage table",
+   "tract": {
+    "province": [
+     1,
+     2,
+     8
+    ],
+    "rock": [
+     "sc"
+    ],
+    "age_min_ma": 66,
+    "age_max_ma": 541,
+    "near_province": {
+     "province": [
+      3,
+      4
+     ],
+     "cells": 30
+    }
+   },
+   "place": "any",
+   "tract_note": "foreland carbonate platforms within 300 km of an orogen: MVT brines are driven by orogenic topography (Leach et al. 2005)"
+  },
+  "sedex_znpb": {
+   "name": "sedimentary exhalative zinc-lead",
+   "commodities": {
+    "Zn": 5.6,
+    "Pb": 2.8,
+    "Ag": 30
+   },
+   "units": {
+    "Zn": "%",
+    "Pb": "%",
+    "Ag": "g/t"
+   },
+   "tonnage_mt": 15,
+   "sd_log10": 0.74,
+   "source": "USGS OFR 90-412 (Application of grade and tonnage deposit models), Table 1 (median tonnage, sd of log tonnage); grades approximate typical grade, not from a cited grade-tonnage table",
+   "tract": {
+    "province": [
+     3,
+     6,
+     8
+    ],
+    "rock": [
+     "sm"
+    ],
+    "age_min_ma": 300,
+    "age_max_ma": 2000,
+    "near_fault": {
+     "types": [
+      4,
+      5,
+      6
+     ],
+     "cells": 3
+    }
+   },
+   "place": "any",
+   "tract_note": "shales of rift and passive-margin basins folded into orogens, near the basin-bounding faults (Leach et al. 2005)"
+  },
+  "sediment_cu": {
+   "name": "sediment-hosted copper (reduced facies)",
+   "commodities": {
+    "Cu": 2.3
+   },
+   "units": {
+    "Cu": "%"
+   },
+   "tonnage_mt": 33,
+   "sd_log10": 0.91,
+   "source": "Cox & others 2003 via OFR 2007-1214 ch. 7 (reduced-facies subtype: 33 Mt, 2.3 % Cu); sd OFR 90-412",
+   "tract": {
+    "province": [
+     2,
+     6,
+     8
+    ],
+    "rock": [
+     "sm",
+     "ss"
+    ],
+    "age_min_ma": 66,
+    "near_rock": [
+     "ev"
+    ],
+    "near_cells": 20
+   },
+   "place": "any"
+  },
+  "tin_greisen": {
+   "name": "tin greisen",
+   "commodities": {
+    "Sn": 0.3
+   },
+   "units": {
+    "Sn": "%"
+   },
+   "tonnage_mt": 7.2,
+   "sd_log10": 0.75,
+   "source": "USGS OFR 90-412 (Application of grade and tonnage deposit models), Table 1 (median tonnage, sd of log tonnage); grade approximate typical grade, not from a cited grade-tonnage table",
+   "tract": {
+    "province": [
+     3,
+     4
+    ],
+    "rock": [
+     "pa"
+    ],
+    "near_fault": {
+     "types": [
+      4,
+      6
+     ],
+     "cells": 10
+    }
+   },
+   "place": "any",
+   "tract_note": "granites of collisional belts (within 100 km of thrusts and sutures)"
+  },
+  "tin_veins": {
+   "name": "tin veins",
+   "commodities": {
+    "Sn": 1.0
+   },
+   "units": {
+    "Sn": "%"
+   },
+   "tonnage_mt": 0.24,
+   "sd_log10": 1.0,
+   "source": "USGS OFR 90-412 (Application of grade and tonnage deposit models), Table 1 (median tonnage, sd of log tonnage); grade approximate typical grade, not from a cited grade-tonnage table",
+   "tract": {
+    "province": [
+     3,
+     4
+    ],
+    "rock": [
+     "pa",
+     "mt",
+     "sm",
+     "ss"
+    ],
+    "near_rock": [
+     "pa"
+    ],
+    "near_cells": 2,
+    "near_fault": {
+     "types": [
+      4,
+      6
+     ],
+     "cells": 10
+    }
+   },
+   "place": "faults",
+   "tract_note": "granites of collisional belts (within 100 km of thrusts and sutures)"
+  },
+  "iron_formation": {
+   "name": "banded iron formation (Superior and Algoma)",
+   "commodities": {
+    "Fe": 52
+   },
+   "units": {
+    "Fe": "%"
+   },
+   "tonnage_mt": 170,
+   "sd_log10": 0.91,
+   "source": "USGS OFR 90-412 (Application of grade and tonnage deposit models), Table 1 (median tonnage, sd of log tonnage); grade approximate typical grade, not from a cited grade-tonnage table",
+   "tract": {
+    "province": [
+     1,
+     3
+    ],
+    "rock": [
+     "mt",
+     "ss",
+     "sm",
+     "vb"
+    ],
+    "age_min_ma": 1800,
+    "age_max_ma": 3200
+   },
+   "place": "any"
+  },
+  "oolitic_ironstone": {
+   "name": "oolitic ironstone",
+   "commodities": {
+    "Fe": 35
+   },
+   "units": {
+    "Fe": "%"
+   },
+   "tonnage_mt": 55,
+   "sd_log10": 0.89,
+   "source": "USGS OFR 90-412 (Application of grade and tonnage deposit models), Table 1 (median tonnage, sd of log tonnage); grade approximate typical grade, not from a cited grade-tonnage table",
+   "tract": {
+    "province": [
+     1,
+     2,
+     3,
+     8
+    ],
+    "rock": [
+     "ss",
+     "sm"
+    ],
+    "age_min_ma": 145,
+    "age_max_ma": 485
+   },
+   "place": "any"
+  },
+  "laterite_ni": {
+   "name": "lateritic nickel",
+   "commodities": {
+    "Ni": 1.4
+   },
+   "units": {
+    "Ni": "%"
+   },
+   "tonnage_mt": 44,
+   "sd_log10": 0.59,
+   "source": "USGS OFR 90-412 (Application of grade and tonnage deposit models), Table 1 (median tonnage, sd of log tonnage); grade approximate typical grade, not from a cited grade-tonnage table",
+   "tract": {
+    "rock": [
+     "pb",
+     "vb"
+    ],
+    "province": [
+     3,
+     9,
+     5
+    ],
+    "climate": {
+     "mat_min_c": 20,
+     "p_min_mm": 1200
+    }
+   },
+   "place": "any"
+  },
+  "hotspring_hg": {
+   "name": "hot-spring mercury",
+   "commodities": {
+    "Hg": 0.3
+   },
+   "units": {
+    "Hg": "%"
+   },
+   "tonnage_mt": 0.0095,
+   "sd_log10": 0.92,
+   "source": "USGS OFR 90-412 (Application of grade and tonnage deposit models), Table 1 (median tonnage, sd of log tonnage); grade approximate typical grade, not from a cited grade-tonnage table",
+   "tract": {
+    "province": [
+     4,
+     5,
+     6
+    ],
+    "rock": [
+     "va",
+     "vi",
+     "py"
+    ],
+    "age_max_ma": 10
+   },
+   "place": "faults"
+  }
+ },
+ "area_resources": {
+  "_note": "area resources: no deposit counts, the permissive ground itself",
+  "coal": {
+   "rock": [
+    "ss",
+    "sm"
+   ],
+   "age_windows_ma": [
+    [
+     252,
+     359
+    ],
+    [
+     23,
+     145
+    ]
+   ],
+   "province": [
+    1,
+    2,
+    3,
+    4,
+    8
+   ],
+   "note": "coal measures of Earth's two great coal ages (Carboniferous-Permian; Cretaceous-Paleogene)"
+  },
+  "salt": {
+   "rock": [
+    "ev"
+   ],
+   "deposit": [
+    2
+   ]
+  },
+  "bog_iron": {
+   "soils": [
+    "Histosols",
+    "Gleysols"
+   ],
+   "vegetation_not": [
+    "Polar desert",
+    "Tundra"
+   ],
+   "note": "limonite of wetlands, the main iron ore of medieval northern Europe"
+  },
+  "peat": {
+   "soils": [
+    "Histosols"
+   ]
+  },
+  "clay": {
+   "deposit": [
+    1
+   ],
+   "rock_or": [
+    "sm"
+   ],
+   "soils": [
+    "Vertisols"
+   ]
+  },
+  "granite": {
+   "rock": [
+    "pa",
+    "pi"
+   ]
+  },
+  "limestone": {
+   "rock": [
+    "sc"
+   ]
+  },
+  "marble": {
+   "rock": [
+    "sc"
+   ],
+   "near_rock": [
+    "pa",
+    "pi",
+    "mt"
+   ],
+   "near_cells": 1
+  },
+  "sandstone": {
+   "rock": [
+    "ss"
+   ]
+  },
+  "slate": {
+   "rock": [
+    "mt",
+    "sm"
+   ],
+   "province": [
+    3
+   ]
+  },
+  "obsidian": {
+   "rock": [
+    "va",
+    "vi",
+    "py"
+   ],
+   "age_max_ma": 5
+  },
+  "sulfur": {
+   "rock": [
+    "va",
+    "vi",
+    "py",
+    "vb"
+   ],
+   "age_max_ma": 1
+  }
+ },
+ "earth_known_counts": {
+  "_source": "well-explored deposits in USGS world databases",
+  "porphyry_cu": 422,
+  "vms": 867,
+  "vms_note": "OFR 2009-1034: 421 felsic + 272 bimodal-mafic + 174 mafic",
+  "porphyry_note": "OFR 2008-1155"
+ },
+ "tract_merge_km": 30,
+ "_tract_note": "USGS tracts are delineated at regional map scale and include the gaps between outcrops: permissive cells closer than tract_merge_km form one tract; its area is the permissive area only",
+ "tonnage_z_max": 3.0
+}

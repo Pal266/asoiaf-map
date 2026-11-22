@@ -154,6 +154,32 @@
    ]
   },
   {
+   "name": "Iron Islands Variscan terrane",
+   "province": 3,
+   "age_ma": 300,
+   "plate": 1,
+   "note": "the Variscan arc terrane of the Westerlands hills continues north under Ironman's Bay (Cornwall and the Scilly Isles: granites with tin, lead and iron); added for the canon mines of the Iron Islands (E17, owner's decision 2026-11-22)",
+   "polygon": [
+    [
+     -16.5,
+     45.3
+    ],
+    [
+     -8.3,
+     45.3
+    ],
+    [
+     -8.3,
+     47.6
+    ],
+    [
+     -16.5,
+     47.6
+    ]
+   ],
+   "warp": false
+  },
+  {
    "name": "Southern Westeros platform",
    "province": 2,
    "age_ma": 600,

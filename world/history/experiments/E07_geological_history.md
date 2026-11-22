@@ -92,6 +92,17 @@ older than every ridge (no Earth counterpart). Two changes:
 Now the floor is slow 20 %, intermediate 27 %, fast 47 %, with 6 % older than every ridge. That remainder is the
 Summer Sea, kept old as the eastern Mediterranean is. The mean age is 60 Myr (Earth 64.2).
 
+## Addendum (2026-11-22, from E17): the Iron Islands
+
+The canon mines of the Iron Islands (iron, lead and tin; CONSTRAINTS WE12) need granites and skarns. The islands lay
+in the Southern Westeros platform, under young limestone. On the owner's decision (CONSTRAINTS decision 12) a block
+"Iron Islands Variscan terrane" (province 3, 300 Ma) continues the Westerlands' Variscan arc terrane north under
+Ironman's Bay, like Cornwall and the Scilly Isles.
+
+The block outlines of the history are tested in warped coordinates (warp amplitude 3°). A box around the islands
+in warped coordinates also caught ~800 cells of the mainland coast. So a block may now carry `"warp": false` and be
+tested in true coordinates; only this block does. It changes 184 island cells and nothing else.
+
 ## Known limits
 
 - This is a scripted history, not a simulated one: no plate motion is integrated, so the ages of continental
