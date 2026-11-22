@@ -1,0 +1,5 @@
+{
+ "description": "Approximate zonal-mean annual precipitation of Earth (mm/year) at the listed latitudes, read off the GPCP climatology (Adler et al. 2003, J. Hydrometeorol. 4, 1147; 1979-2000 mean): the ITCZ peak north of the equator, subtropical minima, mid-latitude storm-track maxima. Rounded to 50 mm; used as one term of the Earth calibration, with a log tolerance of about 12 %.",
+ "lat_deg": [70, 60, 50, 40, 30, 20, 10, 0, -10, -20, -30, -40, -50, -60, -70],
+ "mm_per_year": [350, 750, 1000, 1050, 850, 1000, 2100, 2000, 1500, 900, 800, 1100, 1050, 700, 300]
+}
