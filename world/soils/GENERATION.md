@@ -6,6 +6,8 @@
 - `ice.npz` (surface_m, sheet_frac) from `world/ice/scripts/ice.py`
 - `temperature.npz` and `precipitation.npz` from the climate layers run with `--ice ice.npz`
 - `hydrology.npz` (lake, discharge_m3s) from `world/hydrology/scripts/hydrology.py`
+- `lithology.npz` (rock, deposit, bedrock) from `world/lithology/scripts/lithology.py`: parent material (optional;
+  without it the key falls back to relief-based rules, as in the Earth test)
 - `canon_relief.npz` (feature_id) from `world/canon_relief/scripts/canon_relief.py`, with
   `world/canon_relief/data/canon_features.json`: volcanic relief
 - `data/soils.json`: the key's thresholds, the fertility of each group, Earth's relief distribution and the FAO areas
@@ -16,7 +18,7 @@
 ```
 python3 world/soils/scripts/earth_soil_validation.py --earth-data DIR                   # Earth test (optional)
 python3 world/soils/scripts/soils.py --relief relief.npz --ice ice.npz --temperature temperature.npz \
-    --precipitation precipitation.npz --hydrology hydrology.npz --canon-relief canon_relief.npz --out OUT
+    --precipitation precipitation.npz --hydrology hydrology.npz --canon-relief canon_relief.npz --lithology lithology.npz --out OUT
 ```
 
 The world run takes about 10 s and the Earth test about 2 minutes. Both are deterministic.
@@ -26,7 +28,8 @@ The world run takes about 10 s and the Earth test about 2 minutes. Both are dete
 1. Thornthwaite potential evapotranspiration from the monthly temperature, then the moisture class and the number
    of dry months.
 2. Local relief: height range over the 5 × 5 cells around each cell, mapped by rank onto Earth's distribution.
-3. Volcanic parent material where the canon map draws volcanic relief; closed basins from the hydrology's terminal
+3. Parent material from the lithology (sand, loess, alluvium, basalt, limestone, young volcanics) and where the canon
+   map draws volcanic relief; closed basins from the hydrology's terminal
    lakes, marshes and salt flats.
 4. The key (`soilkey.classify`) gives each cell one Reference Soil Group; the fertility index follows from the group.
 
@@ -40,5 +43,5 @@ The world run takes about 10 s and the Earth test about 2 minutes. Both are dete
 
 - **Earth test:** 52 % of 46 sites; area log RMSE 0.26 against the FAO estimates.
 - **World:**
-  - Westeros south of the Wall: Calcisols 19 %, Podzols 14 %, Luvisols 12 %; mean fertility 0.38;
+  - Westeros south of the Wall: Calcisols 24 %, Podzols 13 %, Luvisols 13 %; mean fertility 0.39;
   - beyond the Wall: Cryosols 94 %.

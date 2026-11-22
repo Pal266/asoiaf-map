@@ -17,6 +17,7 @@
   "Chernozems",
   "Phaeozems",
   "Vertisols",
+  "Nitisols",
   "Ferralsols",
   "Acrisols",
   "Lixisols",
@@ -80,7 +81,8 @@
   "Albeluvisols": 0.4,
   "Podzols": 0.25,
   "Cambisols": 0.6,
-  "Umbrisols": 0.45
+  "Umbrisols": 0.45,
+  "Nitisols": 0.8
  },
  "fao_area_Mha": {
   "Histosols": 350,
@@ -210,5 +212,22 @@
   1473,
   3502
  ],
- "earth_relief_note": "Area-weighted percentiles 0..100 of the Earth test's local relief (3 x 3 cells of ETOPO1 10', ~55 km) over ice-free land. The key's relief thresholds are set on this distribution; the world's local relief is mapped onto it by rank (quantile mapping), since the world's 10 km relief with its sub-grid noise has a different spread."
+ "earth_relief_note": "Area-weighted percentiles 0..100 of the Earth test's local relief (3 x 3 cells of ETOPO1 10', ~55 km) over ice-free land. The key's relief thresholds are set on this distribution; the world's local relief is mapped onto it by rank (quantile mapping), since the world's 10 km relief with its sub-grid noise has a different spread.",
+ "rock_order": [
+  "su",
+  "ss",
+  "sm",
+  "sc",
+  "ev",
+  "mt",
+  "pa",
+  "pi",
+  "pb",
+  "va",
+  "vi",
+  "vb",
+  "py",
+  "ig",
+  "wb"
+ ]
 }

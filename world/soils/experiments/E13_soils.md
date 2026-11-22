@@ -115,10 +115,43 @@ Yakutia, Alaska and northern Canada Cryosols, Congo and Brazil Ferralsols, Kalah
 
 ## Still open
 
-- Parent material is known only where it is volcanic. Sand seas, loess, limestone and basalt plains would need a
-  lithology layer from the geological history.
-- No Regosols, Nitisols, Planosols, Solonetz, Plinthosols, Alisols, Durisols or Anthrosols.
+- ~~Parent material is known only where it is volcanic.~~ Done: the lithology layer (E14), see the addendum.
+- No Regosols, Planosols, Solonetz, Plinthosols, Alisols, Durisols or Anthrosols.
 - A single dominant group per 10 km cell; no soil associations or properties (texture, depth, pH).
+
+## Addendum: parent material from the lithology (run d)
+
+The key takes `rock`, `deposit` and `bedrock` from the lithology layer (E14) when it is given:
+
+- **Andosols:** young volcanics and pyroclastics in moist climates (FAO: humid volcanic regions), besides the canon
+  volcanic relief.
+- **Arenosols:** aeolian sand in deserts and semi-arid lands; the relief-based sand rules apply only without
+  lithology.
+- **Nitisols** (new group, fertility 0.8): moist tropics on basalts and gabbros, on moderate relief, before
+  Ferralsols.
+- **Vertisols:** warm, seasonally dry, low clay plains: basalts, alluvium, closed basins and mixed sediments
+  (shales, marls).
+- **Leptosols:** moist limestone uplands (rendzinas).
+- **Podzols and Luvisols:** moist sand and moist loess respectively.
+
+| Group (M ha) | run c | run d |
+|---|---|---|
+| Arenosols | 1470 | 895 |
+| Vertisols | 294 | 74 |
+| Andosols | 33 | 176 |
+| Nitisols | 0 | 21 |
+| Leptosols | 1380 | 1518 |
+| Luvisols | 609 | 688 |
+| Calcisols | 3231 | 3501 |
+
+Arenosols fall because only true sand seas count now; dry plains without sand become Calcisols. Vertisols shrink
+to the clay plains. The Earth test is unchanged (52 %, log RMSE 0.26): it runs without lithology.
+
+| Region (run d) | Main groups | Mean fertility |
+|---|---|---|
+| Westeros south of the Wall | Calcisols 24 %, Podzols 13 %, Luvisols 13 %, Histosols 10 %, Cambisols 9 %, Kastanozems 7 %, Leptosols 7 % | 0.39 |
+| Beyond the Wall | Cryosols 94 %, Histosols 5 % | 0.11 |
+| Western Essos | Calcisols 28 %, Luvisols 17 %, Kastanozems 16 %, Leptosols 13 %, Cambisols 10 %, Arenosols 6 % | 0.47 |
 
 ## Sources
 

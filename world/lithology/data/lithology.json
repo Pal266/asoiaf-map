@@ -1,0 +1,138 @@
+{
+ "description": "Parameters of the lithology layer (experiment E14): rock classes of the Global Lithological Map (GLiM, Hartmann & Moosdorf 2012, level 1), the assumed composition of each tectonic province of the geological history (E07), and the rules for surface deposits.",
+ "classes": {
+  "su": "unconsolidated sediments",
+  "ss": "siliciclastic sedimentary rocks",
+  "sm": "mixed sedimentary rocks",
+  "sc": "carbonate sedimentary rocks",
+  "ev": "evaporites",
+  "mt": "metamorphic rocks",
+  "pa": "acid plutonic rocks",
+  "pi": "intermediate plutonic rocks",
+  "pb": "basic plutonic rocks",
+  "va": "acid volcanic rocks",
+  "vi": "intermediate volcanic rocks",
+  "vb": "basic volcanic rocks",
+  "py": "pyroclastics",
+  "ig": "ice and glaciers",
+  "wb": "water bodies"
+ },
+ "order": [
+  "su",
+  "ss",
+  "sm",
+  "sc",
+  "ev",
+  "mt",
+  "pa",
+  "pi",
+  "pb",
+  "va",
+  "vi",
+  "vb",
+  "py",
+  "ig",
+  "wb"
+ ],
+ "province_composition": {
+  "note": "Assumed shares of bedrock classes by province (codes of world/history/data/history.json). Cratons are split by local relief between exposed shield and platform cover. The shares are geological generalisations (shields: Precambrian gneiss and granite; platforms: sedimentary cover; orogens: deformed sediments, metamorphic cores and granites; arcs: andesitic volcanics and their plutons; rifts and plateaux: basalts and continental sediments), tuned so that the land totals match GLiM.",
+  "shield": {
+   "mt": 0.5,
+   "pa": 0.25,
+   "pi": 0.05,
+   "pb": 0.04,
+   "ss": 0.1,
+   "vb": 0.06
+  },
+  "2": {
+   "ss": 0.28,
+   "sc": 0.4,
+   "sm": 0.22,
+   "su": 0.1
+  },
+  "3": {
+   "mt": 0.3,
+   "ss": 0.2,
+   "sm": 0.14,
+   "sc": 0.2,
+   "pa": 0.11,
+   "pi": 0.03,
+   "vb": 0.02
+  },
+  "4": {
+   "sm": 0.22,
+   "sc": 0.33,
+   "mt": 0.2,
+   "ss": 0.12,
+   "pa": 0.05,
+   "pi": 0.05,
+   "vi": 0.03
+  },
+  "5": {
+   "vi": 0.25,
+   "py": 0.1,
+   "va": 0.07,
+   "pi": 0.15,
+   "sm": 0.22,
+   "sc": 0.08,
+   "vb": 0.08,
+   "ss": 0.05
+  },
+  "6": {
+   "ss": 0.35,
+   "sm": 0.25,
+   "sc": 0.15,
+   "su": 0.15,
+   "vb": 0.1
+  },
+  "7": {
+   "vb": 0.3,
+   "ss": 0.25,
+   "sm": 0.2,
+   "sc": 0.25
+  },
+  "8": {
+   "su": 0.5,
+   "ss": 0.3,
+   "sm": 0.1,
+   "ev": 0.1
+  },
+  "9": {
+   "vb": 0.9,
+   "py": 0.1
+  }
+ },
+ "craton_shield_relief_m": 250.0,
+ "craton_shield_min_share": 0.2,
+ "noise": {
+  "coarse_n": 125,
+  "coarse_smooth": 4,
+  "fine_n": 500,
+  "fine_smooth": 3,
+  "fine_weight": 0.4,
+  "sigma": 1.4,
+  "seed": 20261122
+ },
+ "deposits": {
+  "alluvium_q_m3s": 100.0,
+  "alluvium_relief_m": 150.0,
+  "coastal_plain_elev_m": 50.0,
+  "aeolian_p_mm": 250.0,
+  "aeolian_relief_m": 150.0,
+  "erg_share": 0.35,
+  "loess_distance_km": 800.0,
+  "loess_relief_m": 200.0,
+  "loess_cold_month_max_C": 5.0,
+  "aeolian_mat_min_C": 5.0
+ },
+ "glim_land_shares": {
+  "sediments": 0.64,
+  "metamorphic": 0.13,
+  "plutonic": 0.07,
+  "volcanic": 0.06,
+  "water_ice": 0.1,
+  "unconsolidated": 0.246,
+  "note": "GLiM: 64 % sediments (a third of them carbonates), 13 % metamorphics, 7 % plutonics, 6 % volcanics, 10 % water and ice; unconsolidated sediments 24.6 % of land (Hartmann & Moosdorf 2012; Boerker et al. 2018)."
+ },
+ "province_warp_deg": 0.8
+}

@@ -6,10 +6,12 @@ Built from the climate with the ice, the relief, the ice and the hydrology, by t
 - local relief: height range over the 5 x 5 cells around each cell (~50 km, as the Earth test's 3 x 3 10' cells),
   mapped by rank onto the Earth test's distribution;
 - hydrology: lakes, marshes, salt flats, closed basins and discharge;
-- volcanic parent material where the canon map draws volcanic relief (canon relief features of type "volcanic").
+- parent material: the lithology layer (E14: rock classes and surface deposits), and volcanic rock where the canon
+  map draws volcanic relief.
 
 Input:
-  --relief, --ice, --temperature, --precipitation, --hydrology, --canon-relief (npz files of those layers)
+  --relief, --ice, --temperature, --precipitation, --hydrology, --canon-relief, --lithology (npz files of those
+  layers)
   world/soils/data/soils.json, world/canon_relief/data/canon_features.json
 Output (in --out):
   soils.npz   [6, 1000, 1000]: rsg uint8 (index into soils.json "groups"), fertility uint8 (0-100)
@@ -41,7 +43,7 @@ COLOURS = {"Ice": (245, 248, 252), "Water": (60, 110, 190), "Histosols": (90, 60
            "Cryosols": (170, 190, 210), "Leptosols": (160, 160, 160), "Andosols": (200, 80, 60),
            "Fluvisols": (110, 170, 200), "Gleysols": (100, 140, 150), "Arenosols": (245, 220, 150),
            "Gypsisols": (250, 240, 200), "Calcisols": (240, 200, 140), "Kastanozems": (190, 150, 100),
-           "Chernozems": (60, 50, 40), "Phaeozems": (120, 100, 70), "Vertisols": (110, 90, 110),
+           "Chernozems": (60, 50, 40), "Phaeozems": (120, 100, 70), "Vertisols": (110, 90, 110), "Nitisols": (170, 60, 50),
            "Ferralsols": (200, 70, 40), "Acrisols": (230, 150, 90), "Lixisols": (230, 180, 120),
            "Luvisols": (200, 130, 110), "Albeluvisols": (210, 190, 170), "Podzols": (170, 160, 190),
            "Cambisols": (220, 200, 120), "Umbrisols": (120, 110, 90)}
@@ -68,6 +70,7 @@ def main():
     ap = argparse.ArgumentParser()
     for a in ("--relief", "--ice", "--temperature", "--precipitation", "--hydrology", "--canon-relief", "--out"):
         ap.add_argument(a, required=True)
+    ap.add_argument("--lithology", default=None, help="lithology.npz from world/lithology/scripts/lithology.py")
     args = ap.parse_args()
     out = Path(args.out)
     out.mkdir(parents=True, exist_ok=True)
@@ -99,6 +102,9 @@ def main():
     inp = {"T": T, "P": P, "PET": pet, "relief_m": rel_q, "elev_m": surface,
            "land": land, "ice": sheet, "lake": hy["lake"], "q_m3s": hy["discharge_m3s"],
            "volcanic": land & np.isin(fid, volc_ids), "basin": np.isin(hy["lake"], (2, 3, 4))}
+    if args.lithology:
+        li = np.load(args.lithology)
+        inp.update(rock=li["rock"], deposit=li["deposit"], bedrock=li["bedrock"])
     code = soilkey.classify(inp, cfg)
     groups = cfg["groups"]
     fert = np.array([cfg["fertility"][g] for g in groups])[code]
