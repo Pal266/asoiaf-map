@@ -121,6 +121,18 @@ Dornish desert is likely below 200 mm. **Canon check passed.** Remark: King's La
 Crownlands; Earth analogue Madrid is modelled 341 / 423 mm, so the model is not obviously wet-biased there. Not a
 canon conflict (canon gives no rainfall), noted for the vegetation layer.
 
+## Addendum (2026-11-22, from E11): snow on high ground
+
+The temperature model now puts snow where the ground, not sea level, is below freezing (E09 addendum). Earth's
+climate became cooler at high latitudes and the global precipitation fell from 1026 to 944 mm. `ocean_e0_mm_day` was
+refitted alone to the global mean, 4.55 → 4.77. Earth test after the refit:
+- log RMSE 0.39 and 58 % within a factor 2 (both unchanged);
+- arid bias +0.25 log;
+- zonal log RMSE 0.11;
+- global mean 989 mm.
+
+The world is now run through `world/climate/scripts/world_climate.py` and takes an optional `--ice`.
+
 ## Canon conflict (Rule 3), resolved
 
 The Dornish desert comes out at ~600 mm — semi-humid to semi-arid, not a desert. Dorne is a peninsula in a warm sea,

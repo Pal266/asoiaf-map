@@ -13,11 +13,11 @@
 
   | Place | Year | January | July |
   |---|---|---|---|
-  | Winterfell | 690 mm | 66 | 39 |
-  | King's Landing | 286 mm | 26 | 16 |
-  | Oldtown | 340 mm | 85 | 3 |
-  | Sunspear | 221 mm | 36 | 7 |
-  | Asshai | 1317 mm | 35 | 126 |
+  | Winterfell | 689 mm | 66 | 39 |
+  | King's Landing | 268 mm | 24 | 15 |
+  | Oldtown | 325 mm | 81 | 3 |
+  | Sunspear | 218 mm | 35 | 7 |
+  | Asshai | 1346 mm | 37 | 126 |
 
   The canon deserts are arid or semi-arid: Red Waste ~85 mm, Grey Waste ~130, Great Sand Sea ~170, Dornish desert
   ~270 (likely below 200 after the model's Earth bias). The south of Westeros and the Free Cities have wet winters

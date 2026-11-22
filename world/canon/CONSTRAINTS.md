@@ -127,6 +127,13 @@ each; the source column names the AWOIAF page.
    Pacific-type). The same day the model showed that without it the North of Westeros would be like Labrador, with
    the Haunted Forest as tundra, so the decision was reversed. The drift is a prescribed ocean heat flux calibrated
    on the North Atlantic and placed on the eastern side of the northern Sunset Sea.
+8. **No ice sheet in the north; an ice sheet on the south polar continent** (experiment
+   `world/ice/experiments/E11_ice.md`, decided 2026-11-22). The world lies at the threshold of glaciation, and its
+   northern ice is bistable. Either the Land of Always Winter's sheet spreads to the Wall and beyond, or there is
+   none. The owner first chose canon within the model's uncertainty (daily temperature spread σ 5 K), which gave a
+   sheet reaching the Wall. Then, after the bistability showed, he chose σ 5.5 K and no northern sheet (canon
+   deviation 6). The south polar continent starts glaciated, because the geological history has kept it at the
+   pole, like Antarctica.
 
 ## 8. Not stated by canon
 

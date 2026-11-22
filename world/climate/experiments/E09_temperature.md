@@ -209,6 +209,20 @@ Still open, for later layers:
 - precipitation;
 - the remaining model errors on Earth: tropics ~3 °C too warm, interior winters too mild, sea-ice extent.
 
+## Addendum (2026-11-22, from E11): snow on high ground, and ice sheets
+
+The ice layer (E11) found that the model decided snow cover from the sea-level temperature, so high ground and
+ice-sheet plateaux lost their snow in summer. On Earth that put the Antarctic plateau at −5 °C in January (real
+~ −28 °C). `ebm.run` now takes two optional inputs:
+- `land_elev`: snow lies where the ground is below `snow_T`, using the ground temperature Ts − 6.5 K/km × land height;
+- `ice_sheet`: ice sheets keep the ice albedo all year.
+
+The temperature layer passes the land height always and the ice sheets when it is given `--ice`. On Earth's
+stations the change is small (RMSE 5.45 / 3.96 / 3.64 → 5.34 / 3.98 / 3.52 °C), and the coefficients were not
+refitted. Details and Antarctic and Greenland values are in E11.
+
+The world's climate code moved to `scripts/world_climate.py`, shared with the precipitation and ice layers.
+
 ## Sources
 
 - Station climatology: "List of cities by average temperature", Wikipedia (read 2026-11-21).

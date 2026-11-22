@@ -3,6 +3,7 @@
 ## Inputs
 
 - `relief.npz` (elevation_m) from `world/relief/scripts/relief.py`
+- `ice.npz` (surface_m, sheet_frac) from `world/ice/scripts/ice.py`
 - `canon_relief.npz` (feature_id) from `world/canon_relief/scripts/canon_relief.py`, for the desert checks
 - `world/climate/data/climate.json`: the temperature model is rerun inside (same run as the temperature layer)
 - `world/precipitation/data/precipitation.json`: model parameters calibrated on Earth
@@ -13,15 +14,15 @@
 
 ```
 python3 world/precipitation/scripts/earth_precip_validation.py --earth-data DIR --out EARTH   # Earth test (optional)
-python3 world/precipitation/scripts/precipitation.py --relief relief.npz --canon-relief canon_relief.npz --out OUT
+python3 world/precipitation/scripts/precipitation.py --relief relief.npz --canon-relief canon_relief.npz --ice ice.npz --out OUT
 ```
 
 The world run takes about 1 minute. Both runs are deterministic.
 
 ## Steps (precipitation.py)
 
-1. **Temperature and sea ice:** the two-layer energy balance model of the temperature layer, monthly, sea level,
-   2°.
+1. **Temperature and sea ice:** the two-layer energy balance model of the temperature layer, with the same surface
+   and ice (`world_climate.py`), monthly, sea level, 2°.
 2. **Land fraction and mean ground height** of every 2° cell, from the 10 km relief.
 3. **Moisture model** (`moisture.run`), two passes of the annual cycle; each month:
    - winds: zonal belts, meridional cells about the ITCZ, thermal and geostrophic components, the Gill monsoon
@@ -41,6 +42,7 @@ The model must run at 2°, the resolution it was calibrated at (upwind numerical
 
 ## Expected values
 
-- **Earth test:** log10 RMSE 0.39 at 109 stations, 56 % within a factor 2; arid-station bias +0.22 log; global
-  mean 1026 mm.
-- **World:** global mean 985 mm; Winterfell 690 mm; Dornish desert median 268 mm; Red Waste median 85 mm.
+- **Earth test:** log10 RMSE 0.39 at 109 stations, 58 % within a factor 2; arid-station bias +0.25 log; global
+  mean 989 mm.
+- **World, with the ice layer:** global mean 956 mm; Winterfell 689 mm; Dornish desert median ~270 mm (mean 272);
+  Red Waste mean 87 mm.

@@ -239,9 +239,9 @@ def qflux_field(lat, lon, land_frac, q):
     return Q
 
 
-def run(land_frac, params, orbit, years=None, verbose=False):
+def run(land_frac, params, orbit, years=None, verbose=False, land_elev=None, ice_sheet=None):
     if params.get("two_layer"):
-        return run_two_layer(land_frac, params, orbit, years, verbose)
+        return run_two_layer(land_frac, params, orbit, years, verbose, land_elev, ice_sheet)
     return run_one_layer(land_frac, params, orbit, years, verbose)
 
 
@@ -308,7 +308,7 @@ def run_one_layer(land_frac, params, orbit, years=None, verbose=False):
     return lat, lon, monthly, ice_monthly
 
 
-def run_two_layer(land_frac, params, orbit, years=None, verbose=False):
+def run_two_layer(land_frac, params, orbit, years=None, verbose=False, land_elev=None, ice_sheet=None):
     """Two layers per cell: surface Ts (land or mixed-layer ocean) and air Ta.
 
         Cs dTs/dt = (1 - f) S (1 - albedo) - g (Ts - Ta) - (a_w + b_w Ts)          surface
@@ -321,7 +321,12 @@ def run_two_layer(land_frac, params, orbit, years=None, verbose=False):
     Sea ice (zero-layer, Semtner 1976): where the sea is frozen, the surface temperature is that of the ice, from the
     balance of sunlight, exchange with the air, window emission and conduction through the ice from the water at
     freezing point below; it cannot exceed 0 C, and the surplus melts the ice. The water under the ice stays at
-    freezing point. Returns monthly mean surface temperature (deg C) and the sea-ice mask, as run_one_layer."""
+    freezing point.
+
+    land_elev (ny, nx, m), optional: mean height of the land in each cell. Snow lies where the ground, not sea level,
+    is below snow_T: Ts - lapse * land_elev (the snow line on high ground and ice-sheet plateaux).
+    ice_sheet (ny, nx) in [0, 1], optional: share of the cell under an ice sheet, which keeps the ice albedo all year.
+    Returns monthly mean surface temperature (deg C, sea level) and the sea-ice mask, as run_one_layer."""
     lat, lon = grid(params["res_deg"])
     ny, nx = len(lat), len(lon)
     n = ny * nx
@@ -345,6 +350,8 @@ def run_two_layer(land_frac, params, orbit, years=None, verbose=False):
     Q0 = S_days.mean(0)[:, None] * (1 - albedo_base)
     Ta = np.clip((Q0 - A_eff - aw) / (ba + bw), -40, 30) * np.ones((1, nx))
     Ts = Ta.copy()
+    z_snow = 0.0 if land_elev is None else p["snow_lapse_K_per_km"] / 1000 * land_elev
+    sheet = np.zeros((ny, nx)) if ice_sheet is None else ice_sheet
     h_ice = np.zeros((ny, nx))
     years = int(years or p["spinup_years"])
     monthly = np.zeros((12, ny, nx))
@@ -362,8 +369,9 @@ def run_two_layer(land_frac, params, orbit, years=None, verbose=False):
             dsum = np.zeros((ny, nx))
             for d in range(MONTH_START[m], MONTH_START[m + 1]):
                 ice = h_ice > 0
-                snow = (land > 0.5) & (Ts < p["snow_T"])
+                snow = (land > 0.5) & (Ts - z_snow < p["snow_T"])
                 alb = np.where(ice | snow, np.maximum(albedo_base, p["ice_albedo"]), albedo_base)
+                alb = alb + sheet * (np.maximum(albedo_base, p["ice_albedo"]) - alb)
                 Q = S_days[d][:, None] * (1 - alb)
                 rhs = np.concatenate([((Cs / dt) * Ts + (1 - f) * Q - aw + qf).ravel(),
                                       ((Ca / dt) * Ta + f * Q - A_eff).ravel()])

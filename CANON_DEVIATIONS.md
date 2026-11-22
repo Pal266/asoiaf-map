@@ -48,13 +48,28 @@
   chestnut, fir, ironwood, sentinel, soldier pine and weirwood; from the Wall it looks like a vast green expanse
   ([A Wiki of Ice and Fire, Haunted forest](https://awoiaf.westeros.org/index.php/The_Haunted_Forest),
   [Beyond the Wall](https://awoiaf.westeros.org/index.php/Beyond-the-Wall)).
-- **Model:** at 64–66° N, just north of the Wall, the warmest month averages ~7.6 °C. That is below the ~10 °C that
-  the polar tree line follows. North of the Wall the land is sparse taiga in sheltered valleys and lowlands, opening
-  into forest-tundra. Dense forest, broadleaf trees included, grows only in the south of the North, below ~60° N:
-  Winterfell's warmest month is ~11.3 °C.
+- **Model:** at 64–66° N, just north of the Wall, the warmest month averages ~7 °C (7.6 before the ice layer, 7.0
+  with it). That is below the ~10 °C that the polar tree line follows. North of the Wall the land is sparse taiga in
+  sheltered valleys and lowlands, opening into forest-tundra. Dense forest, broadleaf trees included, grows only in
+  the south of the North, below ~60° N: Winterfell's warmest month is ~11 °C.
 - **Why:** the climate model (experiment `world/climate/experiments/E09_temperature.md`) is calibrated on 78 Earth
   stations and reproduces Scandinavian and Alaskan summers within 1–3 °C. It includes the warm drift that the owner
   chose to keep the North as mild as possible (decision 7). The cool summers come from the world's geography: the
   lands at 64–70° N lie between two oceans, with an icy polar sea and the Land of Always Winter to the north.
   Uncertainty is about ±3 °C, so even at its upper end the Haunted Forest stays at the tree line. Project owner's
   decision, 2026-11-21.
+
+## 6. The Land of Always Winter has no ice sheet
+
+- **Canon:** the Land of Always Winter is the northernmost part of Westeros, permanently frozen (grade A)
+  ([A Wiki of Ice and Fire, Land of Always Winter](https://awoiaf.westeros.org/index.php/Lands_of_Always_Winter)).
+- **Model:** it is polar tundra on permafrost, with a small ice cap (~28 000 km²) in its mountains at ~72° N. Its
+  warmest month averages ~2.7 °C; snow lies for most of the year. "Permanently frozen" holds for the ground
+  (permafrost), not as an ice sheet.
+- **Why:** in the ice model (experiment `world/ice/experiments/E11_ice.md`) the northern ice is bistable. Either the
+  sheet spreads over the whole land beyond the Wall, into the mountains south of it, or it does not form at all. No
+  parameter value confines it to the Land of Always Winter. That is the small ice-cap instability of energy-balance
+  models. Of the two states the owner chose the one that keeps the haunted forest and the North free of ice. Its
+  mass-balance parameters are within the literature range, but on Earth they give ~34 % too little ice. Project
+  owner's decision, 2026-11-22.
+

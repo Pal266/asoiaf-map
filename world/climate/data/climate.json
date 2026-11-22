@@ -65,7 +65,8 @@
    "decay_km": 1863.0,
    "comp_lat_max": 30.0,
    "note": "Earth: North Atlantic; the world's basin is set in climate.json 'world_qflux_box'"
-  }
+  },
+  "snow_lapse_K_per_km": 6.5
  },
  "lapse_rate_K_per_km": 6.5,
  "station_correction": {

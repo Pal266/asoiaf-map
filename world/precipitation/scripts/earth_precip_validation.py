@@ -109,7 +109,9 @@ def load_earth(cfg, earth_data):
     lat, lon = moisture.grid(cfg["precip"]["res_deg"])
     tcfg = json.loads((WORLD / "climate" / "data" / "climate.json").read_text())
     land2 = tval.earth_land_fraction(tcfg["ebm"]["res_deg"])
-    lat2, lon2, Tm, ice = ebm.run(land2, tcfg["ebm"], tcfg["orbit"])
+    z2 = earth_topography(Path(earth_data), tcfg["ebm"]["res_deg"])
+    zl2 = np.where(land2 > 0.01, z2 / np.maximum(land2, 0.01), 0)     # mean height of the land, for the snow line
+    lat2, lon2, Tm, ice = ebm.run(land2, tcfg["ebm"], tcfg["orbit"], land_elev=zl2)
     T = np.stack([to_grid(Tm[m], lat2, lon2, lat, lon) for m in range(12)])
     icef = np.stack([to_grid(ice[m].astype(float), lat2, lon2, lat, lon) > 0.5 for m in range(12)])
     land = tval.earth_land_fraction(cfg["precip"]["res_deg"])

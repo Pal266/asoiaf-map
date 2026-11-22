@@ -29,6 +29,7 @@ WORLD = HERE.parents[1]
 sys.path.insert(0, str(WORLD / "grid" / "scripts"))
 import cubesphere as cs     # noqa: E402
 import ebm                  # noqa: E402
+import world_climate as wc  # noqa: E402
 
 CFG = HERE.parent / "data" / "climate.json"
 PLACES = {"Castle Black": (63.77, 1.26), "Winterfell": (56.51, -4.25), "King's Landing": (38.69, 1.18),
@@ -66,40 +67,25 @@ def to_cube(field, lat, lon, cell_lat, cell_lon):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--relief", required=True)
+    ap.add_argument("--ice", default=None, help="ice.npz from world/ice/scripts/ice.py (optional)")
     ap.add_argument("--out", required=True)
     args = ap.parse_args()
     out = Path(args.out)
     out.mkdir(parents=True, exist_ok=True)
-    cfg = json.loads(CFG.read_text())
-    p = cfg["ebm"]
-    # the warm drift (Q-flux) is calibrated on the North Atlantic; on the world it lies in the Sunset Sea
-    p["qflux"] = dict(p["qflux"], lon_min=cfg["world_qflux_box"]["lon_min"], lon_max=cfg["world_qflux_box"]["lon_max"])
     elev = np.load(args.relief)["elevation_m"]
     land = elev > 0
-    lf = land_fraction(land, p["res_deg"])
-    lat, lon, monthly, ice = ebm.run(lf, p, cfg["orbit"])
-
-    n = cs.N
-    clat = np.zeros((6, n, n))
-    clon = np.zeros((6, n, n))
-    for f in range(6):
-        la, lo = cs.cell_latlon(f, n)
-        clat[f], clon[f] = np.degrees(la), np.degrees(lo)
-    lapse = cfg["lapse_rate_K_per_km"] / 1000
     ground = np.where(land, elev, 0.0)
-    # statistical correction fitted on Earth's stations (earth_validation.py, fit_correction): on land subtract
-    # b0 + b1 z_km + b2 M, with the coefficients moving from winter to summer through the year
-    sc = cfg["station_correction"]
-    M = to_cube(ebm.continentality(lat, lon, lf, p), lat, lon, clat, clon)
-    zk = np.minimum(ground / 1000, sc["z_cap_km"])
-    bw, bs = np.array(sc["winter"]), np.array(sc["summer"])
-    hemi = np.sign(clat) * np.minimum(np.abs(clat) / sc["equator_ramp_deg"], 1)
-    t = np.zeros((12, 6, n, n), np.int16)
-    for m in range(12):
-        s = np.cos(2 * np.pi * m / 12) * hemi                  # +1: northern January / southern July (winter)
-        b = [(bw[k] + bs[k]) / 2 + (bw[k] - bs[k]) / 2 * s for k in range(3)]
-        corr = np.where(land, b[0] + b[1] * zk + b[2] * M, 0.0)
-        t[m] = np.round((to_cube(monthly[m], lat, lon, clat, clon) - lapse * ground - corr) * 10).astype(np.int16)
+    sheet = None
+    if args.ice:
+        # with the ice layer: the ground is the ice surface, and ice sheets keep the ice albedo all year
+        ice = np.load(args.ice)
+        ground = np.where(land, ice["surface_m"], 0.0)
+        sheet = ice["sheet_frac"].astype(np.float32) / 255
+    n = cs.N
+    clat, clon = wc.cell_latlon_deg(n)
+    temp = wc.temperature(ground, land, sheet, clat, clon)
+    t = np.round(temp["t_cube"] * 10).astype(np.int16)
+    ice = temp["sea_ice"]
     np.savez_compressed(out / "temperature.npz", t_month_dC=t, sea_ice=ice.astype(np.uint8))
 
     # ---- stats and canon checks ----

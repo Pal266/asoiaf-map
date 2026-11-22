@@ -26,7 +26,7 @@
   "oro_k": 2.5612,
   "boost_max": 7.4854,
   "orography_smooth": 1,
-  "ocean_e0_mm_day": 4.5484,
+  "ocean_e0_mm_day": 4.77,
   "land_pet0_mm_day": 0.7364,
   "land_recycling": 0.1092,
   "eddy_diffusivity_m2_s": 2800000.0,

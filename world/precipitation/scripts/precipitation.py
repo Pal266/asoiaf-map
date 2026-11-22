@@ -29,63 +29,37 @@ sys.path.insert(0, str(WORLD / "grid" / "scripts"))
 sys.path.insert(0, str(WORLD / "climate" / "scripts"))
 sys.path.insert(0, str(HERE))
 import cubesphere as cs     # noqa: E402
-import ebm                  # noqa: E402
 import climate as tlayer    # noqa: E402  (land fraction and cube interpolation helpers of the temperature layer)
-import moisture             # noqa: E402
+import world_climate as wc  # noqa: E402
 
 PLACES = tlayer.PLACES
 DESERTS = {"11": "Dornish desert", "23": "Great Sand Sea", "24": "Red waste", "27": "Grey Waste and Cannibal Sands"}
-
-
-def coarse_mean(field_cube, res, sub=4):
-    lat, lon = moisture.grid(res)
-    off = (np.arange(sub) + 0.5) / sub - 0.5
-    acc = np.zeros((len(lat), len(lon)))
-    for a in off:
-        for b in off:
-            LA, LO = np.meshgrid(np.clip(lat + a * res, -89.99, 89.99), lon + b * res, indexing="ij")
-            f, j, i = cs.latlon_to_cell(np.radians(LA), np.radians(LO), cs.N)
-            acc += field_cube[f, j, i]
-    return acc / sub ** 2
 
 
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--relief", required=True)
     ap.add_argument("--canon-relief", required=True)
+    ap.add_argument("--ice", default=None, help="ice.npz from world/ice/scripts/ice.py (optional)")
     ap.add_argument("--out", required=True)
     args = ap.parse_args()
     out = Path(args.out)
     out.mkdir(parents=True, exist_ok=True)
-    cfg = json.loads((HERE.parent / "data" / "precipitation.json").read_text())
-    tcfg = json.loads((WORLD / "climate" / "data" / "climate.json").read_text())
     elev = np.load(args.relief)["elevation_m"]
     fid = np.load(args.canon_relief)["feature_id"]
     land = elev > 0
-
-    # temperature: the same model run as the temperature layer (sea level, 2 degrees), then to 1 degree
-    p = tcfg["ebm"]
-    p["qflux"] = dict(p["qflux"], lon_min=tcfg["world_qflux_box"]["lon_min"], lon_max=tcfg["world_qflux_box"]["lon_max"])
-    lf2 = tlayer.land_fraction(land, p["res_deg"])
-    lat2, lon2, T2, ice2 = ebm.run(lf2, p, tcfg["orbit"])
-    res = cfg["precip"]["res_deg"]
-    lat, lon = moisture.grid(res)
-    LA, LO = np.meshgrid(lat, lon, indexing="ij")
-    T = np.stack([tlayer.to_cube(T2[m], lat2, lon2, LA, LO) for m in range(12)])
-    ice = np.stack([tlayer.to_cube(ice2[m].astype(float), lat2, lon2, LA, LO) > 0.5 for m in range(12)])
-    lf = coarse_mean(land.astype(float), res)
-    z = coarse_mean(np.where(land, elev, 0.0), res)
-    P, E, _, diag = moisture.run(lat, lon, T, lf, z, ice, cfg)
-
+    ground = np.where(land, elev, 0.0)
+    sheet = None
+    if args.ice:
+        ice = np.load(args.ice)
+        ground = np.where(land, ice["surface_m"], 0.0)
+        sheet = ice["sheet_frac"].astype(np.float32) / 255
     n = cs.N
-    clat = np.zeros((6, n, n))
-    clon = np.zeros((6, n, n))
-    for f in range(6):
-        la, lo = cs.cell_latlon(f, n)
-        clat[f], clon[f] = np.degrees(la), np.degrees(lo)
-    pm = np.zeros((12, 6, n, n), np.uint16)
-    for m in range(12):
-        pm[m] = np.clip(np.round(tlayer.to_cube(P[m], lat, lon, clat, clon)), 0, 65535).astype(np.uint16)
+    clat, clon = wc.cell_latlon_deg(n)
+    # temperature: the same model run as the temperature layer; then the moisture model at its own resolution
+    temp = wc.temperature(ground, land, sheet, clat, clon)
+    prec = wc.precipitation(temp, ground, land, clat, clon)
+    pm = np.clip(np.round(prec["p_cube"]), 0, 65535).astype(np.uint16)
     np.savez_compressed(out / "precipitation.npz", p_month_mm=pm)
 
     A = np.broadcast_to(cs.cell_area_km2(n), clat.shape)

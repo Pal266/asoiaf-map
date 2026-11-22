@@ -1,0 +1,42 @@
+{
+ "description": "Parameters of the ice layer (experiment E11): positive-degree-day surface mass balance and ice geometry.",
+ "smb": {
+  "lapse_K_per_km": 6.5,
+  "snow_t0_C": -1.0,
+  "snow_t1_C": 3.0,
+  "sigma_K": 5.5,
+  "ddf_snow_mm": 4.5,
+  "ddf_ice_mm": 8.0,
+  "refreeze_frac": 0.6,
+  "desert_gamma_per_K": 0.07
+ },
+ "glacier": {
+  "aar": 0.6,
+  "dz_up_m": 500
+ },
+ "sheet": {
+  "tau0_kPa": 75.0,
+  "rho_ice": 910.0,
+  "rho_mantle": 3300.0,
+  "iterations": 40,
+  "sheet_min_km2": 5000.0,
+  "converged_km2": 20000.0,
+  "inner_iterations": 15,
+  "start": "history",
+  "glacial_start_T_C": -5.0,
+  "outer_converged_km2": 50000.0,
+  "calving_c_per_yr": 2.5,
+  "calving_depth_max_m": 500.0,
+  "history_glacial_regions": [
+   {
+    "name": "south polar continent",
+    "lat_min": -90.0,
+    "lat_max": -60.0,
+    "why": "isolated at the pole inside the Antarctic ring ridge through the geological history (E06, E07), like Antarctica, glaciated since the Eocene-Oligocene on Earth"
+   }
+  ]
+ },
+ "earth_test": {
+  "bed_under_ice_m": 300.0
+ }
+}
