@@ -133,6 +133,12 @@ refitted alone to the global mean, 4.55 → 4.77. Earth test after the refit:
 
 The world is now run through `world/climate/scripts/world_climate.py` and takes an optional `--ice`.
 
+## Addendum (2026-11-22, from E12): recalibration with Earth rivers, reverted
+
+The model was refitted with Earth's river discharge and runoff to the sea added to the objective (E12, run p10).
+Earth improved a little: stations 0.388 → 0.376, rivers 0.71 → 0.63. The Reach stayed as dry as before. The wetter
+North grew a northern ice sheet in the ice layer again. Reverted; details in E12.
+
 ## Canon conflict (Rule 3), resolved
 
 The Dornish desert comes out at ~600 mm — semi-humid to semi-arid, not a desert. Dorne is a peninsula in a warm sea,

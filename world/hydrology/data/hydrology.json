@@ -1,0 +1,20 @@
+{
+ "description": "Parameters of the hydrology layer (experiment E12): water balance and routing.",
+ "hydro": {
+  "fu_w": 2.6,
+  "fill_epsilon_m": 0.001,
+  "lake_min_depth_m": 1.0,
+  "lake_min_area_km2": 1000.0,
+  "lake_overflow_depth_m": 50.0,
+  "pet_factor": 1.5,
+  "channel_min_m3s": 10.0,
+  "canon_burn_m": 500.0,
+  "canon_drop_m": 0.5,
+  "playa_rise_m": 20.0,
+  "lake_min_maxdepth_m": 10.0
+ },
+ "earth_test": {
+  "snap_deg": 1.5,
+  "burn_m": 1000.0
+ }
+}

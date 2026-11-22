@@ -1,0 +1,21 @@
+{
+ "description": "Earth rivers for the routing and runoff test (experiment E12): mean discharge from 'List of rivers by discharge', Wikipedia (read 2026-11-22; km3/yr converted at 31.56 km3/yr per 1000 m3/s), with the gauge or mouth position (lat, lon, approximate). basin_km2: from the same article where it gives one; otherwise an approximate published basin size used only to pick the right cell near the mouth (snap) and marked snap_only.",
+ "rivers": [
+  {"name": "Amazon", "lat": -0.5, "lon": -50.0, "q_m3s": 209000, "basin_km2": 6925674},
+  {"name": "Ganges-Brahmaputra-Meghna", "lat": 22.6, "lon": 90.6, "q_m3s": 43704, "basin_km2": 1731334},
+  {"name": "Congo", "lat": -4.3, "lon": 15.3, "q_m3s": 40500, "basin_km2": 3700000, "snap_only": true},
+  {"name": "Yangtze", "lat": 31.4, "lon": 121.6, "q_m3s": 31550, "basin_km2": 1800000, "snap_only": true},
+  {"name": "Mississippi", "lat": 29.5, "lon": -90.5, "q_m3s": 21320, "basin_km2": 3200000, "snap_only": true},
+  {"name": "Yenisei", "lat": 69.4, "lon": 86.2, "q_m3s": 20180, "basin_km2": 2580000, "snap_only": true},
+  {"name": "Parana", "lat": -34.0, "lon": -58.4, "q_m3s": 19706, "basin_km2": 2630667},
+  {"name": "Lena", "lat": 72.4, "lon": 126.8, "q_m3s": 18410, "basin_km2": 2490000, "snap_only": true},
+  {"name": "St. Lawrence", "lat": 49.3, "lon": -67.4, "q_m3s": 17600, "basin_km2": 1266642},
+  {"name": "Irrawaddy", "lat": 16.5, "lon": 95.2, "q_m3s": 15400, "basin_km2": 410000, "snap_only": true},
+  {"name": "Ob", "lat": 66.6, "lon": 67.5, "q_m3s": 13120, "basin_km2": 2990000, "snap_only": true},
+  {"name": "Amur", "lat": 52.9, "lon": 140.8, "q_m3s": 12360, "basin_km2": 1860000, "snap_only": true},
+  {"name": "Pearl", "lat": 22.6, "lon": 113.5, "q_m3s": 10650, "basin_km2": 450000, "snap_only": true},
+  {"name": "Mackenzie", "lat": 68.5, "lon": -134.5, "q_m3s": 9820, "basin_km2": 1800000, "snap_only": true},
+  {"name": "Rhine", "lat": 51.9, "lon": 4.3, "q_m3s": 3200, "basin_km2": 224000},
+  {"name": "Nile (Aswan)", "lat": 24.1, "lon": 32.9, "q_m3s": 2800, "basin_km2": 2900000, "snap_only": true}
+ ]
+}

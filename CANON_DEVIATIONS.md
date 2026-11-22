@@ -73,3 +73,19 @@
   mass-balance parameters are within the literature range, but on Earth they give ~34 % too little ice. Project
   owner's decision, 2026-11-22.
 
+## 7. The Reach and the Crownlands have a dry Mediterranean climate; their rivers are small
+
+- **Canon:** the Reach is the most fertile region of Westeros; the Mander is one of its major rivers, and the
+  Blackwater Rush reaches the sea at King's Landing (the official map; grade A)
+  ([A Wiki of Ice and Fire, The Reach](https://awoiaf.westeros.org/index.php/Reach),
+  [Mander](https://awoiaf.westeros.org/index.php/Mander)).
+- **Model:** the south of Westeros gets ~250–350 mm of precipitation a year, falling in winter, with dry summers.
+  King's Landing has 268 mm and Oldtown 325 mm. The canon rivers flow along their drawn courses (decision 9), but
+  the Mander carries ~240 m³/s from 600 000 km² and the Blackwater Rush ~100 m³/s. The Honeywine and the Greenblood
+  are seasonal streams. The Reach's fertility is that of California's Central Valley or Andalusia: rich soils and
+  river water, and the vineyards of the Arbor.
+- **Why:** a west coast at 30–40° N on a Pacific-sized ocean (decision 5) lies under the subtropical high, as do
+  California, central Chile and Morocco. Recalibrating the precipitation model with Earth's river discharge did not
+  change it (King's Landing 268 → 269 mm; experiment `world/hydrology/experiments/E12_hydrology.md`). Project
+  owner's decision, 2026-11-22.
+

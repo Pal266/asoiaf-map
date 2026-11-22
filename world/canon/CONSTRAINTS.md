@@ -134,6 +134,15 @@ each; the source column names the AWOIAF page.
    sheet reaching the Wall. Then, after the bistability showed, he chose σ 5.5 K and no northern sheet (canon
    deviation 6). The south polar continent starts glaciated, because the geological history has kept it at the
    pole, like Antarctica.
+9. **The rivers of the official map are carved into the relief** (experiment
+   `world/hydrology/experiments/E12_hydrology.md`, decided 2026-11-22). The relief (E08) has no river incision, and
+   its drainage did not follow the canon rivers (the Riverlands drained west, the Rhoyne barely reached Volantis).
+   The main rivers are traced on M1 and carved as valleys falling from source to mouth. Their discharge comes from
+   the climate.
+10. **The inland lakes of the official map hold water** (experiment E12, decided 2026-11-22): the God's Eye, Dagger
+    Lake, the Shrinking Sea (its two remaining pools) and the Bleeding Sea are taken from M1. Their water balance
+    decides whether they overflow; the Shrinking Sea and the Bleeding Sea, in a dry interior, are terminal lakes
+    losing more by evaporation than they receive.
 
 ## 8. Not stated by canon
 
