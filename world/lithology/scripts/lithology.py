@@ -17,7 +17,9 @@ Input:
   world/lithology/data/lithology.json
 Output (in --out):
   lithology.npz  [6, 1000, 1000]: rock uint8 (index into "order"), deposit uint8 (0 none, 1 alluvium,
-                 2 evaporite, 3 aeolian sand, 4 loess), bedrock uint8 (the rock under the deposits)
+                 2 evaporite, 3 aeolian sand, 4 loess), bedrock uint8 (the rock under the deposits),
+                 province uint8 and event_age_ma float32 (the history's, read through the warp: the provinces
+                 the rocks were drawn from)
   stats.json     land shares against GLiM, by region
   preview.png    rock classes, equirectangular
 Deterministic.
@@ -100,7 +102,9 @@ def main():
     O = {c: i for i, c in enumerate(order)}
     n = cs.N
     rng = np.random.default_rng(cfg["noise"]["seed"])
-    prov = np.load(args.history)["province"]
+    hist = np.load(args.history)
+    prov = hist["province"]
+    event = hist["event_age_ma"]
     elev = np.load(args.relief)["elevation_m"].astype(np.float64)
     land = elev > 0
     sheet = np.load(args.ice)["sheet_frac"] == 255
@@ -119,7 +123,9 @@ def main():
     wx = smooth_field(nz["coarse_n"], nz["coarse_smooth"], n, rng) * amp / np.maximum(np.cos(np.radians(clat)), 0.2)
     fw, jw, iw = cs.latlon_to_cell(np.radians(np.clip(clat + wy, -89.9, 89.9)), np.radians(clon + wx), n)
     pw = prov[fw, jw, iw]
-    prov = np.where(land & (pw > 0), pw, prov)
+    keep = land & (pw > 0)
+    prov = np.where(keep, pw, prov)
+    event = np.where(keep, event[fw, jw, iw], event)
 
     # 1. bedrock by province; cratons: shield where relief is high, platform cover where it is low
     bed = np.full(land.shape, O["ss"], np.int16)
@@ -172,7 +178,8 @@ def main():
     rock[sheet] = O["ig"]
     rock[land & np.isin(lake, (1, 2))] = O["wb"]
     rock[~land] = O["wb"]
-    np.savez_compressed(out / "lithology.npz", rock=rock.astype(np.uint8), deposit=dep, bedrock=bed.astype(np.uint8))
+    np.savez_compressed(out / "lithology.npz", rock=rock.astype(np.uint8), deposit=dep, bedrock=bed.astype(np.uint8),
+                        province=prov.astype(np.uint8), event_age_ma=event.astype(np.float32))
 
     A = np.broadcast_to(cs.cell_area_km2(n), land.shape)
     L = land

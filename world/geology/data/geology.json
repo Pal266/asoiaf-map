@@ -1,0 +1,205 @@
+{
+ "description": "Rock ages, faults and seismic hazard (experiment E16).",
+ "hazard": {
+  "_note": "decay length, reference velocity, zone weight and class thresholds searched on the Earth test (earth_hazard_validation.py --grid; best 0.87 of 71 cities, leave-one-out 0.85); boundary weights fixed by class",
+  "decay_km": 500,
+  "boundary_weight": {
+   "SUB": 1.0,
+   "OCB": 1.0,
+   "CCB": 1.0,
+   "CTF": 1.0,
+   "CRB": 0.8,
+   "OTF": 0.5,
+   "OSR": 0.5
+  },
+  "zone_weight": 0.5,
+  "zone_weight_outside": 0.5,
+  "class_thresholds": [
+   0.3,
+   0.45,
+   0.55
+  ],
+  "rate_ref_mm_yr": 20,
+  "rate_exponent": 0.5
+ },
+ "periods": {
+  "_source": "International Chronostratigraphic Chart v2023/09 (ICS); Precambrian by eon and era",
+  "names": [
+   "Quaternary",
+   "Neogene",
+   "Paleogene",
+   "Cretaceous",
+   "Jurassic",
+   "Triassic",
+   "Permian",
+   "Carboniferous",
+   "Devonian",
+   "Silurian",
+   "Ordovician",
+   "Cambrian",
+   "Neoproterozoic",
+   "Mesoproterozoic",
+   "Paleoproterozoic",
+   "Archean"
+  ],
+  "base_ma": [
+   2.58,
+   23.03,
+   66.0,
+   145.0,
+   201.4,
+   251.9,
+   298.9,
+   358.9,
+   419.2,
+   443.8,
+   485.4,
+   538.8,
+   1000,
+   1600,
+   2500,
+   4000
+  ],
+  "colours": [
+   [
+    249,
+    249,
+    127
+   ],
+   [
+    255,
+    230,
+    25
+   ],
+   [
+    253,
+    154,
+    82
+   ],
+   [
+    127,
+    198,
+    78
+   ],
+   [
+    52,
+    178,
+    201
+   ],
+   [
+    129,
+    43,
+    146
+   ],
+   [
+    240,
+    64,
+    40
+   ],
+   [
+    103,
+    165,
+    153
+   ],
+   [
+    203,
+    140,
+    55
+   ],
+   [
+    179,
+    225,
+    182
+   ],
+   [
+    0,
+    146,
+    112
+   ],
+   [
+    127,
+    160,
+    86
+   ],
+   [
+    254,
+    179,
+    66
+   ],
+   [
+    253,
+    180,
+    98
+   ],
+   [
+    247,
+    104,
+    152
+   ],
+   [
+    240,
+    4,
+    127
+   ]
+  ]
+ },
+ "age": {
+  "_note": "Rock formation ages (E16). Sediments are sampled from a power law, area density ~ age^-a (Wilkinson et al. 2009, a = 0.86), between the limits of their setting; crystalline rocks take the age of their province's last tectonic event (history E07).",
+  "power_law_exponent": 0.86,
+  "quaternary_ma": 2.58,
+  "unconsolidated_max_ma": 5.33,
+  "min_ma": 0.01,
+  "folded_sediment_span_ma": 200,
+  "post_orogenic_share": {
+   "3": 0.5,
+   "4": 0.3
+  },
+  "arc_pluton_span_ma": 60,
+  "plateau_sediment_span_ma": 220,
+  "crystalline_jitter": 0.1,
+  "doom_feature": 18,
+  "doom_age_ma": 0.0004,
+  "noise": {
+   "coarse_n": 125,
+   "coarse_smooth": 4,
+   "fine_n": 500,
+   "fine_smooth": 3,
+   "fine_weight": 0.4,
+   "seed": 20261123
+  }
+ },
+ "faults": {
+  "_note": "Faults: plate contacts (classes of Bird 2003) and the contacts of tectonic provinces on continental crust; activity from the age of the event that made or last moved them.",
+  "types": [
+   "none",
+   "subduction megathrust",
+   "spreading ridge",
+   "transform",
+   "thrust",
+   "normal",
+   "suture"
+  ],
+  "active_max_ma": 30,
+  "dormant_max_ma": 66,
+  "earth_median_velocity_mm_yr": {
+   "SUB": 64.3,
+   "OCB": 9.3,
+   "CCB": 20.7,
+   "CTF": 15.7,
+   "OTF": 31.5,
+   "CRB": 10.8,
+   "OSR": 34.1
+  },
+  "_velocity_note": "length-weighted medians of the PB2002 steps per class; used for world boundaries whose rate the scenario does not give (trenches, transforms). Ridges use their spreading rate (history.json).",
+  "dormant_zone_weight": 0.35,
+  "continental_rift_max_ma": 15,
+  "tectonic_min_ma": 1,
+  "activity": [
+   "none",
+   "active",
+   "dormant",
+   "inactive"
+  ],
+  "_activity_note": "plate contacts are active; faults of rifted margins went dormant when spreading began; continental rifts (1-15 Ma) are active; other contacts by the age of their event: <= 30 Ma active, <= 66 Ma dormant, older inactive. Contacts of canon features dated < 1 Ma (post-glacial wetland and drowned land bridge) are not faults."
+ }
+}

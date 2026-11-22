@@ -22,12 +22,14 @@ About 10 s; deterministic (fixed seed in `lithology.json`).
 
 ## Layer order
 
-history → relief → ice ⇄ climate → hydrology → **lithology** → soils (`soils.py --lithology OUT/lithology.npz`).
+history → relief → ice ⇄ climate → hydrology → **lithology** → soils (`soils.py --lithology OUT/lithology.npz`),
+geology (E16).
 
 ## Outputs
 
 - `lithology.npz` [6, 1000, 1000]: `rock` (index into `order`), `deposit` (0 none, 1 alluvium, 2 evaporite,
-  3 aeolian sand, 4 loess), `bedrock` (the rock under the deposits)
+  3 aeolian sand, 4 loess), `bedrock` (the rock under the deposits), `province` and `event_age_ma` (the
+  history's provinces and event ages read through the warp, for the geology layer)
 - `stats.json`: land shares against GLiM, deposits, shares by region
 - `preview.png`: rock classes, equirectangular
 
