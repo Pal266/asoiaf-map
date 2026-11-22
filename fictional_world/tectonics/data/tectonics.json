@@ -1,0 +1,237 @@
+{
+ "description": "Tectonic history of the fictional world (layer 3).",
+ "seed": 20261122,
+ "sim_n": 200,
+ "breakup_age_ma": 100,
+ "supercontinent": {
+  "continental_area_share": 0.41,
+  "_area_source": "Cogley 1984: 210.4 M km2, 41 % of Earth's surface",
+  "center_lat": 0.0,
+  "center_lon": 0.0,
+  "n_lobes": 7,
+  "lobe_spread_deg": 45,
+  "lobe_radius_deg": [
+   22,
+   38
+  ],
+  "noise": {
+   "coarse_n": 25,
+   "coarse_smooth": 3,
+   "fine_n": 100,
+   "fine_smooth": 2,
+   "fine_weight": 0.35,
+   "amplitude": 0.35
+  },
+  "n_terranes": 45,
+  "craton_share": 0.35,
+  "craton_age_ma": [
+   1800,
+   3200
+  ],
+  "terrane_age_ma": [
+   350,
+   1200
+  ],
+  "assembly_age_ma": 220,
+  "_assembly_note": "final assembly ~120 Myr before breakup, as Pangaea (320 -> 200 Ma)",
+  "suture_width_km": 250,
+  "n_blocks": 11,
+  "terrane_warp_deg": 5.0,
+  "block_complete_ma": 450,
+  "assembly_start_ma": 420,
+  "_blocks_note": "blocks are the continents that collided to make the supercontinent (Pangaea: ~10 major blocks); their internal sutures are older than block_complete_ma, the assembly welds run from assembly_start_ma down to assembly_age_ma"
+ },
+ "breakup": {
+  "_source": "speeds: Zahirovic et al. 2015 (median RMS ~4 cm/yr; cratonic plates ~2.8, oceanic plates bounded by subduction ~8.5); rifting along assembly sutures, shorter ones first (Buiter & Torsvik 2014; Erdos et al. 2025)",
+  "n_continental_plates": 9,
+  "continental_speed_cm_yr": [
+   1.5,
+   6.0
+  ],
+  "craton_slowdown": 0.4,
+  "n_oceanic_plates": 7,
+  "oceanic_speed_cm_yr": [
+   5.0,
+   9.0
+  ],
+  "oceanic_seed_min_distance_deg": 20,
+  "spin_sd_deg_per_myr": 0.04,
+  "boundary_threshold_cm_yr": 0.5,
+  "max_ocean_age_myr": 200,
+  "_max_age_note": "the oldest ocean floor before subduction removes it; Panthalassa floor of the Jurassic was up to ~200 Myr old",
+  "n_microcontinents": 3,
+  "micro_max_area_km2": 4000000.0,
+  "_micro_note": "small terranes on rifted edges break away as microcontinents (Madagascar 0.59 M km2, the Seychelles bank, the Lord Howe Rise; Zealandia ~4.9 M km2 at the large end)",
+  "micro_candidates_factor": 3
+ },
+ "drift": {
+  "step_myr": 1,
+  "snapshot_every_myr": 10,
+  "arc_band_km": [
+   100,
+   350
+  ],
+  "_arc_note": "volcanic arcs stand ~100-300 km behind the trench (Syracuse & Abers 2006: slab depth ~100 km under the arc)",
+  "island_arc_band_km": [
+   100,
+   220
+  ],
+  "collision_band_km": 300,
+  "rift_margin_band_km": 150,
+  "_merge_note": "two continental plates weld once ~0.5 M km2 of crust has been consumed by their convergence; the welded plate then takes a new Euler pole by the reorganisation rule (a collision removes the slab pull between the two plates). Without the new pole, a 0.5 M km2 threshold welded every continent back into one landmass",
+  "event_codes": {
+   "0": "basement (terrane formation)",
+   "1": "rifted margin",
+   "2": "continental arc",
+   "3": "collision orogen",
+   "4": "island arc (on ocean floor)",
+   "5": "suture of the supercontinent assembly",
+   "6": "internal suture of a block",
+   "7": "hotspot volcanism on a continent",
+   "8": "large igneous province (flood basalt)"
+  },
+  "merge_after_collision_km2": 500000.0,
+  "reorganisation_ma": [
+   70,
+   40
+  ],
+  "_reorganisation_note": "plates change their motion every few tens of Myr (Earth: global reorganisations ~100, ~83, ~50 Ma; Matthews et al. 2012); at each the Euler poles are recomputed from the configuration of that time by the same rule as at the breakup",
+  "thickness_km": {
+   "craton": 40,
+   "basement": 37,
+   "old_orogen": 40,
+   "ocean": 7,
+   "margin_min": 12,
+   "max": 72,
+   "arc_max": 65,
+   "island_arc_max": 30,
+   "_source": "Christensen & Mooney 1995: shields/platforms ~41 km, Palaeozoic orogens ~40, extended crust ~30, oceanic ~7; Tibet ~70 km; central Andes ~70; island arcs ~20-35 km (Izu-Bonin ~20, Aleutians ~35)"
+  },
+  "arc_growth_km_per_myr": 0.12,
+  "_arc_growth_note": "magmatic addition at arcs ~30 km3 per km of arc per Myr (Reymer & Schubert 1984) spread over a ~250 km wide arc",
+  "island_arc_min_myr": 5,
+  "_island_arc_note": "arc crust forms 100-220 km behind the trench (Syracuse & Abers 2006: arc-trench distances ~100-300 km) and only where the arc stays at least 5 Myr; a band swept briefly by a migrating trench is not arc crust",
+  "post_collision": {
+   "duration_myr": 40,
+   "thickening_km_per_myr": 0.4,
+   "widening_km_per_myr": 10,
+   "_source": "after the first contact, convergence goes on inside the welded plate for tens of Myr: India-Asia since ~50 Ma and still active, the Alps ~35 Myr, the Zagros ~25 Myr; Tibetan crust doubled to ~70 km and the plateau grew outwards at ~1 cm/yr. Values are order-of-magnitude"
+  },
+  "accretion_min_thickness_km": 20,
+  "accretion_reach_km": 400,
+  "_accretion_note": "ocean crust thicker than ~20 km (island arcs, oceanic plateaus) is too buoyant to subduct and is accreted to the continent it meets (Japan, the Cordilleran terranes, Wrangellia, the Caribbean plateau in Colombia; Cloos 1993: plateaus over ~17 km and arcs resist subduction)",
+  "spare_arc_myr": 5
+ },
+ "output": {
+  "n": 1000,
+  "warp": {
+   "wavelengths_km": [
+    1000,
+    500,
+    250,
+    120
+   ],
+   "hurst": 0.7,
+   "components": 8,
+   "amplitude_km": 40
+  },
+  "smooth_iterations": 6,
+  "young_ma": 66,
+  "_young_note": "Cenozoic events count as young orogens and active arcs, older ones as old orogens (codes of the first world)",
+  "shield_share_of_cratons": 0.4,
+  "_shield_note": "exposed shields vs covered platforms on Precambrian cratons, order of magnitude",
+  "old_orogen_max_ma": 1000,
+  "plateau_min_thickness_km": 60,
+  "foreland_band_km": [
+   100,
+   400
+  ],
+  "isostasy": {
+   "rho_crust": 2830,
+   "rho_mantle": 3300,
+   "reference_thickness_km": 35,
+   "reference_elevation_m": 0,
+   "_source": "Airy isostasy, densities after Christensen & Mooney 1995; the continental surface is shifted so that the mean height of continental crust including shelves is ~120 m (Cogley 1984)",
+   "mean_continental_elevation_m": 120
+  },
+  "province_codes": {
+   "0": "ocean floor",
+   "1": "craton (shield)",
+   "2": "platform (old basement under sedimentary cover)",
+   "3": "old orogen (Proterozoic to Mesozoic mobile belt)",
+   "4": "young orogen (Cenozoic collision)",
+   "5": "active margin or volcanic arc",
+   "6": "rift or young rifted margin",
+   "7": "uplifted plateau",
+   "8": "sedimentary or foreland basin",
+   "9": "oceanic plateau"
+  },
+  "sea_level": {
+   "earth_max_age_myr": 180,
+   "water_loading_factor": 0.69,
+   "_source": "Earth's ocean floor area falls about linearly with age to ~180 Myr (Parsons 1982), mean ~60 Myr; sea level change = 0.69 x change of mean basin depth (isostatic water loading; Muller et al. 2008, Science 319, 1357)"
+  },
+  "frame": {
+   "polar_latitude_deg": 60,
+   "candidates": 40000,
+   "tie_tolerance": 0.005,
+   "_note": "decision 7: the spin axis moves at most 15 deg (a typical true polar wander over 100 Myr) to where the least land lies poleward of 60 deg; among axes within 0.5 % of the land of that minimum, the one nearest the simulation's axis. Without the limit the minimum (4.3 %) needed 43 deg",
+   "max_polar_wander_deg": 15
+  },
+  "arc_volcanoes": {
+   "arc_distance_km": 150,
+   "spacing_km": 70,
+   "_source": "volcanic fronts stand ~100-300 km behind the trench, typically ~150 km (Syracuse & Abers 2006); arc volcanoes are spaced ~50-70 km along the front (de Bremond d'Ars et al. 1995)"
+  }
+ },
+ "plumes": {
+  "_source": "49 hotspots, 7 primary (deep) ones (Courtillot et al. 2003); LIPs ~1 per 20 Myr long-term, clustered at supercontinent breakup (Bryan & Ferrari 2013); oceanic plateaus 10-35 km thick crust, Ontong Java 1.86 M km2 (Coffin & Eldholm 1994); Hawaiian swell ~1 km high, half-width ~500 km (Van Ark & Lin 2004)",
+  "n_primary": 7,
+  "n_secondary": 90,
+  "min_spacing_deg": 8,
+  "primary_at_breakup": 3,
+  "breakup_window_myr": 10,
+  "secondary_duration_myr": [
+   10,
+   60
+  ],
+  "track_radius_km": {
+   "primary": 100,
+   "secondary": 60
+  },
+  "track_thickness_km": {
+   "primary": 18,
+   "secondary": 12
+  },
+  "lip_area_km2": [
+   500000.0,
+   2000000.0
+  ],
+  "plateau_thickness_km": [
+   25,
+   35
+  ],
+  "flood_basalt_added_km": 3,
+  "swell": {
+   "height_m": {
+    "primary": 1000,
+    "secondary": 500
+   },
+   "half_width_km": 500
+  },
+  "_count_note": "secondary plumes live 10-60 Myr, so ~1/3 of them are active at any time: 90 give ~30 active, plus 7 primary, close to Earth's ~40-49 hotspots today",
+  "max_drift_cm_yr": {
+   "primary": 1.0,
+   "secondary": 2.0
+  },
+  "_drift_note": "hotspots move slowly in the mantle: primary ones by ~1 cm/yr or less within a hemisphere; up to 5 cm/yr between hemispheres before 50 Ma (Courtillot et al. 2003)",
+  "volcano_spacing_km": {
+   "primary": 50,
+   "secondary": 80
+  },
+  "_spacing_note": "volcanoes along the Hawaiian chain stand ~40-60 km apart (ten Brink 1991); weaker tracks are sparser",
+  "lip_outline_noise": 0.3,
+  "lip_rim_taper_km": 250,
+  "_flood_note": "continental flood basalts are ~1-3 km of lava (Deccan up to ~2 km) plus underplating; +3 km of crust gives ~+430 m by Airy, like the Deccan plateau (~0.5-1 km); lavas thin over the outer ~250 km"
+ }
+}
